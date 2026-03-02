@@ -24,6 +24,8 @@
   <meta property="og:title" content="Mission-Critical Systems Built to Survive | Umanah Systems Group" />
   <meta property="og:description" content="Governed hardware, sovereign manufacturing, and execution control for defense and civil infrastructure." />
   <meta property="og:image" content="https://umanahsystems.com/images/og-preview.jpg" />
+  <meta property="og:image:secure_url" content="https://umanahsystems.com/images/og-preview.jpg" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Umanah Systems Group — Mission-Critical Systems Built to Survive" />
@@ -34,6 +36,7 @@
   <meta name="twitter:title" content="Mission-Critical Systems Built to Survive | Umanah Systems Group" />
   <meta name="twitter:description" content="Governed hardware, sovereign manufacturing, and execution control for defense and civil infrastructure." />
   <meta name="twitter:image" content="https://umanahsystems.com/images/og-preview.jpg" />
+  <meta name="twitter:image:src" content="https://umanahsystems.com/images/og-preview.jpg" />
   <meta name="twitter:image:alt" content="Umanah Systems Group — Mission-Critical Systems Built to Survive" />
 
   <!-- ── Theme & App ──────────────────────────────────────── -->
@@ -236,12 +239,12 @@ img { max-width: 100%; display: block; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 64px; animation: fadeInUp 0.9s ease 0.3s both; }
 .hero-stats { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px; animation: fadeInUp 0.9s ease 0.4s both; }
 .stat {
-  display: flex; align-items: center; gap: 8px; padding: 10px 16px;
+  display: flex; align-items: center; justify-content: flex-start; gap: 8px; padding: 10px 16px;
   background: rgba(255,255,255,0.03); border: 1px solid var(--border);
   border-radius: var(--r-md); font-size: 0.78rem; font-weight: 500; color: var(--text-secondary);
 }
-.stat-icon { color: var(--accent); font-size: 0.88rem; }
-.stat-label { white-space: nowrap; }
+.stat-icon { color: var(--accent); font-size: 0.88rem; flex-shrink: 0; line-height: 1; display: flex; align-items: center; }
+.stat-label { white-space: nowrap; line-height: 1; }
 .hero-scroll-indicator {
   position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 1;
@@ -637,7 +640,7 @@ img { max-width: 100%; display: block; }
     gap: 8px;
     width: 100%;
   }
-  .stat { font-size: 0.78rem; padding: 10px 14px; justify-content: center; }
+  .stat { font-size: 0.78rem; padding: 10px 14px; justify-content: flex-start; gap: 10px; }
   .hero-scroll-indicator { display: none; }
 
   /* Value props */
@@ -698,7 +701,7 @@ img { max-width: 100%; display: block; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .hero-stats { grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
-  .stat { font-size: 0.74rem; padding: 9px 12px; justify-content: center; }
+  .stat { font-size: 0.74rem; padding: 9px 12px; justify-content: flex-start; gap: 8px; }
   .about-visual { display: none; }
   .section-body { max-width: 100%; }
   .pillar-card { overflow: hidden; }
