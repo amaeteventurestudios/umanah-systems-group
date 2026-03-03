@@ -342,8 +342,10 @@ img { max-width: 100%; display: block; }
 }
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .pillar-card {
   background: var(--bg-card);
@@ -359,6 +361,8 @@ img { max-width: 100%; display: block; }
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0,0,0,0.3);
 }
+/* 4th card: auto placement in 2-col grid */
+.pillar-card--centered { grid-column: auto; }
 .pillar-icon {
   width: 52px; height: 52px;
   background: var(--accent-dim);
@@ -584,7 +588,8 @@ img { max-width: 100%; display: block; }
   .hero-title { text-align: center; }
   .hero-sub { text-align: center; margin-left: auto; margin-right: auto; }
   .what-cards { grid-template-columns: 1fr 1fr; }
-  .pillars-grid { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: 1fr 1fr; max-width: 100%; }
+  .pillar-card--centered { grid-column: auto; }
   .use-grid { grid-template-columns: 1fr; }
   .arch-grid { grid-template-columns: 1fr; }
   .what-section, .pillars-section, .how-section, .use-section, .arch-section, .cta-section { padding: 80px 0; }
@@ -592,6 +597,13 @@ img { max-width: 100%; display: block; }
   .section-body { max-width: 100%; }
   .how-steps { max-width: 100%; }
   .how-step { text-align: left; }
+}
+
+@media (max-width: 540px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+  .pillar-card { padding: 28px 20px; }
+  .pillar-card h3 { font-size: 0.95rem; }
+  .pillar-card p { font-size: 0.85rem; }
 }
 
 @media (max-width: 480px) {
@@ -620,8 +632,6 @@ img { max-width: 100%; display: block; }
         <li><a href="index.html#about">About</a></li>
         <li><a href="crucible.html" class="active">Crucible</a></li>
         <li><a href="reydious.html">Reydious</a></li>
-        <li><a href="index.html#capabilities">Capabilities</a></li>
-        <li><a href="index.html#thesis">Thesis</a></li>
         <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
@@ -632,8 +642,6 @@ img { max-width: 100%; display: block; }
       <a href="index.html#about"        class="mobile-link">About</a>
       <a href="crucible.html"           class="mobile-link active">Crucible</a>
       <a href="reydious.html"           class="mobile-link">Reydious</a>
-      <a href="index.html#capabilities" class="mobile-link">Capabilities</a>
-      <a href="index.html#thesis"       class="mobile-link">Thesis</a>
       <a href="index.html#contact"      class="mobile-link">Contact</a>
     </div>
   </nav>
@@ -713,7 +721,7 @@ img { max-width: 100%; display: block; }
           <h3>Field-Ready Embedded Subsystems</h3>
           <p>Embedded compute and control subsystems configured, tested, and validated for direct field deployment.</p>
         </div>
-        <div class="pillar-card reveal" style="grid-column: 2;">
+        <div class="pillar-card pillar-card--centered reveal">
           <div class="pillar-icon"><i class="fa-solid fa-industry"></i></div>
           <h3>Survivable Industrial &amp; Infrastructure Hardware</h3>
           <p>Hardware engineered for industrial and civil infrastructure environments where durability and uptime are non-negotiable.</p>
@@ -887,8 +895,6 @@ img { max-width: 100%; display: block; }
         <a href="index.html#about">About</a>
         <a href="crucible.html" class="active">Crucible</a>
         <a href="reydious.html">Reydious</a>
-        <a href="index.html#capabilities">Capabilities</a>
-        <a href="index.html#thesis">Thesis</a>
         <a href="index.html#contact">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
       </nav>
