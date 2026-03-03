@@ -301,7 +301,7 @@ img { max-width: 100%; display: block; }
   background: var(--accent-dim); border: 1px solid rgba(232,97,26,0.3);
   padding: 5px 12px; border-radius: 100px; margin-bottom: 16px;
 }
-.tag-alt { color: #5b8dee; background: rgba(91,141,238,0.1); border-color: rgba(91,141,238,0.28); }
+.tag-alt { color: var(--accent); background: var(--accent-dim); border-color: rgba(232,97,26,0.28); }
 .platform-subtitle { font-family: var(--font-display); font-size: 0.98rem; font-weight: 600; color: var(--accent); margin-bottom: 18px; letter-spacing: 0.03em; }
 .platform-desc { font-size: 1rem; color: var(--text-secondary); line-height: 1.76; margin-bottom: 12px; }
 .platform-features { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
@@ -332,6 +332,8 @@ img { max-width: 100%; display: block; }
 /* ── REYDIOUS ─────────────────────────────────────── */
 .reydious-section { padding: 120px 0; background: var(--bg-base); border-top: 1px solid var(--border); }
 .reydious-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.reydious-text { text-align: center; }
+.reydious-text .section-body { margin-left: auto; margin-right: auto; }
 .reydious-pillars { display: flex; flex-direction: column; gap: 16px; }
 .pillar-card {
   display: flex; align-items: flex-start; gap: 18px; padding: 22px 22px;
@@ -343,7 +345,7 @@ img { max-width: 100%; display: block; }
   width: 42px; height: 42px; flex-shrink: 0;
   background: rgba(91,141,238,0.1); border: 1px solid rgba(91,141,238,0.22);
   border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
-  color: #5b8dee; font-size: 0.95rem;
+  color: var(--accent); font-size: 0.95rem;
 }
 .pillar-content h4 { font-family: var(--font-display); font-size: 0.93rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
 .pillar-content p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; }
@@ -721,8 +723,8 @@ img { max-width: 100%; display: block; }
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#crucible">Crucible</a></li>
-      <li><a href="#reydious">Reydious</a></li>
+      <li><a href="crucible.html">Crucible</a></li>
+      <li><a href="reydious.html">Reydious</a></li>
       <li><a href="#capabilities">Capabilities</a></li>
       <li><a href="#thesis">Thesis</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -733,8 +735,8 @@ img { max-width: 100%; display: block; }
   </div>
   <div class="nav-mobile" id="mobileMenu">
     <a href="#about"        class="mobile-link">About</a>
-    <a href="#crucible"     class="mobile-link">Crucible</a>
-    <a href="#reydious"     class="mobile-link">Reydious</a>
+    <a href="crucible.html" class="mobile-link">Crucible</a>
+    <a href="reydious.html" class="mobile-link">Reydious</a>
     <a href="#capabilities" class="mobile-link">Capabilities</a>
     <a href="#thesis"       class="mobile-link">Thesis</a>
     <a href="#contact"      class="mobile-link">Contact</a>
@@ -769,10 +771,7 @@ img { max-width: 100%; display: block; }
       <div class="stat"><span class="stat-icon"><i class="fa-solid fa-lock"></i></span><span class="stat-label">Governed Execution</span></div>
     </div>
   </div>
-  <div class="hero-scroll-indicator">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+
 </section>
 
 <!-- ══════════════════ VALUE PROPS ════════════════════════ -->
@@ -841,15 +840,18 @@ img { max-width: 100%; display: block; }
     <div class="platform-header reveal">
       <div class="platform-tag">Platform</div>
       <h2 class="section-title">Crucible</h2>
-      <p class="platform-subtitle">Manufacturing and Stress Validation</p>
+      <p class="platform-subtitle">Integrated Manufacturing and Survivability</p>
       <p class="platform-desc">
-        Crucible is our manufacturing and validation platform.
+        Crucible is Umanah Systems Group's integrated production and stress-validation platform.
       </p>
       <p class="platform-desc">
-        Crucible builds and tests hardware systems designed to survive heat, pressure, vibration, radiation, and high-power fault conditions.
+        Crucible designs, integrates, assembles, and validates mission-critical hardware under direct production authority. We own the core layers required to move from prototype to deployable system without dependency on external manufacturers for critical integration.
       </p>
       <p class="platform-desc">
-        All hardware produced through Crucible is built under strict configuration control and tested before deployment.
+        Crucible builds hardware engineered to survive heat, pressure, vibration, radiation, and high-power electrical fault conditions.
+      </p>
+      <p class="platform-desc">
+        Every system produced through Crucible is assembled under strict configuration control, validated under stress, and cleared for deployment only after documented verification.
       </p>
     </div>
     <div class="platform-features">
@@ -857,20 +859,25 @@ img { max-width: 100%; display: block; }
         <div class="feature-number">01</div>
         <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
         <h3>Controlled Production</h3>
-        <p>Mission-critical subsystems built under defined authority and version control.</p>
+        <p>Mission-critical subsystems assembled under defined engineering authority, version control, and documented configuration management. Iteration cycles remain internal. Deployment readiness is not outsourced.</p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-number">02</div>
         <div class="feature-icon"><i class="fa-solid fa-temperature-high"></i></div>
-        <h3>Stress Testing</h3>
-        <p>Thermal, mechanical, and electrical testing to expose failure early.</p>
+        <h3>Stress Validation</h3>
+        <p>Thermal, mechanical, electrical, and fault-injection testing designed to expose failure modes before field deployment. We test to break systems early, not after release.</p>
       </div>
       <div class="feature-card reveal">
         <div class="feature-number">03</div>
         <div class="feature-icon"><i class="fa-solid fa-file-contract"></i></div>
         <h3>Traceable Configuration</h3>
-        <p>Clear system documentation for audit and accountability.</p>
+        <p>Each unit is documented, versioned, and auditable. Hardware, firmware, and system configuration are locked before deployment to ensure accountability in real-world environments.</p>
       </div>
+    </div>
+    <div style="display:flex;justify-content:center;width:100%;margin-top:28px;">
+      <a href="crucible.html" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;">
+        Learn More About Crucible &nbsp;<i class="fa-solid fa-arrow-right"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -882,7 +889,7 @@ img { max-width: 100%; display: block; }
       <div class="reydious-text reveal">
         <div class="platform-tag tag-alt">Platform</div>
         <h2 class="section-title">Reydious</h2>
-        <p class="platform-subtitle" style="color:#5b8dee;">Execution Governance Platform</p>
+        <p class="platform-subtitle" style="color:var(--accent);">Execution Governance Platform</p>
         <p class="section-body">
           Reydious is the software platform that powers our software-defined hardware and mission-critical software systems, and integrates with third-party, government-owned, commercial, and industrial systems to create a unified, governed execution environment.
         </p>
@@ -892,6 +899,12 @@ img { max-width: 100%; display: block; }
         <p class="section-body">
           Reydious governs behavior. Crucible ensures survivability. Together, they form one reliability architecture.
         </p>
+        <div style="display:flex;justify-content:center;width:100%;margin-top:28px;">
+          <a href="reydious.html" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;padding:12px 26px;background:var(--accent);color:#fff;border-radius:12px;font-family:var(--font-display);font-size:0.92rem;font-weight:600;text-decoration:none;transition:var(--ease);">
+            <i class="fa-solid fa-arrow-right"></i>
+            Learn More About Reydious
+          </a>
+        </div>
       </div>
       <div class="reydious-pillars reveal">
         <div class="pillar-card">
@@ -1031,8 +1044,8 @@ img { max-width: 100%; display: block; }
         <!-- Block 6 — USG response -->
         <div class="thesis-block reveal">
           <p>Umanah Systems Group exists to rebuild mission-critical infrastructure for survivability, containment, and sovereign endurance.</p>
-          <p>Through <strong style="color:var(--text-primary)">Crucible</strong>, we manufacture and stress-validate hardware designed to withstand extreme heat, pressure, vibration, radiation, and high-power fault conditions.</p>
-          <p>Through <strong style="color:#5b8dee">Reydious</strong>, we enforce runtime authority and prevent unsafe or unauthorized actions at the exact moment they attempt to occur.</p>
+          <p>Through <strong style="color:var(--accent)">Crucible</strong>, we manufacture and stress-validate hardware designed to withstand extreme heat, pressure, vibration, radiation, and high-power fault conditions.</p>
+          <p>Through <strong style="color:var(--accent)">Reydious</strong>, we enforce runtime authority and prevent unsafe or unauthorized actions at the exact moment they attempt to occur.</p>
           <p>We integrate fabrication, validation, and governance into one controlled architecture. We do not optimize for convenience. We optimize for survival.</p>
         </div>
 
@@ -1116,8 +1129,8 @@ img { max-width: 100%; display: block; }
     </div>
     <nav class="footer-nav">
       <a href="#about">About</a>
-      <a href="#crucible">Crucible</a>
-      <a href="#reydious">Reydious</a>
+      <a href="crucible.html">Crucible</a>
+      <a href="reydious.html">Reydious</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#thesis">Thesis</a>
       <a href="#contact">Contact</a>
