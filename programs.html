@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Programs | Umanah Systems Group</title>
+  <meta name="description" content="Focused execution programs under Umanah Systems Group." />
+  <meta name="author" content="Umanah Systems Group" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://umanahsystems.com/programs" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://umanahsystems.com/programs" />
+  <meta property="og:title" content="Programs | Umanah Systems Group" />
+  <meta property="og:description" content="Focused execution programs under Umanah Systems Group." />
+  <meta property="og:image" content="https://umanahsystems.com/images/og-preview.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Programs | Umanah Systems Group" />
+  <meta name="twitter:description" content="Focused execution programs under Umanah Systems Group." />
+  <meta name="twitter:image" content="https://umanahsystems.com/images/og-preview.jpg" />
+
+  <meta name="theme-color" content="#08090c" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-outer:       #040508;
+  --bg-base:        #08090c;
+  --bg-surface:     #0d0f14;
+  --bg-card:        #131620;
+  --bg-card-hover:  #191d2b;
+  --border:         rgba(255,255,255,0.07);
+  --border-bright:  rgba(255,255,255,0.13);
+
+  --accent:         #e8611a;
+  --accent-dim:     rgba(232,97,26,0.15);
+  --accent-glow:    rgba(232,97,26,0.35);
+  --accent-alt:     #f08040;
+
+  --text-primary:   #f0f2f5;
+  --text-secondary: #8b909e;
+  --text-muted:     #484e60;
+
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+
+  --r-sm: 6px;  --r-md: 12px;  --r-lg: 20px;  --r-xl: 28px;
+  --ease: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg-outer);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-base);
+  box-shadow: 0 0 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+.accent-strong { color: var(--accent); font-weight: 700; }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(232,97,26,0.3);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.16;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+}
+.section-body {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.76;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: var(--r-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--ease);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+.btn-primary:hover {
+  background: var(--accent-alt);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 30px var(--accent-glow);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-bright);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,9,12,0.92);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.logo-mark {
+  width: 38px; height: 38px; background: var(--accent); color: #fff;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.78rem;
+  letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm); flex-shrink: 0;
+}
+.logo-text { font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; color: var(--text-primary); }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  font-size: 0.865rem; font-weight: 500; color: var(--text-secondary);
+  padding: 8px 13px; border-radius: var(--r-sm); transition: var(--ease);
+}
+.nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta { background: var(--accent) !important; color: #fff !important; padding: 8px 16px !important; }
+.nav-cta:hover { background: var(--accent-alt) !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: var(--ease); }
+.nav-mobile { display: none; flex-direction: column; padding: 12px 28px 20px; background: rgba(8,9,12,0.97); border-top: 1px solid var(--border); }
+.nav-mobile.open { display: flex; }
+.mobile-link { font-size: 1rem; font-weight: 500; color: var(--text-secondary); padding: 13px 0; border-bottom: 1px solid var(--border); transition: color var(--ease); }
+.mobile-link:last-child { border-bottom: none; }
+.mobile-link:hover, .mobile-link.active { color: var(--accent); }
+
+.hero {
+  position: relative;
+  min-height: min(100vh, 680px);
+  display: flex; align-items: center;
+  overflow: hidden; padding-top: 68px;
+  background: var(--bg-base);
+}
+.hero-grid {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  opacity: 0.5;
+}
+.hero-glow-1 {
+  position: absolute; z-index: 1;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(232,97,26,0.16) 0%, transparent 70%);
+  border-radius: 50%; filter: blur(120px); pointer-events: none;
+  top: -200px; right: -150px;
+}
+.hero-glow-2 {
+  position: absolute; z-index: 1;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(232,97,26,0.10) 0%, transparent 70%);
+  border-radius: 50%; filter: blur(120px); pointer-events: none;
+  bottom: -100px; left: -80px;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; padding: 100px 28px 120px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  max-width: 1100px; margin: 0 auto;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-dim); border: 1px solid rgba(232,97,26,0.3);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 32px;
+  animation: fadeInDown 0.8s ease forwards;
+}
+.badge-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2s ease infinite; }
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 800; line-height: 1.06; letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 24px; width: 100%;
+  animation: fadeInUp 0.9s ease 0.1s both;
+}
+.hero-sub {
+  font-size: clamp(0.98rem, 1.5vw, 1.12rem);
+  color: var(--text-secondary);
+  max-width: 540px; width: 100%; line-height: 1.72; margin-left: auto; margin-right: auto;
+  animation: fadeInUp 0.9s ease 0.2s both;
+}
+
+.programs-section {
+  padding: 104px 0;
+  background: var(--bg-base);
+}
+.programs-header {
+  max-width: 680px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.program-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 34px 28px;
+  transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease), background var(--ease);
+}
+.program-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  transform: translateY(-3px);
+  background: var(--bg-card-hover);
+}
+.program-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.program-card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+  margin-bottom: 24px;
+  word-break: break-word;
+}
+.program-card .btn { margin-top: auto; align-self: center; }
+
+.support-section {
+  padding: 120px 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+}
+.support-header {
+  max-width: 680px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.support-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg-card);
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 30px 26px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color var(--ease), background var(--ease), transform var(--ease), box-shadow var(--ease);
+}
+.support-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.22); }
+.support-card:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(232,97,26,0.22), 0 8px 24px rgba(0,0,0,0.22);
+  background: var(--bg-card-hover);
+}
+.support-card h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.support-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.cta-section {
+  padding: 120px 0;
+  background: var(--bg-base);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.cta-inner { max-width: 620px; margin: 0 auto; }
+.cta-inner .section-body { max-width: 100%; margin-bottom: 36px; }
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer { background: var(--bg-surface); border-top: 1px solid var(--border); padding: 48px 0 32px; }
+.footer-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+}
+.footer-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.footer-name { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+.footer-nav a { font-size: 0.85rem; color: var(--text-muted); transition: var(--ease); }
+.footer-nav a:hover, .footer-nav a.active { color: var(--accent); }
+.footer-social { display: flex; justify-content: center; gap: 12px; }
+.footer-social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--border-bright); color: var(--text-secondary);
+  font-size: 0.95rem; transition: var(--ease);
+}
+.footer-social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
+.footer-copy {
+  font-size: 0.78rem; color: var(--text-muted); width: 100%;
+  text-align: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px;
+}
+
+@keyframes blink    { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+@keyframes fadeInUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeInDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+
+@media (max-width: 900px) {
+  .program-grid, .support-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links  { display: none; }
+  .nav-hamburger { display: flex; }
+  .container { padding: 0 20px; }
+  .hero-content { padding: 72px 20px 90px; }
+  .hero-title, .hero-sub { text-align: center; margin-left: auto; margin-right: auto; }
+  .programs-section, .support-section, .cta-section { padding: 76px 0; }
+  .section-body { max-width: 100%; }
+  .footer-inner { padding: 0 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero { min-height: 500px; }
+  .hero-content { padding: 60px 20px 72px; }
+  .hero-title { font-size: clamp(2.25rem, 11vw, 3rem); }
+  .hero-sub { font-size: 0.95rem; }
+  .program-card, .support-card { padding: 26px 20px; }
+  .cta-actions { flex-direction: column; align-items: center; width: 100%; }
+  .cta-actions .btn, .program-card .btn { width: 100%; justify-content: center; }
+}
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">USG</span>
+        <span class="logo-text">Umanah Systems Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="crucible.html">Crucible</a></li>
+        <li><a href="reydious.html">Reydious</a></li>
+        <li><a href="programs.html" class="active">Programs</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="crucible.html" class="mobile-link">Crucible</a>
+      <a href="reydious.html" class="mobile-link">Reydious</a>
+      <a href="programs.html" class="mobile-link active">Programs</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="top">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-dot"></span>FOCUSED EXECUTION PROGRAMS</div>
+      <h1 class="hero-title">Programs</h1>
+      <p class="hero-sub">Umanah Systems Group builds focused programs for real-world deployment. These programs apply governed software, resilient hardware, and mission-critical system design to environments where reliability matters.</p>
+    </div>
+  </section>
+
+  <section class="programs-section" id="programs">
+    <div class="container">
+      <div class="programs-header reveal">
+        <div class="section-label">PROGRAMS</div>
+        <h2 class="section-title">Current Focus Areas</h2>
+        <p class="section-body">These are the two USG programs currently highlighted on the site. Each applies the broader USG architecture to a specific mission and deployment context.</p>
+      </div>
+      <div class="program-grid">
+        <article class="program-card reveal" id="biogrid">
+          <h3>BioGrid Networks</h3>
+          <p>Distributed biological sensing and monitoring systems for difficult environments.</p>
+          <a href="#biogrid" class="btn btn-primary">Learn More</a>
+        </article>
+        <article class="program-card reveal" id="resonance-grid">
+          <h3>Resonance Grid</h3>
+          <p>Tracking, sensing, and monitoring systems for demanding environments.</p>
+          <a href="#resonance-grid" class="btn btn-primary">Learn More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="support-section">
+    <div class="container">
+      <div class="support-header reveal">
+        <div class="section-label">SYSTEM BACKBONE</div>
+        <h2 class="section-title">Powered by <span class="accent-strong">Reydious</span> and <span class="accent-strong">Crucible</span></h2>
+        <p class="section-body">Each program is supported by the same core USG architecture. <span class="accent-strong">Reydious</span> governs execution, authority, and control at the software layer. <span class="accent-strong">Crucible</span> supports hardware development, validation, and survivability for real deployment conditions.</p>
+      </div>
+      <div class="support-grid">
+        <a class="support-card reveal" href="reydious.html" aria-label="Open Reydious page">
+          <h4>Reydious</h4>
+          <p>Software governance, execution control, and auditable operational logic across USG programs.</p>
+        </a>
+        <a class="support-card reveal" href="crucible.html" aria-label="Open Crucible page">
+          <h4>Crucible</h4>
+          <p>Hardware build, validation, packaging, and survivability support for systems deployed under stress.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-label">NEXT STEP</div>
+        <h2 class="section-title">Explore the Programs</h2>
+        <p class="section-body">Start with BioGrid Networks and Resonance Grid to see how Umanah Systems Group applies software governance and hardware discipline to focused mission areas.</p>
+        <div class="cta-actions">
+          <a href="#biogrid" class="btn btn-primary">BioGrid Networks</a>
+          <a href="#resonance-grid" class="btn btn-ghost">Resonance Grid</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">USG</span>
+        <span class="footer-name">Umanah Systems Group</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="crucible.html">Crucible</a>
+        <a href="reydious.html">Reydious</a>
+        <a href="programs.html" class="active">Programs</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/umanah-systems" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Umanah Systems Group on LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 Umanah Systems Group. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach((el) => observer.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+})();
+</script>
+</body>
+</html>
