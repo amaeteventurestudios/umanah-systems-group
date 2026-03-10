@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Lucent Robotics | Infrastructure Inspection Systems</title>
+  <meta name="description" content="Lucent Robotics is an Umanah Systems Group program developing robotic systems designed to enter pipelines, machines, and confined infrastructure environments to collect inspection data." />
+  <meta name="keywords" content="Lucent Robotics, pipeline inspection robots, infrastructure robotics, industrial inspection robotics, confined space robotics, infrastructure sensing systems, Umanah Systems Group" />
+  <meta name="author" content="Umanah Systems Group" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090c">
+
+  <link rel="canonical" href="https://www.umanahsystems.com/lucent-robotics" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucent Robotics | Infrastructure Inspection Systems">
+  <meta property="og:description" content="Robotic systems designed to enter infrastructure and collect information from places people cannot easily reach." />
+  <meta property="og:image" content="https://www.umanahsystems.com/og-social-share.jpg">
+  <meta property="og:url" content="https://www.umanahsystems.com/lucent-robotics" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lucent Robotics | Infrastructure Inspection Systems" />
+  <meta name="twitter:description" content="Robotic systems designed to enter infrastructure and collect information from places people cannot easily reach." />
+  <meta name="twitter:image" content="https://www.umanahsystems.com/og-social-share.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-outer: #040508;
+  --bg-base: #08090c;
+  --bg-surface: #0d0f14;
+  --bg-card: #131620;
+  --bg-card-hover: #191d2b;
+  --border: rgba(255,255,255,0.07);
+  --border-bright: rgba(255,255,255,0.13);
+  --accent: #e8611a;
+  --accent-dim: rgba(232,97,26,0.15);
+  --accent-glow: rgba(232,97,26,0.35);
+  --accent-alt: #f08040;
+  --text-primary: #f0f2f5;
+  --text-secondary: #8b909e;
+  --text-muted: #484e60;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --r-sm: 6px; --r-md: 12px; --r-lg: 20px; --r-xl: 28px;
+  --ease: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg-outer);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-base);
+  box-shadow: 0 0 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.14;
+  margin-bottom: 18px;
+}
+.section-body {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.78;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  padding: 13px 28px; border-radius: var(--r-md); border: none;
+  cursor: pointer; transition: var(--ease); letter-spacing: 0.02em; white-space: nowrap;
+}
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 20px var(--accent-glow); }
+.btn-primary:hover { background: var(--accent-alt); box-shadow: 0 6px 30px var(--accent-glow); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border-bright); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,9,12,0.92);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.logo-mark {
+  width: 38px; height: 38px; background: var(--accent); color: #fff;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.78rem;
+  letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm);
+}
+.logo-text { font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  font-size: 0.865rem; font-weight: 500; color: var(--text-secondary);
+  padding: 8px 13px; border-radius: var(--r-sm); transition: var(--ease);
+}
+.nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta { background: var(--accent) !important; color: #fff !important; padding: 8px 16px !important; }
+
+/* ── NAV DROPDOWN ─────────────────────────────────────── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+.nav-dropdown > a::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.6; transition: transform var(--ease), opacity var(--ease); flex-shrink: 0; }
+.nav-dropdown:hover > a { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-dropdown:hover > a::after { opacity: 1; transform: rotate(180deg); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); min-width: 192px; background: rgba(13,15,20,0.97); border: 1px solid var(--border-bright); border-radius: var(--r-md); padding: 12px 6px 6px; box-shadow: 0 12px 40px rgba(0,0,0,0.55); z-index: 200; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; font-size: 0.865rem; font-weight: 500; color: var(--text-secondary); padding: 9px 13px; border-radius: var(--r-sm); transition: var(--ease); white-space: nowrap; }
+.dropdown-menu a:hover { color: var(--text-primary); background: rgba(255,255,255,0.07); }
+.dropdown-menu a.active { color: var(--accent); }
+
+/* ── MOBILE SUB-LINKS ─────────────────────────────────── */
+.mobile-sub-link { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 10px 0 10px 18px; border-bottom: 1px solid var(--border); transition: color var(--ease); display: block; }
+.mobile-sub-link:last-child { border-bottom: none; }
+.mobile-sub-link:hover { color: var(--accent); }
+.mobile-sub-link.active { color: var(--accent); }
+
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+.nav-mobile { display: none; flex-direction: column; padding: 12px 28px 20px; background: rgba(8,9,12,0.97); border-top: 1px solid var(--border); }
+.nav-mobile.open { display: flex; }
+.mobile-link { font-size: 1rem; font-weight: 500; color: var(--text-secondary); padding: 13px 0; border-bottom: 1px solid var(--border); }
+.mobile-link:last-child { border-bottom: none; }
+
+.hero {
+  position: relative;
+  min-height: min(100vh, 680px);
+  display: flex; align-items: center;
+  overflow: hidden;
+  padding-top: 68px;
+}
+.hero-grid {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  opacity: 0.5;
+}
+.hero-glow-1, .hero-glow-2 {
+  position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none;
+}
+.hero-glow-1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(232,97,26,0.16) 0%, transparent 70%); top: -200px; right: -150px; }
+.hero-glow-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,97,26,0.1) 0%, transparent 70%); bottom: -100px; left: -80px; }
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1100px; margin: 0 auto;
+  padding: 100px 28px 90px;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-dim); border: 1px solid rgba(232,97,26,0.3);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 30px;
+}
+.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; margin-bottom: 22px; }
+.hero-subline { font-family: var(--font-display); font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.45; max-width: 760px; margin: 0 auto 18px; }
+.hero-text { max-width: 620px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.section { padding: 110px 0; border-top: 1px solid var(--border); }
+.surface { background: var(--bg-surface); }
+.content-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.content-wrap .section-body { max-width: 720px; }
+.intro-line { margin-top: 22px; margin-bottom: 10px; color: var(--text-primary); font-weight: 600; }
+.bullet-list {
+  width: fit-content; max-width: 100%; margin: 20px auto 0; padding-left: 0;
+  display: grid; gap: 10px; text-align: left; list-style: none;
+}
+.bullet-list li {
+  position: relative; padding-left: 18px;
+  color: var(--text-secondary); line-height: 1.75;
+}
+.bullet-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); position: absolute; left: 0; top: 0.68em;
+}
+
+.image-break {
+  padding: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+.image-break img {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 50vw, 460px);
+  object-fit: cover;
+  object-position: center;
+}
+.image-break--full img {
+  height: auto;
+  object-fit: unset;
+}
+.image-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8,9,12,0.88) 0%, rgba(8,9,12,0.2) 48%, rgba(8,9,12,0.15) 100%);
+  display: flex; align-items: flex-end;
+}
+.image-overlay-inner { padding: 38px 34px; max-width: 760px; }
+.image-overlay h3 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 10px; }
+.image-overlay p { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
+
+.panel-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+}
+.panel {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 30px 26px; text-align: center;
+}
+.panel h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 14px; }
+.panel ul { display: grid; gap: 8px; }
+.panel li { color: var(--text-secondary); }
+
+.metric-list { margin-top: 0; }
+.status-wrap { margin-top: 24px; display: flex; justify-content: center; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(232,97,26,0.28);
+  border-radius: 100px;
+  padding: 9px 14px;
+}
+
+/* ── PLATFORM ARCHITECTURE ─────────────────────────────── */
+.arch-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+}
+.arch-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 32px 28px;
+}
+.arch-card-title {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+  margin-bottom: 14px;
+}
+.arch-card-title a {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(232,97,26,0.3);
+  transition: border-color var(--ease), color var(--ease);
+}
+.arch-card-title a:hover {
+  color: var(--accent-alt);
+  border-color: rgba(232,97,26,0.7);
+}
+.arch-card p {
+  color: var(--text-secondary);
+  line-height: 1.78;
+  font-size: 0.97rem;
+}
+
+.contact-block { margin-top: 22px; }
+.contact-block p { color: var(--text-secondary); }
+.contact-name { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; }
+.contact-email { color: var(--accent); font-weight: 600; border-bottom: 1px solid rgba(232,97,26,0.3); display: inline-block; }
+
+.form-wrap { max-width: 760px; margin: 34px auto 0; }
+.contact-form {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-xl); padding: 36px;
+}
+.form-group { margin-bottom: 18px; text-align: left; }
+.form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.form-group input, .form-group textarea {
+  width: 100%; background: var(--bg-base); border: 1px solid var(--border-bright);
+  border-radius: var(--r-md); padding: 12px 15px;
+  font-family: var(--font-body); font-size: 0.93rem; color: var(--text-primary);
+  outline: none; transition: border-color var(--ease), box-shadow var(--ease);
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+.form-error {
+  display: none; margin-top: 14px; text-align: left;
+  font-size: 0.86rem; color: #fca5a5;
+}
+.form-success {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(34,197,94,0.3);
+  background: rgba(34,197,94,0.08);
+  color: #86efac;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.form-success.show, .form-error.show { display: block; }
+
+.footer { background: var(--bg-base); border-top: 1px solid var(--border); padding: 34px 0; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+.footer-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.footer-name { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+.footer-nav a { font-size: 0.85rem; color: var(--text-muted); transition: var(--ease); }
+.footer-nav a:hover, .footer-nav a.active { color: var(--accent); }
+.footer-social { display: flex; justify-content: center; gap: 12px; }
+.footer-social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-bright); color: var(--text-secondary); font-size: 0.95rem; transition: var(--ease); }
+.footer-social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
+.footer-copy { font-size: 0.78rem; color: var(--text-muted); width: 100%; text-align: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
+
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .container { padding: 0 20px; }
+  .hero-content { padding: 74px 20px 84px; }
+  .section { padding: 80px 0; }
+  .panel-grid { grid-template-columns: 1fr; }
+  .arch-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 26px 22px; }
+}
+@media (max-width: 480px) {
+  .hero-content { padding: 62px 20px 72px; }
+  .hero-title { font-size: clamp(2rem, 10vw, 2.9rem); }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+  .image-overlay-inner { padding: 22px 18px; }
+}
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">USG</span>
+        <span class="logo-text">Umanah Systems Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="crucible.html">Crucible</a></li>
+        <li><a href="reydious.html">Reydious</a></li>
+        <li class="nav-dropdown">
+          <a href="programs.html">Programs</a>
+          <div class="dropdown-menu">
+            <a href="biogrid-networks.html">BioGrid Networks</a>
+            <a href="resonance-grid.html">Resonance Grid</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="crucible.html" class="mobile-link">Crucible</a>
+      <a href="reydious.html" class="mobile-link">Reydious</a>
+      <a href="programs.html" class="mobile-link">Programs</a>
+      <a href="biogrid-networks.html" class="mobile-sub-link">BioGrid Networks</a>
+      <a href="resonance-grid.html" class="mobile-sub-link">Resonance Grid</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">An Umanah Systems Group Program</div>
+      <h1 class="hero-title">Lucent Robotics</h1>
+      <p class="hero-subline">Robotic systems designed to enter infrastructure and collect information from places people cannot easily reach.</p>
+      <p class="hero-text">Robots that go where people cannot.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Request Pilot Discussion</a>
+        <a href="#pilot" class="btn btn-ghost">Pilot Participation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="problem">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Challenge</div>
+        <h2 class="section-title">The Problem</h2>
+        <p class="section-body">Much of the world's critical infrastructure operates inside pipes, machines, tunnels, and sealed systems.</p>
+        <p class="intro-line">Examples include:</p>
+        <ul class="bullet-list">
+          <li>oil and gas pipelines</li>
+          <li>refineries and power plants</li>
+          <li>water infrastructure</li>
+          <li>industrial equipment</li>
+          <li>military facilities</li>
+        </ul>
+        <p class="section-body" style="margin-top: 24px;">When something goes wrong inside these systems, it can be difficult to understand what is happening without shutting down equipment or dismantling infrastructure.</p>
+        <p class="section-body" style="margin-top: 16px;">In many cases, operators must either interrupt operations or send people into confined and potentially dangerous environments to investigate.</p>
+        <p class="section-body" style="margin-top: 16px;">Lucent Robotics is being developed to explore another approach.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-break reveal" aria-label="Pipeline inspection environment">
+    <img src="images/pipeline.jpg" alt="Infrastructure inspection environment — operators monitoring robotic inspection inside a large industrial pipeline" />
+    <div class="image-overlay">
+      <div class="image-overlay-inner">
+        <h3>Into the Infrastructure</h3>
+        <p>Robotic inspection systems designed to enter confined environments and collect data without dismantling or shutting down operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface" id="program">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Program</div>
+        <h2 class="section-title">The Program</h2>
+        <p class="section-body">Lucent Robotics is an early-stage robotics program focused on inspection and sensing inside infrastructure systems.</p>
+        <p class="section-body" style="margin-top: 16px;">The program explores robotic platforms that can enter confined environments such as pipelines, mechanical systems, and industrial infrastructure in order to collect inspection data.</p>
+        <p class="intro-line">These robotic systems may carry sensor packages such as:</p>
+        <ul class="bullet-list">
+          <li>cameras</li>
+          <li>acoustic sensors</li>
+          <li>temperature sensors</li>
+          <li>environmental sensors</li>
+        </ul>
+        <p class="section-body" style="margin-top: 24px;">The goal is to allow operators to observe and understand conditions inside infrastructure without dismantling or shutting down the system.</p>
+        <p class="section-body" style="margin-top: 16px;">Lucent Robotics is currently under development with pilot validation planned.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="applications">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Applications</div>
+        <h2 class="section-title">Potential Applications</h2>
+        <p class="section-body">The Lucent Robotics program is being explored for environments where internal inspection is difficult, hazardous, or disruptive.</p>
+        <p class="section-body" style="margin-top: 16px;">Examples include:</p>
+      </div>
+      <div class="panel-grid">
+        <div class="panel reveal">
+          <h4>Energy</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">Inspection of pipelines, refinery systems, and offshore infrastructure.</p>
+        </div>
+        <div class="panel reveal">
+          <h4>Water</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">Monitoring of municipal water systems and treatment infrastructure.</p>
+        </div>
+        <div class="panel reveal">
+          <h4>Industry</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">Inspection of large mechanical systems and confined industrial equipment.</p>
+        </div>
+        <div class="panel reveal">
+          <h4>Defense</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">Assessment of infrastructure within secure facilities and installations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface" id="architecture">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Platform</div>
+        <h2 class="section-title">Platform Architecture</h2>
+        <p class="section-body">Lucent Robotics operates within the Umanah Systems Group platform architecture.</p>
+        <p class="section-body" style="margin-top: 16px;">Two core systems support the program.</p>
+      </div>
+      <div class="arch-grid">
+        <div class="arch-card reveal">
+          <div class="arch-card-title"><a href="/reydious.html">Reydious</a></div>
+          <p>Reydious is the execution governance platform used across Umanah Systems Group systems. It validates commands, enforces operational constraints, and records system activity so that machine operations can be monitored and documented.</p>
+        </div>
+        <div class="arch-card reveal">
+          <div class="arch-card-title"><a href="/crucible.html">Crucible</a></div>
+          <p>Crucible is the integrated production and validation platform used to build and test rugged hardware systems. It supports the development of field systems designed to operate in demanding environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-break image-break--full reveal" aria-label="Platform architecture diagram">
+    <img src="images/platform.jpg" alt="Lucent Robotics platform architecture — Reydious execution governance and Crucible hardware production systems" />
+  </section>
+
+  <section class="section" id="pilot">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Validation</div>
+        <h2 class="section-title">Pilot Invitation</h2>
+        <p class="section-body">Lucent Robotics is preparing controlled validation pilots with infrastructure operators and technical partners.</p>
+        <p class="section-body" style="margin-top: 16px;">These pilots are intended to test robotic inspection systems in real infrastructure environments such as pipelines, mechanical systems, and confined industrial spaces.</p>
+        <p class="intro-line">Pilot objectives include:</p>
+        <ul class="bullet-list">
+          <li>Navigation reliability inside confined infrastructure</li>
+          <li>Stability of video and sensor capture during inspection</li>
+          <li>Operational friction during deployment and retrieval</li>
+          <li>Integration with inspection and maintenance workflows</li>
+          <li>Safety and reliability under real operating conditions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface" id="measurement">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Measurement</div>
+        <h2 class="section-title">Pilot Evaluation Metrics</h2>
+        <p class="section-body">The pilot program is designed to measure how robotic inspection performs under real operating conditions.</p>
+        <p class="intro-line">Evaluation areas include:</p>
+        <ul class="bullet-list metric-list">
+          <li>Reliability of inspection data under field conditions</li>
+          <li>Video and sensor capture quality across environments</li>
+          <li>Completeness of mission logging and inspection records</li>
+          <li>Time required to complete an inspection and generate a report</li>
+          <li>Ease of use for operators during deployment and retrieval</li>
+          <li>Integration into existing inspection, maintenance, and compliance workflows</li>
+        </ul>
+        <div style="margin-top: 30px;">
+          <a href="#contact" class="btn btn-primary">Discuss Pilot Participation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stage">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Stage</div>
+        <h2 class="section-title">Program Status</h2>
+        <p class="section-body">Lucent Robotics is currently being developed as a research and pilot program within Umanah Systems Group.</p>
+        <p class="section-body" style="margin-top: 16px;">The program focuses on exploring robotic approaches for infrastructure inspection and sensing in environments where traditional inspection methods are difficult or unsafe.</p>
+        <p class="section-body" style="margin-top: 16px;">Pilot collaborations and early technical development are planned as the program evolves.</p>
+        <div class="status-wrap"><span class="status-badge">Active · Pilot Development</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section surface" id="contact">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Get Involved</div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-body">For pilot discussions, contact:</p>
+        <div class="contact-block">
+          <div class="contact-name">Amaete Umanah</div>
+          <a class="contact-email" href="mailto:contact@umanahsystems.com">contact@umanahsystems.com</a>
+        </div>
+      </div>
+
+      <div class="form-wrap reveal">
+        <form class="contact-form" id="lucentContactForm" novalidate>
+          <input type="hidden" name="subject" value="Lucent Robotics Pilot Discussion" />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Your company" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your infrastructure environment and interest in the pilot." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Request Pilot Discussion</button>
+          <p id="formError" class="form-error" role="alert"></p>
+          <p id="formSuccess" class="form-success" role="status">Thank you. Your message has been received. We will be in touch shortly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">USG</span>
+        <span class="footer-name">Umanah Systems Group</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="crucible.html">Crucible</a>
+        <a href="reydious.html">Reydious</a>
+        <a href="programs.html">Programs</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/umanah-systems" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Umanah Systems Group on LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; Umanah Systems Group. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach((el) => obs.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+})();
+</script>
+<script src="js/lucent-robotics.js"></script>
+</body>
+</html>
