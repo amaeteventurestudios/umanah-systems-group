@@ -4,31 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Sapphyre</title>
-  <meta name="description" content="Sapphyre is a Umanah Systems Group program focused on high-performance semiconductor materials and device architectures for mission-critical systems operating in extreme environments." />
+  <!-- Primary SEO -->
+  <title>PrimeScout | Governed Autonomous Patrol and Inspection</title>
+  <meta name="description" content="PrimeScout is an Umanah Systems Group program building governed autonomous patrol and inspection systems for indoor and outdoor environments." />
+  <meta name="keywords" content="PrimeScout, autonomous patrol, autonomous inspection, indoor outdoor robotics, site operations, governed robotics, Reydious, Umanah Systems Group" />
   <meta name="author" content="Umanah Systems Group" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://umanahsystems.com/sapphyre" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090c">
+
+  <link rel="canonical" href="https://www.umanahsystems.com/primescout" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
   <link rel="shortcut icon" href="images/favicon.png" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://umanahsystems.com/sapphyre" />
-  <meta property="og:title" content="Sapphyre" />
-  <meta property="og:description" content="Sapphyre is a Umanah Systems Group program focused on high-performance semiconductor materials and device architectures for mission-critical systems operating in extreme environments." />
-  <meta property="og:image" content="https://umanahsystems.com/images/og-preview.jpg" />
-  <meta property="og:image:alt" content="Sapphyre — Advanced Semiconductor Materials" />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PrimeScout | Governed Autonomous Patrol and Inspection">
+  <meta property="og:description" content="Governed autonomous patrol and inspection systems for structured indoor and outdoor environments." />
+  <meta property="og:image" content="https://www.umanahsystems.com/prime1.jpg">
+  <meta property="og:url" content="https://www.umanahsystems.com/primescout" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sapphyre" />
-  <meta name="twitter:description" content="Sapphyre is a Umanah Systems Group program focused on high-performance semiconductor materials and device architectures for mission-critical systems operating in extreme environments." />
-  <meta name="twitter:image" content="https://umanahsystems.com/images/og-preview.jpg" />
-  <meta name="twitter:image:alt" content="Sapphyre — Advanced Semiconductor Materials" />
-
-  <meta name="theme-color" content="#08090c" />
+  <meta name="twitter:title" content="PrimeScout | Governed Autonomous Patrol and Inspection" />
+  <meta name="twitter:description" content="Governed autonomous patrol and inspection systems for structured indoor and outdoor environments." />
+  <meta name="twitter:image" content="https://www.umanahsystems.com/prime1.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -123,7 +124,6 @@ img { max-width: 100%; display: block; }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── NAV ─────────────────────────────────────────────── */
 .nav {
   position: sticky; top: 0; z-index: 100;
   background: rgba(8,9,12,0.92);
@@ -152,7 +152,6 @@ img { max-width: 100%; display: block; }
 .nav-links a.active { color: var(--accent); }
 .nav-cta { background: var(--accent) !important; color: #fff !important; padding: 8px 16px !important; }
 
-/* ── NAV DROPDOWN ─────────────────────────────────────── */
 .nav-dropdown { position: relative; }
 .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
 .nav-dropdown > a::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.6; transition: transform var(--ease), opacity var(--ease); flex-shrink: 0; }
@@ -164,11 +163,9 @@ img { max-width: 100%; display: block; }
 .dropdown-menu a:hover { color: var(--text-primary); background: rgba(255,255,255,0.07); }
 .dropdown-menu a.active { color: var(--accent); }
 
-/* ── MOBILE SUB-LINKS ─────────────────────────────────── */
 .mobile-sub-link { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 10px 0 10px 18px; border-bottom: 1px solid var(--border); transition: color var(--ease); display: block; }
 .mobile-sub-link:last-child { border-bottom: none; }
 .mobile-sub-link:hover { color: var(--accent); }
-.mobile-sub-link.active { color: var(--accent); }
 
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
 .nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
@@ -177,7 +174,6 @@ img { max-width: 100%; display: block; }
 .mobile-link { font-size: 1rem; font-weight: 500; color: var(--text-secondary); padding: 13px 0; border-bottom: 1px solid var(--border); }
 .mobile-link:last-child { border-bottom: none; }
 
-/* ── HERO ─────────────────────────────────────────────── */
 .hero {
   position: relative;
   min-height: min(100vh, 680px);
@@ -211,15 +207,15 @@ img { max-width: 100%; display: block; }
 }
 .hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; margin-bottom: 22px; }
 .hero-subline { font-family: var(--font-display); font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.45; max-width: 760px; margin: 0 auto 18px; }
-.hero-text { max-width: 620px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
+.hero-text { max-width: 660px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
 .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-/* ── SECTIONS ─────────────────────────────────────────── */
 .section { padding: 110px 0; border-top: 1px solid var(--border); }
 .surface { background: var(--bg-surface); }
 .content-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
 .content-wrap .section-body { max-width: 720px; }
 .intro-line { margin-top: 22px; margin-bottom: 10px; color: var(--text-primary); font-weight: 600; }
+
 .bullet-list {
   width: fit-content; max-width: 100%; margin: 20px auto 0; padding-left: 0;
   display: grid; gap: 10px; text-align: left; list-style: none;
@@ -233,70 +229,7 @@ img { max-width: 100%; display: block; }
   background: var(--accent); position: absolute; left: 0; top: 0.68em;
 }
 
-/* ── IMAGE PLACEHOLDER ────────────────────────────────── */
-.image-break {
-  padding: 40px 28px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  overflow: visible;
-  line-height: normal;
-  max-width: 1100px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-.image-break img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: var(--r-md);
-}
-.image-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: clamp(240px, 50vw, 460px);
-  background: var(--bg-surface);
-  border: 2px dashed var(--border-bright);
-  gap: 10px;
-}
-.image-placeholder-label {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  letter-spacing: 0.04em;
-}
-.image-placeholder-sub {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-.image-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(8,9,12,0.88) 0%, rgba(8,9,12,0.2) 48%, rgba(8,9,12,0.15) 100%);
-  display: flex; align-items: flex-end;
-}
-.image-overlay-inner { padding: 38px 34px; max-width: 760px; }
-.image-overlay h3 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 10px; }
-.image-overlay p { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
-
-/* ── PANELS ───────────────────────────────────────────── */
-.panel-grid {
-  max-width: 920px; margin: 36px auto 0;
-  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
-}
-.panel {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
-  padding: 30px 26px; text-align: center;
-}
-.panel h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 14px; }
-.panel ul { display: grid; gap: 8px; }
-.panel li { color: var(--text-secondary); }
-
-/* ── STEP CARDS ───────────────────────────────────────── */
+/* ── STEP CARDS ──────────────────────────────────────── */
 .step-grid {
   max-width: 920px; margin: 36px auto 0;
   display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px;
@@ -316,35 +249,78 @@ img { max-width: 100%; display: block; }
 .step-card li { font-size: 0.9rem; color: var(--text-secondary); position: relative; padding-left: 14px; }
 .step-card li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); position: absolute; left: 0; top: 0.68em; }
 
-/* ── POWERED BY CARDS (clickable) ─────────────────────── */
-.powered-grid {
-  max-width: 720px; margin: 36px auto 0;
-  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+/* ── IMAGE BREAK ─────────────────────────────────────── */
+.image-break {
+  padding: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
 }
-.powered-card {
+.image-break img {
   display: block;
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
-  padding: 34px 28px; text-align: center;
-  transition: border-color var(--ease), background var(--ease), transform var(--ease);
-  cursor: pointer;
-}
-.powered-card:hover {
-  border-color: var(--accent);
-  background: var(--bg-card-hover);
-  transform: translateY(-3px);
-}
-.powered-card h4 {
-  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
-  color: var(--text-primary); margin-bottom: 10px;
-}
-.powered-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
-.powered-card-arrow {
-  display: inline-block; margin-top: 16px;
-  font-size: 0.8rem; font-weight: 600; color: var(--accent);
-  letter-spacing: 0.04em;
+  width: 100%;
+  height: auto;
+  object-fit: unset;
 }
 
-/* ── STATUS / METRICS ─────────────────────────────────── */
+/* ── ARCH CARDS (Powered by) ─────────────────────────── */
+.arch-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+}
+.arch-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 32px 28px;
+}
+.arch-card-title {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+  margin-bottom: 14px;
+}
+.arch-card-title a {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(232,97,26,0.3);
+  transition: border-color var(--ease), color var(--ease);
+}
+.arch-card-title a:hover {
+  color: var(--accent-alt);
+  border-color: rgba(232,97,26,0.7);
+}
+.arch-card p { color: var(--text-secondary); line-height: 1.78; font-size: 0.97rem; }
+
+/* ── PANEL GRID ──────────────────────────────────────── */
+.panel-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+}
+.panel {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 30px 26px; text-align: center;
+}
+.panel h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 14px; }
+.panel ul { display: grid; gap: 8px; }
+.panel li { color: var(--text-secondary); }
+
+/* ── WEDGE SECTION ───────────────────────────────────── */
+.wedge-block {
+  max-width: 720px; margin: 28px auto 0; text-align: center;
+}
+.wedge-block p { color: var(--text-secondary); line-height: 1.78; margin-bottom: 14px; }
+.wedge-list {
+  width: fit-content; max-width: 100%; margin: 20px auto 0;
+  display: grid; gap: 10px; text-align: left; list-style: none;
+}
+.wedge-list li {
+  position: relative; padding-left: 18px;
+  color: var(--text-secondary); line-height: 1.75;
+}
+.wedge-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); position: absolute; left: 0; top: 0.68em;
+}
+
+/* ── STATUS ──────────────────────────────────────────── */
 .metric-list { margin-top: 0; }
 .status-wrap { margin-top: 24px; display: flex; justify-content: center; }
 .status-badge {
@@ -357,7 +333,7 @@ img { max-width: 100%; display: block; }
   padding: 9px 14px;
 }
 
-/* ── CONTACT ──────────────────────────────────────────── */
+/* ── CONTACT ─────────────────────────────────────────── */
 .contact-block { margin-top: 22px; }
 .contact-block p { color: var(--text-secondary); }
 .contact-name { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; }
@@ -378,28 +354,34 @@ img { max-width: 100%; display: block; }
 }
 .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
-.form-error { display: none; margin-top: 14px; text-align: left; font-size: 0.86rem; color: #fca5a5; }
+.form-error {
+  display: none; margin-top: 14px; text-align: left;
+  font-size: 0.86rem; color: #fca5a5;
+}
 .form-success {
-  display: none; margin-top: 16px; padding: 14px 16px;
-  border-radius: var(--r-md); border: 1px solid rgba(34,197,94,0.3);
-  background: rgba(34,197,94,0.08); color: #86efac; font-size: 0.9rem; text-align: left;
+  display: none;
+  margin-top: 16px; padding: 14px 16px;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(34,197,94,0.3);
+  background: rgba(34,197,94,0.08);
+  color: #86efac; font-size: 0.9rem; text-align: left;
 }
 .form-success.show, .form-error.show { display: block; }
 
-/* ── FOOTER ───────────────────────────────────────────── */
+/* ── FOOTER ──────────────────────────────────────────── */
 .footer { background: var(--bg-base); border-top: 1px solid var(--border); padding: 34px 0; }
 .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
 .footer-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
 .footer-name { color: var(--text-secondary); font-size: 0.9rem; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
 .footer-nav a { font-size: 0.85rem; color: var(--text-muted); transition: var(--ease); }
-.footer-nav a:hover, .footer-nav a.active { color: var(--accent); }
+.footer-nav a:hover { color: var(--accent); }
 .footer-social { display: flex; justify-content: center; gap: 12px; }
 .footer-social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-bright); color: var(--text-secondary); font-size: 0.95rem; transition: var(--ease); }
 .footer-social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
 .footer-copy { font-size: 0.78rem; color: var(--text-muted); width: 100%; text-align: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
 
-/* ── RESPONSIVE ───────────────────────────────────────── */
+/* ── RESPONSIVE ──────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-inner { padding: 0 20px; }
   .nav-links { display: none; }
@@ -407,95 +389,23 @@ img { max-width: 100%; display: block; }
   .container { padding: 0 20px; }
   .hero-content { padding: 74px 20px 84px; }
   .section { padding: 80px 0; }
-  .panel-grid { grid-template-columns: 1fr; }
   .step-grid { grid-template-columns: 1fr; }
-  .powered-grid { grid-template-columns: 1fr; }
+  .panel-grid { grid-template-columns: 1fr; }
+  .arch-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 26px 22px; }
-
-  /* ── Headings / labels / intro: centered ── */
-  .section-label  { text-align: center; }
-  .section-title  { text-align: center; }
-  .section-body   { text-align: center; }
-  .intro-line     { text-align: center; }
-
-  /* ── Step cards: number + title + paragraph centered ── */
-  .step-card      { text-align: left; }
-  .step-number    { text-align: center; }
-  .step-card h4   { text-align: center; }
-  .step-card p    { text-align: center; }
-
-  /* ── Step card bullet list: left-aligned block, centered as a unit ── */
-  .step-card ul {
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .step-card li {
-    position: relative;
-    padding-left: 16px;
-    text-align: left;
-  }
-  .step-card li::before {
-    position: absolute;
-    left: 0;
-    top: 0.68em;
-  }
-
-  /* ── .bullet-list: left-aligned block, centered as a unit ── */
-  .bullet-list {
-    width: fit-content;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-  }
-  .bullet-list li {
-    position: relative;
-    padding-left: 18px;
-    text-align: left;
-  }
-  .bullet-list li::before {
-    position: absolute;
-    left: 0;
-    top: 0.68em;
-  }
-
-  /* ── Panel lists (Who This Is For cards): same treatment ── */
-  .panel { text-align: left; }
-  .panel h4 { text-align: center; }
-  .panel ul {
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .panel li {
-    position: relative;
-    padding-left: 16px;
-    text-align: left;
-    color: var(--text-secondary);
-  }
-  .panel li::before {
-    content: '';
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--accent);
-    position: absolute;
-    left: 0; top: 0.7em;
-  }
 }
 @media (max-width: 480px) {
   .hero-content { padding: 62px 20px 72px; }
   .hero-title { font-size: clamp(2rem, 10vw, 2.9rem); }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
-  .image-overlay-inner { padding: 22px 18px; }
+  .image-break img { height: auto; }
 }
   </style>
 </head>
 <body>
 <div class="site-wrapper">
 
-  <!-- ── NAVIGATION ──────────────────────────────────── -->
   <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -507,9 +417,9 @@ img { max-width: 100%; display: block; }
         <li><a href="crucible.html">Crucible</a></li>
         <li><a href="reydious.html">Reydious</a></li>
         <li class="nav-dropdown">
-          <a href="programs.html" class="active">Programs</a>
+          <a href="programs.html">Programs</a>
           <div class="dropdown-menu">
-            <a href="biogrid-networks.html" class="active">BioGrid Networks</a>
+            <a href="biogrid-networks.html">BioGrid Networks</a>
             <a href="resonance-grid.html">Resonance Grid</a>
           </div>
         </li>
@@ -521,8 +431,8 @@ img { max-width: 100%; display: block; }
       <a href="index.html#about" class="mobile-link">About</a>
       <a href="crucible.html" class="mobile-link">Crucible</a>
       <a href="reydious.html" class="mobile-link">Reydious</a>
-      <a href="programs.html" class="mobile-link active">Programs</a>
-      <a href="biogrid-networks.html" class="mobile-sub-link active">BioGrid Networks</a>
+      <a href="programs.html" class="mobile-link">Programs</a>
+      <a href="biogrid-networks.html" class="mobile-sub-link">BioGrid Networks</a>
       <a href="resonance-grid.html" class="mobile-sub-link">Resonance Grid</a>
       <a href="index.html#contact" class="mobile-link">Contact</a>
     </div>
@@ -534,27 +444,26 @@ img { max-width: 100%; display: block; }
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
     <div class="hero-content">
-      <div class="hero-badge">Infrastructure in Development</div>
-      <h1 class="hero-title">Sapphyre</h1>
-      <p class="hero-subline">Advanced semiconductor materials and device architectures for mission-critical environments.</p>
-      <p class="hero-text">Sapphyre is a semiconductor program within Umanah Systems Group focused on developing high-performance electronic materials and device architectures for demanding environments.<br><br>The work centers on semiconductor structures such as silicon-germanium and advanced heterostructure devices that can deliver higher carrier mobility, improved efficiency, and reliable operation in extreme conditions.<br><br>These technologies support applications across aerospace systems, industrial sensing, high-reliability electronics, and next-generation computing platforms.</p>
+      <div class="hero-badge">An Umanah Systems Group Program</div>
+      <h1 class="hero-title">PrimeScout</h1>
+      <p class="hero-subline">Governed autonomous patrol and inspection for indoor and outdoor environments.</p>
+      <p class="hero-text">PrimeScout combines autonomous mobile systems, low-light sensing, terrain and route intelligence, anomaly-aware behavior, and governed execution through Reydious.<br><br>Complete patrol routes. Verify checkpoints. Inspect assigned areas. Produce auditable mission records.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Request Program Discussion</a>
-        <a href="#approach" class="btn btn-ghost">Learn about USG</a>
+        <a href="#contact" class="btn btn-primary">Request Pilot Discussion</a>
+        <a href="#approach" class="btn btn-ghost">System Approach</a>
       </div>
     </div>
   </section>
 
-  <!-- ── MISSION ─────────────────────────────────────── -->
-  <section class="section" id="mission">
+  <!-- ── THE PROBLEM ────────────────────────────────── -->
+  <section class="section" id="problem">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Mission</div>
+        <div class="section-label">Challenge</div>
         <h2 class="section-title">The Problem</h2>
-        <p class="section-body" style="text-align: center; margin-bottom: 16px;">Modern electronic systems increasingly operate in environments where traditional semiconductor devices begin to fail.</p>
-        <p class="section-body" style="text-align: center; margin-bottom: 16px;">High temperatures, radiation exposure, mechanical stress, and energy constraints all place limits on conventional silicon electronics.</p>
-        <p class="section-body" style="text-align: center; margin-bottom: 16px;">Many systems in aerospace, energy infrastructure, autonomous platforms, and industrial environments require semiconductor devices that can deliver higher performance while maintaining reliability in these conditions.</p>
-        <p class="section-body" style="text-align: center;">Sapphyre focuses on advanced semiconductor materials and architectures designed to meet these challenges.</p>
+        <p class="section-body">In many operational environments, fixed cameras leave blind spots and human patrols are expensive, inconsistent, or difficult to sustain across every hour of the day.</p>
+        <p class="section-body" style="margin-top: 16px;">That creates gaps in route coverage, checkpoint verification, perimeter awareness, and off-hours inspection.</p>
+        <p class="section-body" style="margin-top: 16px;">PrimeScout is designed to close that gap with governed autonomous patrol and inspection.</p>
       </div>
     </div>
   </section>
@@ -565,96 +474,128 @@ img { max-width: 100%; display: block; }
       <div class="content-wrap reveal">
         <div class="section-label">Solution</div>
         <h2 class="section-title">System Approach</h2>
-        <p class="section-body">Sapphyre advances semiconductor capability through three integrated pathways.</p>
+        <p class="section-body">PrimeScout is an autonomous site operations system built around five integrated layers.</p>
       </div>
       <div class="step-grid">
         <div class="step-card reveal">
           <div class="step-number">01</div>
-          <h4>Advanced Semiconductor Materials</h4>
-          <p>Development of high-performance semiconductor structures including silicon-germanium heterostructures and other advanced materials designed to increase carrier mobility and reduce energy loss.</p>
+          <h4>Mobile Patrol Platform</h4>
+          <p>A dockable autonomous system designed to move through structured indoor and outdoor environments.</p>
           <ul>
-            <li>Focus on high-performance semiconductor structures</li>
-            <li>Materials engineered for reliability in extreme environments</li>
+            <li>Supports scheduled patrol and inspection routes</li>
+            <li>Built for repeatable route execution across defined operating areas</li>
+            <li>Designed for persistent site coverage with return-to-dock behavior</li>
           </ul>
         </div>
         <div class="step-card reveal">
           <div class="step-number">02</div>
-          <h4>Device Architecture</h4>
-          <p>Engineering semiconductor device structures that improve signal integrity, efficiency, and durability across demanding operating environments.</p>
+          <h4>Low-Light Perception</h4>
+          <p>A sensing layer designed for conditions where conventional vision systems become less reliable.</p>
           <ul>
-            <li>Improved carrier transport and signal integrity</li>
-            <li>Durable performance under thermal and mechanical stress</li>
+            <li>Supports navigation and inspection in low light, glare, and mixed-visibility conditions</li>
+            <li>Improves hazard detection and route confidence</li>
+            <li>Enables more reliable off-hours operation</li>
           </ul>
         </div>
         <div class="step-card reveal">
           <div class="step-number">03</div>
-          <h4>Integration Pathways</h4>
-          <p>Design approaches that allow advanced materials and devices to integrate into modern semiconductor fabrication workflows and mission-critical electronic systems.</p>
+          <h4>Route and Terrain Intelligence</h4>
+          <p>A route-assurance layer for constrained, structured environments.</p>
           <ul>
-            <li>Compatibility with contemporary fabrication processes</li>
-            <li>Integration into high-reliability electronic systems</li>
-            <li>Scalable pathways for manufacturing and deployment</li>
+            <li>Maintains route logic across indoor and outdoor zones</li>
+            <li>Supports checkpoint sequencing and traversal planning</li>
+            <li>Enables safer reroute, slowdown, stop, or return behavior</li>
+          </ul>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">04</div>
+          <h4>Anomaly Interpretation</h4>
+          <p>A decision layer for distinguishing transient issues from operationally relevant anomalies.</p>
+          <ul>
+            <li>Flags off-normal conditions during patrol and inspection</li>
+            <li>Supports continue, slow, stop, reroute, dock, or escalate decisions</li>
+            <li>Connects observations to mission context instead of treating every alert the same way</li>
+          </ul>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">05</div>
+          <h4>Governed Execution</h4>
+          <p>Powered by Reydious. Governs how the machine behaves before and during mission execution.</p>
+          <ul>
+            <li>Enforces route, zone, and behavior constraints</li>
+            <li>Applies authority rules and mission conditions</li>
+            <li>Records what the machine did, why it did it, and when it stopped or escalated</li>
+          </ul>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">06</div>
+          <h4>Mission Evidence</h4>
+          <p>A record layer for reviewable patrol and inspection evidence.</p>
+          <ul>
+            <li>Captures checkpoint proof and route completion records</li>
+            <li>Organizes logs for review, exception handling, and audit</li>
+            <li>Shows what was completed, missed, or escalated</li>
           </ul>
         </div>
       </div>
-
+      <div style="margin-top: 36px; text-align: center;">
+        <p style="color: var(--text-secondary); font-size: 0.97rem; line-height: 1.7;">PrimeScout is built for governed patrol and inspection with auditable execution.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ── IMAGE: WAFER INSPECTION ──────────────────────── -->
-  <div class="image-break" aria-label="Sapphyre wafer inspection">
-    <img src="images/wafer-inspection.jpg" alt="Semiconductor wafer under dual-beam optical and laser inspection system." />
-  </div>
+  <!-- ── IMAGE: prime2.jpg ──────────────────────────── -->
+  <section class="image-break reveal" aria-label="PrimeScout autonomous patrol platform at commercial campus">
+    <img src="images/prime2.jpg" alt="PrimeScout autonomous patrol robot operating at a commercial campus at night" />
+  </section>
 
   <!-- ── DEPLOYMENT ENVIRONMENTS ───────────────────── -->
   <section class="section" id="environments">
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Deployment</div>
-        <h2 class="section-title">Deployment Context</h2>
-        <p class="section-body">Possible deployment contexts include:</p>
+        <h2 class="section-title">Deployment Environments</h2>
+        <p class="section-body">PrimeScout is designed for structured environments where route completion, checkpoint verification, and accountable machine behavior matter.</p>
+        <p class="section-body" style="margin-top: 16px;">Deployment sequencing will depend on pilot fit, site constraints, and mission requirements.</p>
+        <p class="intro-line">Target environments include:</p>
         <ul class="bullet-list">
-          <li>Aerospace electronics</li>
-          <li>Space systems</li>
-          <li>Industrial automation</li>
-          <li>Energy infrastructure</li>
-          <li>Scientific instrumentation</li>
-          <li>Advanced computing systems</li>
+          <li>warehouses and logistics facilities</li>
+          <li>construction sites</li>
+          <li>industrial campuses</li>
+          <li>equipment and storage yards</li>
+          <li>utilities and energy sites</li>
+          <li>commercial and business campuses</li>
+          <li>restricted and defense-adjacent environments</li>
         </ul>
       </div>
     </div>
   </section>
 
-
   <!-- ── POWERED BY REYDIOUS AND CRUCIBLE ──────────── -->
   <section class="section surface" id="powered-by">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">System Backbone</div>
+        <div class="section-label">Platform</div>
         <h2 class="section-title">Powered by Reydious and Crucible</h2>
-        <p class="section-body">The execution governance layer that controls how mission-critical systems operate, ensuring that software-defined hardware behaves within defined safety and authority constraints.</p>
-        <p class="section-body">The integrated production and survivability platform that enables rugged hardware manufacturing, validation, and deployment for extreme environments.</p>
-        <p class="section-body">Both systems form the operational foundation of Umanah Systems Group deployments.</p>
+        <p class="section-body">PrimeScout is supported by the same core USG architecture.</p>
       </div>
-      <div class="powered-grid">
-        <a href="reydious.html" class="powered-card reveal" aria-label="Open Reydious page">
-          <h4>Reydious</h4>
-          <p>The execution governance layer that controls how mission-critical systems operate, ensuring that software-defined hardware behaves within defined safety and authority constraints.</p>
-          <span class="powered-card-arrow">View Reydious →</span>
-        </a>
-        <a href="crucible.html" class="powered-card reveal" aria-label="Open Crucible page">
-          <h4>Crucible</h4>
-          <p>The integrated production and survivability platform that enables rugged hardware manufacturing, validation, and deployment for extreme environments.</p>
-          <span class="powered-card-arrow">View Crucible →</span>
-        </a>
+      <div class="arch-grid">
+        <div class="arch-card reveal">
+          <div class="arch-card-title"><a href="/reydious.html">Reydious</a></div>
+          <p>Reydious governs mission execution, constraints, authority, overrides, and auditability at the software layer.</p>
+        </div>
+        <div class="arch-card reveal">
+          <div class="arch-card-title"><a href="/crucible.html">Crucible</a></div>
+          <p>Crucible supports hardware development, integration, survivability, and field validation for deployment in real operating conditions.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── IMAGE: SEMICONDUCTOR WAFER ─────────────────── -->
-  <div class="image-break" aria-label="Sapphyre semiconductor wafer">
-    <img src="images/semiconductor-wafer.jpg" alt="Advanced semiconductor chip and satellite systems for mission-critical infrastructure." />
-  </div>
+  <!-- ── IMAGE: prime3.jpg ──────────────────────────── -->
+  <section class="image-break reveal" aria-label="PrimeScout autonomous patrol robot at warehouse facility">
+    <img src="images/prime3.jpg" alt="PrimeScout autonomous patrol robot operating inside a large warehouse facility" />
+  </section>
 
   <!-- ── WHO THIS IS FOR ────────────────────────────── -->
   <section class="section" id="audience">
@@ -662,75 +603,119 @@ img { max-width: 100%; display: block; }
       <div class="content-wrap reveal">
         <div class="section-label">Audience</div>
         <h2 class="section-title">Who This Is For</h2>
-        <p class="section-body">Sapphyre supports programs and teams building electronics that must sustain performance and reliability under harsh operational conditions.</p>
+        <p class="section-body">PrimeScout is designed for organizations operating environments where consistent patrol, inspection coverage, and auditable machine behavior are operational requirements.</p>
       </div>
       <div class="panel-grid">
         <div class="panel reveal">
-          <h4>Engineering Teams</h4>
+          <h4>Industries</h4>
           <ul>
-            <li>Organizations developing advanced electronic systems that must operate reliably in demanding environments.</li>
+            <li>warehousing and logistics</li>
+            <li>construction and site operations</li>
+            <li>utilities and energy</li>
+            <li>industrial infrastructure</li>
+            <li>equipment and storage operations</li>
+            <li>commercial campuses</li>
+            <li>restricted and defense-adjacent facilities</li>
           </ul>
         </div>
         <div class="panel reveal">
-          <h4>Industrial and Aerospace Programs</h4>
+          <h4>Decision Makers</h4>
           <ul>
-            <li>Programs requiring high-performance semiconductor devices capable of operating under harsh operational conditions.</li>
+            <li>operations leaders</li>
+            <li>security and site management teams</li>
+            <li>facilities and infrastructure directors</li>
+            <li>program managers for autonomous systems</li>
+            <li>procurement and sustainment teams</li>
+            <li>risk, compliance, and operational oversight leads</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── THE WEDGE ──────────────────────────────────── -->
+  <section class="section surface" id="wedge">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Differentiation</div>
+        <h2 class="section-title">The Wedge</h2>
+        <div class="wedge-block">
+          <p>PrimeScout delivers <strong style="color: var(--text-primary);">governed autonomous patrol and inspection</strong>, not just detection or monitoring.</p>
+          <p>That distinction is the wedge.</p>
+          <p>Most systems focus on watching, alerting, or deterrence. PrimeScout is built to complete bounded operational work under defined rules.</p>
+          <ul class="wedge-list">
+            <li>Routes are assigned.</li>
+            <li>Checkpoints are verified.</li>
+            <li>Patrol behavior is constrained.</li>
+            <li>Anomalies are interpreted in context.</li>
+            <li>Escalation and return behavior can be governed by policy.</li>
+            <li>Each mission leaves behind auditable evidence of completion, exception, interruption, or override.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IMAGE: prime4.jpg ──────────────────────────── -->
+  <section class="image-break reveal" aria-label="PrimeScout autonomous patrol robot at energy infrastructure">
+    <img src="images/prime4.jpg" alt="PrimeScout autonomous patrol robot operating at an energy infrastructure site at dusk" />
+  </section>
+
   <!-- ── PILOT INVITATION ───────────────────────────── -->
-  <section class="section surface" id="pilot">
+  <section class="section" id="pilot">
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Validation</div>
         <h2 class="section-title">Pilot Invitation</h2>
-        <p class="section-body">We are seeking early pilot partners interested in exploring advanced semiconductor materials and device architectures for mission-critical applications.</p>
-        <p class="section-body">Pilot programs focus on evaluation, integration pathways, and deployment feasibility in real operational environments.</p>
+        <p class="section-body">PrimeScout is currently seeking pilot environments where governed autonomous patrol and inspection can be evaluated under real operating conditions.</p>
+        <p class="intro-line">Pilot objectives include:</p>
+        <ul class="bullet-list">
+          <li>route completion reliability</li>
+          <li>checkpoint verification accuracy</li>
+          <li>low-light patrol performance</li>
+          <li>indoor and outdoor traversal continuity</li>
+          <li>policy enforcement during off-normal conditions</li>
+          <li>docking, recovery, and return behavior</li>
+          <li>audit trail completeness and operator reviewability</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- ── PILOT EVALUATION METRICS ──────────────────── -->
-  <section class="section" id="measurement">
+  <section class="section surface" id="measurement">
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Measurement</div>
         <h2 class="section-title">Pilot Evaluation Metrics</h2>
-        <p class="section-body">Example metrics include:</p>
+        <p class="section-body">The pilot is intended to measure:</p>
         <ul class="bullet-list metric-list">
-          <li>Device performance under environmental stress</li>
-          <li>Energy efficiency improvements</li>
-          <li>Operational reliability</li>
-          <li>Integration feasibility</li>
-          <li>Manufacturing scalability</li>
+          <li>route completion rate</li>
+          <li>checkpoint verification consistency</li>
+          <li>patrol uptime across assigned schedules</li>
+          <li>low-light navigation reliability</li>
+          <li>false positive and false escalation rates</li>
+          <li>mission log completeness</li>
+          <li>operator usability and workflow fit</li>
+          <li>time from anomaly detection to structured review</li>
         </ul>
         <div style="margin-top: 30px;">
-          <a href="#contact" class="btn btn-primary">Request Program Discussion</a>
+          <a href="#contact" class="btn btn-primary">Discuss Pilot Participation</a>
         </div>
       </div>
-      <div class="panel-grid" style="margin-top: 48px;">
-        <div class="panel reveal">
-          <h4>Development Stage</h4>
-          <ul>
-            <li>Advanced semiconductor R&amp;D</li>
-            <li>Integration pathway validation</li>
-            <li>Seeking pilot partners</li>
-          </ul>
-        </div>
-        <div class="panel reveal">
-          <h4>Target Metrics</h4>
-          <ul>
-            <li>Performance gains under stress conditions</li>
-            <li>Improved device-level efficiency</li>
-            <li>Manufacturing and deployment readiness</li>
-          </ul>
-        </div>
-      </div>
-      <div class="status-wrap reveal">
-        <span class="status-badge">Active · Seeking Pilot Partners</span>
+    </div>
+  </section>
+
+  <!-- ── PROGRAM STATUS ─────────────────────────────── -->
+  <section class="section" id="stage">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Stage</div>
+        <h2 class="section-title">Program Status</h2>
+        <p class="section-body">PrimeScout is in an early system integration and pilot-oriented validation phase.</p>
+        <p class="section-body" style="margin-top: 16px;">The program is being developed to support governed autonomous patrol and inspection across structured indoor and outdoor environments.</p>
+        <p class="section-body" style="margin-top: 16px;">PrimeScout is currently seeking pilot partners.</p>
+        <div class="status-wrap"><span class="status-badge">Active · Seeking Pilot Partners</span></div>
       </div>
     </div>
   </section>
@@ -749,8 +734,8 @@ img { max-width: 100%; display: block; }
       </div>
 
       <div class="form-wrap reveal">
-        <form class="contact-form" id="sapphyreContactForm" novalidate>
-          <input type="hidden" name="subject" value="Sapphyre Program Discussion" />
+        <form class="contact-form" id="primescoutContactForm" novalidate>
+          <input type="hidden" name="subject" value="PrimeScout Pilot Discussion" />
           <div class="form-group">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Your full name" required />
@@ -765,9 +750,9 @@ img { max-width: 100%; display: block; }
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your operational environment and interest in Sapphyre." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your site, operating environment, and interest in a PrimeScout pilot." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Request Program Discussion</button>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Request Pilot Discussion</button>
           <p id="formError" class="form-error" role="alert"></p>
           <p id="formSuccess" class="form-success" role="status">Thank you. Your message has been received. We will be in touch shortly.</p>
         </form>
@@ -775,7 +760,6 @@ img { max-width: 100%; display: block; }
     </div>
   </section>
 
-  <!-- ── FOOTER ──────────────────────────────────────── -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -786,7 +770,7 @@ img { max-width: 100%; display: block; }
         <a href="index.html#about">About</a>
         <a href="crucible.html">Crucible</a>
         <a href="reydious.html">Reydious</a>
-        <a href="programs.html" class="active">Programs</a>
+        <a href="programs.html">Programs</a>
         <a href="index.html#contact">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
       </nav>
@@ -799,20 +783,17 @@ img { max-width: 100%; display: block; }
     </div>
   </footer>
 
-</div><!-- /.site-wrapper -->
+</div>
 
 <script>
 (function () {
   'use strict';
-
-  /* hamburger */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
   }
 
-  /* scroll reveal */
   const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const obs = new IntersectionObserver((entries) => {
@@ -827,51 +808,8 @@ img { max-width: 100%; display: block; }
   } else {
     reveals.forEach((el) => el.classList.add('visible'));
   }
-
-  /* contact form */
-  const form = document.getElementById('sapphyreContactForm');
-  const errEl = document.getElementById('formError');
-  const okEl = document.getElementById('formSuccess');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      errEl.classList.remove('show');
-      okEl.classList.remove('show');
-      const name    = form.name.value.trim();
-      const company = form.company.value.trim();
-      const email   = form.email.value.trim();
-      const message = form.message.value.trim();
-      if (!name || !company || !email || !message) {
-        errEl.textContent = 'Please fill in all required fields.';
-        errEl.classList.add('show');
-        return;
-      }
-      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRe.test(email)) {
-        errEl.textContent = 'Please enter a valid email address.';
-        errEl.classList.add('show');
-        return;
-      }
-      try {
-        const response = await fetch('https://formspree.io/f/xeelnkqj', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name, company, email, message, subject: 'Sapphyre Program Discussion' }),
-        });
-        if (response.ok) {
-          okEl.classList.add('show');
-          form.reset();
-        } else {
-          errEl.textContent = 'Something went wrong. Please try again or email contact@umanahsystems.com directly.';
-          errEl.classList.add('show');
-        }
-      } catch {
-        errEl.textContent = 'Network error. Please check your connection and try again.';
-        errEl.classList.add('show');
-      }
-    });
-  }
 })();
 </script>
+<script src="js/primescout.js"></script>
 </body>
 </html>
