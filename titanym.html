@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Titanym | SiGe-on-Sapphire Process Qualification</title>
+  <meta name="description" content="Titanym is a Umanah Systems Group program focused on reproducing and qualifying a SiGe-on-sapphire semiconductor process for future extreme-environment electronics." />
+  <meta name="keywords" content="Titanym, SiGe on sapphire, silicon germanium epitaxy, semiconductor materials qualification, extreme environment electronics, semiconductor process development, Umanah Systems Group" />
+  <meta name="author" content="Umanah Systems Group" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08090c" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Titanym | SiGe-on-Sapphire Process Qualification" />
+  <meta property="og:description" content="Titanym is a technical program focused on reproducing and qualifying a SiGe-on-sapphire semiconductor growth process." />
+  <meta property="og:image" content="https://www.umanahsystems.com/images/titanym-preview.jpg" />
+  <meta property="og:image:alt" content="Titanym — SiGe-on-Sapphire Process Qualification" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Titanym | SiGe-on-Sapphire Process Qualification" />
+  <meta name="twitter:description" content="A Umanah Systems Group program evaluating SiGe-on-sapphire semiconductor growth for future extreme-environment electronics." />
+  <meta name="twitter:image" content="https://www.umanahsystems.com/images/titanym-preview.jpg" />
+  <meta name="twitter:image:alt" content="Titanym — SiGe-on-Sapphire Process Qualification" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-outer: #040508;
+  --bg-base: #08090c;
+  --bg-surface: #0d0f14;
+  --bg-card: #131620;
+  --bg-card-hover: #191d2b;
+  --border: rgba(255,255,255,0.07);
+  --border-bright: rgba(255,255,255,0.13);
+  --accent: #e8611a;
+  --accent-dim: rgba(232,97,26,0.15);
+  --accent-glow: rgba(232,97,26,0.35);
+  --accent-alt: #f08040;
+  --text-primary: #f0f2f5;
+  --text-secondary: #8b909e;
+  --text-muted: #484e60;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --r-sm: 6px; --r-md: 12px; --r-lg: 20px; --r-xl: 28px;
+  --ease: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg-outer);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-base);
+  box-shadow: 0 0 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.14;
+  margin-bottom: 18px;
+}
+.section-body {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.78;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  padding: 13px 28px; border-radius: var(--r-md); border: none;
+  cursor: pointer; transition: var(--ease); letter-spacing: 0.02em; white-space: nowrap;
+}
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 20px var(--accent-glow); }
+.btn-primary:hover { background: var(--accent-alt); box-shadow: 0 6px 30px var(--accent-glow); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border-bright); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,9,12,0.92);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.logo-mark {
+  width: 38px; height: 38px; background: var(--accent); color: #fff;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.78rem;
+  letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm);
+}
+.logo-text { font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  font-size: 0.865rem; font-weight: 500; color: var(--text-secondary);
+  padding: 8px 13px; border-radius: var(--r-sm); transition: var(--ease);
+}
+.nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta { background: var(--accent) !important; color: #fff !important; padding: 8px 16px !important; }
+
+/* ── NAV DROPDOWN ─────────────────────────────────────── */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+.nav-dropdown > a::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.6; transition: transform var(--ease), opacity var(--ease); flex-shrink: 0; }
+.nav-dropdown:hover > a { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-dropdown:hover > a::after { opacity: 1; transform: rotate(180deg); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); min-width: 192px; background: rgba(13,15,20,0.97); border: 1px solid var(--border-bright); border-radius: var(--r-md); padding: 12px 6px 6px; box-shadow: 0 12px 40px rgba(0,0,0,0.55); z-index: 200; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; font-size: 0.865rem; font-weight: 500; color: var(--text-secondary); padding: 9px 13px; border-radius: var(--r-sm); transition: var(--ease); white-space: nowrap; }
+.dropdown-menu a:hover { color: var(--text-primary); background: rgba(255,255,255,0.07); }
+.dropdown-menu a.active { color: var(--accent); }
+
+/* ── MOBILE SUB-LINKS ─────────────────────────────────── */
+.mobile-sub-link { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 10px 0 10px 18px; border-bottom: 1px solid var(--border); transition: color var(--ease); display: block; }
+.mobile-sub-link:last-child { border-bottom: none; }
+.mobile-sub-link:hover { color: var(--accent); }
+.mobile-sub-link.active { color: var(--accent); }
+
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+.nav-mobile { display: none; flex-direction: column; padding: 12px 28px 20px; background: rgba(8,9,12,0.97); border-top: 1px solid var(--border); }
+.nav-mobile.open { display: flex; }
+.mobile-link { font-size: 1rem; font-weight: 500; color: var(--text-secondary); padding: 13px 0; border-bottom: 1px solid var(--border); }
+.mobile-link:last-child { border-bottom: none; }
+
+.hero {
+  position: relative;
+  min-height: min(100vh, 680px);
+  display: flex; align-items: center;
+  overflow: hidden;
+  padding-top: 68px;
+}
+.hero-grid {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  opacity: 0.5;
+}
+.hero-glow-1, .hero-glow-2 {
+  position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none;
+}
+.hero-glow-1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(232,97,26,0.16) 0%, transparent 70%); top: -200px; right: -150px; }
+.hero-glow-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,97,26,0.1) 0%, transparent 70%); bottom: -100px; left: -80px; }
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1100px; margin: 0 auto;
+  padding: 100px 28px 90px;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-dim); border: 1px solid rgba(232,97,26,0.3);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 30px;
+}
+.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; margin-bottom: 22px; }
+.hero-subline { font-family: var(--font-display); font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.45; max-width: 760px; margin: 0 auto 18px; }
+.hero-text { max-width: 620px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.section { padding: 110px 0; border-top: 1px solid var(--border); }
+.surface { background: var(--bg-surface); }
+.content-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.content-wrap .section-body { max-width: 720px; }
+.intro-line { margin-top: 22px; margin-bottom: 10px; color: var(--text-primary); font-weight: 600; }
+.bullet-list {
+  width: fit-content; max-width: 100%; margin: 20px auto 0; padding-left: 0;
+  display: grid; gap: 10px; text-align: left; list-style: none;
+}
+.bullet-list li {
+  position: relative; padding-left: 18px;
+  color: var(--text-secondary); line-height: 1.75;
+}
+.bullet-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); position: absolute; left: 0; top: 0.68em;
+}
+
+/* ── SCOPE CARDS ──────────────────────────────────────── */
+.scope-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+}
+.scope-card { flex: 1 1 calc(50% - 10px); min-width: 280px; max-width: calc(50% - 10px); }
+.scope-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 26px;
+  display: flex; gap: 18px; align-items: flex-start;
+  transition: border-color var(--ease), background var(--ease);
+}
+.scope-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
+.scope-icon {
+  flex-shrink: 0; width: 42px; height: 42px;
+  background: var(--accent-dim); border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+.scope-card h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 6px;
+}
+.scope-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
+
+/* ── STEP / QUAL PATH ─────────────────────────────────── */
+.qual-path { max-width: 700px; margin: 36px auto 0; }
+.qual-step {
+  display: flex; gap: 22px; align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.qual-step:last-child { border-bottom: none; }
+.qual-step-num {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+  color: var(--accent); min-width: 36px; flex-shrink: 0;
+}
+.qual-step-content h4 {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 6px;
+}
+.qual-step-content p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* ── INFO CARDS ───────────────────────────────────────── */
+.info-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;
+}
+.info-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 24px; text-align: center;
+}
+.info-card h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 10px;
+}
+.info-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65; }
+
+/* ── QUAL CARDS (measurement framework) ──────────────── */
+.qual-cards {
+  max-width: 920px; margin: 36px auto 0;
+  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+}
+.qual-card { flex: 1 1 calc(33.333% - 14px); min-width: 240px; max-width: calc(33.333% - 14px); }
+.qual-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 26px 22px;
+}
+.qual-card-icon { color: var(--accent); margin-bottom: 14px; }
+.qual-card h4 {
+  font-family: var(--font-display); font-size: 0.9rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 10px;
+}
+.qual-card ul { display: grid; gap: 6px; }
+.qual-card li { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55; }
+
+/* ── GAUGE ───────────────────────────────────────────── */
+@keyframes needleSweep {
+  from { transform: rotate(50deg);  transform-origin: 100px 100px; }
+  to   { transform: rotate(-5deg);  transform-origin: 100px 100px; }
+}
+#gauge-needle {
+  transform-origin: 100px 100px;
+  animation: needleSweep 1.8s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  animation-play-state: paused;
+}
+#gauge-needle.animated { animation-play-state: running; }
+
+.gauge-wrap {
+  text-align: center;
+  padding: 36px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--r-xl);
+  max-width: 420px;
+  margin: 36px auto 0;
+}
+.gauge-label {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+.gauge { max-width: 220px; width: 100%; margin: 0 auto 16px; }
+.gauge-arc svg { width: 100%; height: auto; display: block; }
+.gauge-wrap { max-width: 420px; width: 100%; }
+.gauge-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+/* ── EXEC CARDS ───────────────────────────────────────── */
+.exec-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;
+}
+.exec-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 24px;
+}
+.exec-card-icon { color: var(--accent); margin-bottom: 14px; }
+.exec-card h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 8px;
+}
+.exec-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* ── OUTPUT BOX ───────────────────────────────────────── */
+.output-box {
+  max-width: 920px; margin: 32px auto 0;
+  background: var(--bg-surface); border: 1px solid var(--border-bright);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-md); padding: 20px 24px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.output-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); white-space: nowrap;
+}
+.output-box p { font-size: 0.95rem; color: var(--text-secondary); margin: 0; }
+.output-box strong { color: var(--text-primary); font-weight: 600; }
+
+/* ── IMAGE BREAK ──────────────────────────────────────── */
+.image-break {
+  padding: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+.image-break img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── PANEL GRID ───────────────────────────────────────── */
+.panel-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+}
+.panel {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 30px 26px; text-align: center;
+}
+.panel h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 14px; }
+.panel ul { display: grid; gap: 8px; }
+.panel li { color: var(--text-secondary); }
+
+/* ── METRIC / STATUS ──────────────────────────────────── */
+.metric-list { margin-top: 0; }
+.status-wrap { margin-top: 24px; display: flex; justify-content: center; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(232,97,26,0.28);
+  border-radius: 100px;
+  padding: 9px 14px;
+}
+
+/* ── CONTACT / FORM ───────────────────────────────────── */
+.contact-block { margin-top: 22px; }
+.contact-block p { color: var(--text-secondary); }
+.contact-name { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; }
+.contact-email { color: var(--accent); font-weight: 600; border-bottom: 1px solid rgba(232,97,26,0.3); display: inline-block; }
+
+.form-wrap { max-width: 760px; margin: 34px auto 0; }
+.contact-form {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-xl); padding: 36px;
+}
+.form-group { margin-bottom: 18px; text-align: left; }
+.form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.form-group input, .form-group textarea {
+  width: 100%; background: var(--bg-base); border: 1px solid var(--border-bright);
+  border-radius: var(--r-md); padding: 12px 15px;
+  font-family: var(--font-body); font-size: 0.93rem; color: var(--text-primary);
+  outline: none; transition: border-color var(--ease), box-shadow var(--ease);
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+.form-error {
+  display: none; margin-top: 14px; text-align: left;
+  font-size: 0.86rem; color: #fca5a5;
+}
+.form-success {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(34,197,94,0.3);
+  background: rgba(34,197,94,0.08);
+  color: #86efac;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.form-success.show, .form-error.show { display: block; }
+
+/* ── FOOTER ───────────────────────────────────────────── */
+.footer { background: var(--bg-base); border-top: 1px solid var(--border); padding: 34px 0; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+.footer-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.footer-name { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+.footer-nav a { font-size: 0.85rem; color: var(--text-muted); transition: var(--ease); }
+.footer-nav a:hover, .footer-nav a.active { color: var(--accent); }
+.footer-social { display: flex; justify-content: center; gap: 12px; }
+.footer-social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-bright); color: var(--text-secondary); font-size: 0.95rem; transition: var(--ease); }
+.footer-social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
+.footer-copy { font-size: 0.78rem; color: var(--text-muted); width: 100%; text-align: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
+
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .container { padding: 0 20px; }
+  .hero-content { padding: 74px 20px 84px; }
+  .section { padding: 80px 0; }
+  .panel-grid { grid-template-columns: 1fr; }
+  .scope-grid { flex-direction: column; }
+  .scope-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
+  .info-grid { grid-template-columns: 1fr; }
+  .qual-card { flex: 1 1 calc(50% - 10px); max-width: calc(50% - 10px); min-width: 200px; }
+  .exec-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 26px 22px; }
+}
+@media (max-width: 480px) {
+  .hero-content { padding: 62px 20px 72px; }
+  .hero-title { font-size: clamp(2rem, 10vw, 2.9rem); }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+  .qual-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
+}
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">USG</span>
+        <span class="logo-text">Umanah Systems Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="crucible.html">Crucible</a></li>
+        <li><a href="reydious.html">Reydious</a></li>
+        <li class="nav-dropdown">
+          <a href="programs.html" class="active">Programs</a>
+          <div class="dropdown-menu">
+            <a href="biogrid-networks.html">BioGrid Networks</a>
+            <a href="resonance-grid.html">Resonance Grid</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="crucible.html" class="mobile-link">Crucible</a>
+      <a href="reydious.html" class="mobile-link">Reydious</a>
+      <a href="programs.html" class="mobile-link active">Programs</a>
+      <a href="biogrid-networks.html" class="mobile-sub-link">BioGrid Networks</a>
+      <a href="resonance-grid.html" class="mobile-sub-link">Resonance Grid</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">A Umanah Systems Group Program</div>
+      <h1 class="hero-title">Titanym</h1>
+      <p class="hero-subline">SiGe-on-Sapphire Process Qualification</p>
+      <p class="hero-text">
+        A technical program focused on reproducing and evaluating a low-temperature silicon-germanium growth process on sapphire substrates.<br>
+        Phase 1 is designed to determine whether the process can be reliably reproduced and whether the resulting material meets the quality requirements for future device work.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Request Program Discussion</a>
+        <a href="#program" class="btn btn-ghost">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROGRAM OVERVIEW ───────────────────────────────────── -->
+  <section class="section surface" id="program">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Program Overview</div>
+        <h2 class="section-title">Titanym begins with materials qualification.</h2>
+        <p class="section-body">The program attempts to reproduce reported SiGe-on-sapphire growth conditions in a controlled nanofabrication environment and measure the resulting crystal material.</p>
+        <p class="section-body" style="margin-top:16px;">This phase is not focused on device deployment. The objective is to determine whether the process can produce repeatable, high-quality semiconductor material suitable for further development.</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <h4>Qualification before deployment</h4>
+          <p>Phase 1 focuses on process reproduction and material measurement — not device integration or field deployment. The work ends with a qualification report and a Go / No-Go decision.</p>
+        </div>
+        <div class="info-card reveal">
+          <h4>Defined technical scope</h4>
+          <p>Each Phase 1 objective is bounded. Growth conditions, crystal quality, defect mapping, wafer stress, surface morphology, and repeatability — nothing beyond the defined scope.</p>
+        </div>
+        <div class="info-card reveal">
+          <h4>Risk reduction</h4>
+          <p>A structured qualification sequence identifies failure modes before downstream investment. Each measurement gates the next step, reducing technical and program risk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PHASE 1 SCOPE ──────────────────────────────────────── -->
+  <section class="section" id="phase1">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Scope</div>
+        <h2 class="section-title">Phase 1 Scope</h2>
+        <p class="section-body">Phase 1 focuses on a tightly scoped set of process and measurement objectives.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h4>Process Reproduction</h4>
+            <p>Reproduce low-temperature SiGe growth conditions from reported literature parameters in a controlled nanofabrication environment.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <div>
+            <h4>Crystal Structure &amp; Lattice Alignment</h4>
+            <p>Measure crystal quality, orientation, and structural integrity of deposited SiGe layers including single-crystal confirmation and SiGe orientation alignment.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M6 20V10M12 20V4M18 20v-8"/></svg>
+          </div>
+          <div>
+            <h4>Defect Density &amp; Twin Formation</h4>
+            <p>Evaluate defect density and twin formation using X-ray diffraction — dislocations, twin defects, and contamination mapping across the deposited layer.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <h4>Wafer Stress &amp; Surface Morphology</h4>
+            <p>Analyze wafer stress through curvature analysis and thermal load performance testing, combined with AFM and microscopy for surface roughness and defect counts.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+          </div>
+          <div>
+            <h4>Repeatability Across Runs</h4>
+            <p>Test reproducibility across multiple growth runs with statistical analysis and clear Go/No-Go criteria applied to the full dataset.</p>
+          </div>
+        </div>
+      </div>
+      <div class="output-box reveal">
+        <span class="output-label">Program Output</span>
+        <p>Qualification report and <strong>Go / No-Go</strong> decision for subsequent device work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUALIFICATION PATH ─────────────────────────────────── -->
+  <section class="section surface" id="qualification">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Evaluation Sequence</div>
+        <h2 class="section-title">The Qualification Path</h2>
+        <p class="section-body">The program follows a defined evaluation sequence — each step gates the next.</p>
+      </div>
+      <div class="qual-path">
+        <div class="qual-step reveal">
+          <div class="qual-step-num">01</div>
+          <div class="qual-step-content">
+            <h4>Reproduce Growth Conditions</h4>
+            <p>Reproduce reported low-temperature SiGe growth conditions in a controlled nanofabrication environment.</p>
+          </div>
+        </div>
+        <div class="qual-step reveal">
+          <div class="qual-step-num">02</div>
+          <div class="qual-step-content">
+            <h4>Characterize Crystal Quality</h4>
+            <p>Single crystal confirmation, SiGe orientation alignment, and X-ray diffraction defect density mapping.</p>
+          </div>
+        </div>
+        <div class="qual-step reveal">
+          <div class="qual-step-num">03</div>
+          <div class="qual-step-content">
+            <h4>Evaluate Repeatability</h4>
+            <p>Statistical analysis across multiple growth runs. Surface condition, wafer stress, and defect uniformity.</p>
+          </div>
+        </div>
+        <div class="qual-step reveal">
+          <div class="qual-step-num">04</div>
+          <div class="qual-step-content">
+            <h4>Produce Qualification Report</h4>
+            <p>Document all measurement data, process parameters, and material characterization findings.</p>
+          </div>
+        </div>
+        <div class="qual-step reveal">
+          <div class="qual-step-num">05</div>
+          <div class="qual-step-content">
+            <h4>Issue Go / No-Go Decision</h4>
+            <p>A formal determination on whether the material system is ready for subsequent device development work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IMAGE: titanym3 ────────────────────────────────────── -->
+  <div class="image-break">
+    <img src="images/titanym3.jpg" alt="SiGe-on-Sapphire process qualification — laboratory environment" />
+  </div>
+
+  <!-- ── MEASUREMENT FRAMEWORK ─────────────────────────────── -->
+  <section class="section" id="measurement">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Measurement Framework</div>
+        <h2 class="section-title">SiGe-on-Sapphire Wafer Qualification</h2>
+        <p class="section-body">Five measurement categories define the qualification standard for Phase 1.</p>
+      </div>
+      <div class="qual-cards">
+        <div class="qual-card reveal">
+          <div class="qual-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h4>Crystal Quality</h4>
+          <ul class="bullet-list metric-list">
+            <li>Single crystal confirmation</li>
+            <li>SiGe orientation alignment</li>
+          </ul>
+        </div>
+        <div class="qual-card reveal">
+          <div class="qual-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6M11 8v6"/></svg>
+          </div>
+          <h4>Defect Structure</h4>
+          <ul class="bullet-list metric-list">
+            <li>X-ray diffraction for dislocations</li>
+            <li>Twin defects and contamination</li>
+          </ul>
+        </div>
+        <div class="qual-card reveal">
+          <div class="qual-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <h4>Wafer Stress</h4>
+          <ul class="bullet-list metric-list">
+            <li>Curvature analysis for internal stress</li>
+            <li>Thermal load performance</li>
+          </ul>
+        </div>
+        <div class="qual-card reveal">
+          <div class="qual-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h4>Surface Condition</h4>
+          <ul class="bullet-list metric-list">
+            <li>AFM and microscopy analysis</li>
+            <li>Defect counts and surface roughness</li>
+          </ul>
+        </div>
+        <div class="qual-card reveal">
+          <div class="qual-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h4>Repeatability</h4>
+          <ul class="bullet-list metric-list">
+            <li>Statistical analysis of multiple wafer runs</li>
+            <li>Clear Go / No-Go criteria</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Go / No-Go gauge -->
+      <div class="gauge-wrap reveal">
+        <div class="gauge-label">Go / No-Go</div>
+        <div class="gauge">
+          <div class="gauge-arc">
+            <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10,100 A90,90 0 0,1 100,10"  fill="none" stroke="#3A8C5C" stroke-width="22" stroke-linecap="butt"/>
+              <path d="M100,10 A90,90 0 0,1 155,32"  fill="none" stroke="#C8A227" stroke-width="22" stroke-linecap="butt"/>
+              <path d="M155,32 A90,90 0 0,1 190,100" fill="none" stroke="#C05430" stroke-width="22" stroke-linecap="butt"/>
+              <line id="gauge-needle" x1="100" y1="100" x2="30" y2="18" stroke="#f0f2f5" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="100" cy="100" r="6" fill="#f0f2f5"/>
+              <text x="4"   y="126" font-size="13" fill="#3A8C5C" font-family="Inter,sans-serif" font-weight="600">Go</text>
+              <text x="148" y="126" font-size="13" fill="#C05430" font-family="Inter,sans-serif" font-weight="600">No-Go</text>
+            </svg>
+          </div>
+        </div>
+        <p class="gauge-desc">Each qualification metric must pass before a Go decision is issued.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXECUTION ──────────────────────────────────────────── -->
+  <section class="section surface" id="execution">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Operations</div>
+        <h2 class="section-title">Execution Environment</h2>
+        <p class="section-body">Titanym Phase 1 is carried out within a university nanofabrication environment where controlled deposition and materials characterization equipment are available. The program is structured to operate within existing lab capacity rather than building a new facility.</p>
+      </div>
+      <div class="exec-grid">
+        <div class="exec-card reveal">
+          <div class="exec-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h4>Program Structure</h4>
+          <p>Titanym operates as a program under Umanah Systems Group — a structured technical program with defined scope and deliverables.</p>
+        </div>
+        <div class="exec-card reveal">
+          <div class="exec-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9V7H8V3L2 8l6 5V9h14z"/><rect x="2" y="13" width="14" height="2" rx="1"/><rect x="2" y="18" width="10" height="2" rx="1"/></svg>
+          </div>
+          <h4>Nanofabrication Environment</h4>
+          <p>Phase 1 is intended to run within a university nanofabrication environment where controlled deposition and materials characterization can be performed.</p>
+        </div>
+        <div class="exec-card reveal">
+          <div class="exec-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h4>Current Focus</h4>
+          <p>The current phase focuses strictly on process reproduction and materials evaluation. Device development is not in scope for Phase 1.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STAGE ───────────────────────────────────────────────── -->
+  <section class="section" id="stage">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Stage</div>
+        <h2 class="section-title">Program Status</h2>
+        <p class="section-body">Phase 1 qualification program. Seeking technical collaborators and institutional partners for controlled process work.</p>
+        <div class="status-wrap"><span class="status-badge">Phase 1 · Process Qualification</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ─────────────────────────────────────────────── -->
+  <section class="section surface" id="contact">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Get Involved</div>
+        <h2 class="section-title">Program Contact</h2>
+        <p class="section-body">For technical collaboration, institutional partnership, or program discussion inquiries.</p>
+        <div class="contact-block">
+          <div class="contact-name">Amaete Umanah</div>
+          <a class="contact-email" href="mailto:contact@umanahsystems.com">contact@umanahsystems.com</a>
+        </div>
+      </div>
+
+      <div class="form-wrap reveal">
+        <form class="contact-form" id="titanymContactForm" novalidate>
+          <input type="hidden" name="subject" value="Titanym Program Discussion" />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Your company or institution" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your background and interest in the Titanym program." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Request Program Discussion</button>
+          <p id="formError" class="form-error" role="alert"></p>
+          <p id="formSuccess" class="form-success" role="status">Thank you. Your message has been received. We will be in touch shortly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">USG</span>
+        <span class="footer-name">Umanah Systems Group</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="crucible.html">Crucible</a>
+        <a href="reydious.html">Reydious</a>
+        <a href="programs.html" class="active">Programs</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/umanah-systems" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Umanah Systems Group on LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; Umanah Systems Group. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach((el) => obs.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+})();
+</script>
+<script src="js/titanym.js"></script>
+</body>
+</html>
