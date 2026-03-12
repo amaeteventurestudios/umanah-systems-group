@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USG Programs | Umanah Systems Group</title>
+
+  <!-- ── NO INDEXING / NO CRAWLING ─────────────────────────── -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nocache, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="bingbot" content="noindex, nofollow" />
+  <meta http-equiv="X-Robots-Tag" content="noindex, nofollow" />
+
+  <!-- ── FONTS & ICONS ─────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ── DESIGN TOKENS ───────────────────────────────────────── */
+    :root {
+      --bg-base:        #0a0c10;
+      --bg-surface:     #0f1117;
+      --bg-card:        #13161e;
+      --bg-card-hover:  #181c26;
+      --text-primary:   #f0f2f7;
+      --text-secondary: #9aa0b4;
+      --text-muted:     #5c6278;
+      --accent:         #e8620a;
+      --accent-soft:    rgba(232,98,10,0.12);
+      --accent-glow:    rgba(232,98,10,0.22);
+      --border:         rgba(255,255,255,0.06);
+      --border-bright:  rgba(255,255,255,0.10);
+      --font-body:      'Inter', sans-serif;
+      --font-display:   'Syne', sans-serif;
+      --r-sm:  6px;
+      --r-md:  10px;
+      --r-lg:  16px;
+      --ease:  0.18s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: #040508;
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── BOXED SITE WRAPPER ─────────────────────────────────── */
+    .site-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--bg-base);
+      box-shadow: 0 0 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+      position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ── NOISE OVERLAY ───────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.4;
+    }
+
+    /* ── NAVIGATION ─────────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,12,16,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 28px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 9px;
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 0.95rem; letter-spacing: 0.01em;
+    }
+    .logo-mark {
+      background: var(--accent); color: #fff;
+      padding: 3px 7px; border-radius: var(--r-sm);
+      font-size: 0.8rem; font-weight: 800; letter-spacing: 0.04em;
+    }
+    .logo-text { color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--text-secondary); padding: 7px 12px;
+      border-radius: var(--r-sm); transition: var(--ease);
+    }
+    .nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+    .nav-links a.active { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: #fff !important;
+      padding: 7px 16px; border-radius: var(--r-sm);
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { opacity: 0.88; background: var(--accent) !important; }
+
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%); min-width: 192px;
+      background: rgba(13,15,20,0.97); border: 1px solid var(--border-bright);
+      border-radius: var(--r-md); padding: 12px 6px 6px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55); z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: block; font-size: 0.865rem; font-weight: 500;
+      color: var(--text-secondary); padding: 9px 13px;
+      border-radius: var(--r-sm); transition: var(--ease); white-space: nowrap;
+    }
+    .dropdown-menu a:hover { color: var(--text-primary); background: rgba(255,255,255,0.07); }
+    .dropdown-menu a.active { color: var(--accent); }
+
+    /* Mobile */
+    .mobile-sub-link {
+      font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+      padding: 10px 0 10px 18px; border-bottom: 1px solid var(--border);
+      transition: color var(--ease); display: block;
+    }
+    .mobile-sub-link:last-child { border-bottom: none; }
+    .mobile-sub-link:hover, .mobile-sub-link.active { color: var(--accent); }
+    .mobile-link {
+      font-size: 1rem; font-weight: 500; color: var(--text-secondary);
+      padding: 13px 0; border-bottom: 1px solid var(--border);
+    }
+    .mobile-link:last-child { border-bottom: none; }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text-secondary); border-radius: 2px; transition: var(--ease);
+    }
+    .nav-mobile {
+      display: none; flex-direction: column;
+      background: rgba(10,12,16,0.97); padding: 8px 28px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile.open { display: flex; }
+
+
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 90px 28px 72px; text-align: center;
+      min-height: 320px; display: flex; align-items: center; justify-content: center;
+      background: var(--bg-base);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(232,98,10,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,98,10,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+    .hero-glow-1 {
+      position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,98,10,0.12) 0%, transparent 65%);
+      top: -180px; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none;
+    }
+    .hero-glow-2 {
+      position: absolute; width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,98,10,0.07) 0%, transparent 65%);
+      bottom: -100px; right: 15%; z-index: 0; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 640px; width: 100%; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-soft); color: var(--accent);
+      border: 1px solid rgba(232,98,10,0.25);
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 26px;
+    }
+    .hero-title {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.08; letter-spacing: -0.02em;
+      color: var(--text-primary); margin-bottom: 18px;
+    }
+    .hero-title span { color: var(--accent); }
+    .hero-sub {
+      font-size: 0.97rem; color: var(--text-secondary);
+      max-width: 480px; margin: 0 auto;
+      line-height: 1.72;
+    }
+
+    /* ── FEATURED ROW (Reydious + Crucible) ─────────────────── */
+    .section { padding: 64px 0; position: relative; z-index: 1; }
+    .surface { background: var(--bg-surface); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 800; color: var(--text-primary); margin-bottom: 14px;
+      line-height: 1.18; max-width: 680px;
+    }
+    .section-intro {
+      font-size: 0.95rem; color: var(--text-secondary);
+      max-width: 560px; line-height: 1.75; margin-bottom: 44px;
+    }
+
+    /* Featured 2-col cards */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 72px;
+    }
+    .featured-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+    .featured-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+      opacity: 0; transition: opacity 0.25s ease;
+    }
+    .featured-card:hover {
+      border-color: var(--border-bright);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .featured-card:hover::before { opacity: 1; }
+    .featured-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      background: var(--accent-soft); border: 1px solid rgba(232,98,10,0.2);
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 18px;
+    }
+    .featured-tag .dot {
+      width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+    .featured-name {
+      font-family: var(--font-display); font-size: 1.9rem; font-weight: 800;
+      color: var(--text-primary); margin-bottom: 8px; line-height: 1.1;
+    }
+    .featured-role {
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px;
+    }
+    .featured-desc {
+      font-size: 0.935rem; color: var(--text-secondary);
+      line-height: 1.72; margin-bottom: 28px;
+    }
+    .featured-link {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.85rem; font-weight: 600; color: var(--accent);
+      transition: gap 0.2s ease;
+    }
+    .featured-link:hover { gap: 11px; }
+    .featured-link svg { flex-shrink: 0; }
+    .featured-bg-num {
+      position: absolute; bottom: -10px; right: 16px;
+      font-family: var(--font-display); font-size: 7rem; font-weight: 800;
+      color: rgba(255,255,255,0.024); line-height: 1; pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── ALL PROGRAMS GRID ───────────────────────────────────── */
+    .programs-header {
+      display: flex; align-items: baseline; gap: 14px; margin-bottom: 36px;
+    }
+    .programs-header .section-title { margin-bottom: 0; }
+    .programs-count {
+      font-size: 0.8rem; color: var(--text-muted); font-weight: 500;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .prog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 26px 24px;
+      position: relative; overflow: hidden;
+      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex; flex-direction: column;
+    }
+    .prog-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 80%);
+      opacity: 0; transition: opacity 0.25s ease;
+    }
+    .prog-card:hover {
+      border-color: rgba(232,98,10,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+    }
+    .prog-card:hover::after { opacity: 1; }
+    .prog-card-num {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--text-muted); margin-bottom: 12px;
+    }
+    .prog-card-name {
+      font-family: var(--font-display); font-size: 1.2rem; font-weight: 800;
+      color: var(--text-primary); margin-bottom: 6px; line-height: 1.2;
+    }
+    .prog-card-sub {
+      font-size: 0.75rem; font-weight: 600; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 14px;
+    }
+    .prog-card-desc {
+      font-size: 0.875rem; color: var(--text-secondary);
+      line-height: 1.68; flex: 1; margin-bottom: 22px;
+    }
+    .prog-card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      transition: gap 0.2s ease; align-self: flex-start;
+    }
+    .prog-card-link:hover { gap: 10px; }
+
+    /* Category divider */
+    .category-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin: 56px 0 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .category-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── ANIMATED COUNTER STRIP ─────────────────────────────── */
+    .stats-strip {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+    }
+    .stats-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 28px;
+      display: flex; gap: 0; flex-wrap: wrap;
+    }
+    .stat-item {
+      flex: 1 1 200px;
+      text-align: center;
+      padding: 16px 20px;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-display); font-size: 2.2rem; font-weight: 800;
+      color: var(--accent); line-height: 1; margin-bottom: 6px;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.78rem; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      background: var(--bg-base);
+      border-top: 1px solid var(--border);
+      padding: 34px 0;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 18px;
+    }
+    .footer-brand {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+    }
+    .footer-name { color: var(--text-secondary); font-size: 0.9rem; }
+    .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+    .footer-nav a { font-size: 0.85rem; color: var(--text-muted); transition: var(--ease); }
+    .footer-nav a:hover, .footer-nav a.active { color: var(--accent); }
+    .footer-social { display: flex; justify-content: center; gap: 12px; }
+    .footer-social-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--border-bright); color: var(--text-secondary);
+      font-size: 0.95rem; transition: var(--ease);
+    }
+    .footer-social-link:hover {
+      background: var(--accent); border-color: var(--accent); color: #fff;
+      transform: translateY(-2px);
+    }
+    .footer-copy {
+      font-size: 0.78rem; color: var(--text-muted); width: 100%;
+      text-align: center; border-top: 1px solid var(--border);
+      padding-top: 16px; margin-top: 4px;
+    }
+
+    /* ── REVEAL ANIMATIONS ───────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal-left {
+      opacity: 0; transform: translateX(-28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    .reveal-right {
+      opacity: 0; transform: translateX(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Staggered children */
+    .stagger > * { opacity: 0; transform: translateY(22px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
+    .stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.12s; }
+    .stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.19s; }
+    .stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.26s; }
+    .stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.33s; }
+    .stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.40s; }
+    .stagger.visible > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.47s; }
+    .stagger.visible > *:nth-child(8) { opacity: 1; transform: none; transition-delay: 0.54s; }
+
+    /* Floating orb animation on hero */
+    @keyframes float-orb {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(-18px); }
+    }
+    .hero-glow-1 { animation: float-orb 7s ease-in-out infinite; }
+
+    /* Shimmer on featured cards */
+    @keyframes shimmer {
+      0%   { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .programs-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { padding: 70px 20px 60px; }
+      .section { padding: 56px 20px; }
+      .programs-grid { grid-template-columns: 1fr; }
+      .featured-card { padding: 28px 22px; }
+      .stats-inner { gap: 0; }
+      .stat-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:nth-child(odd) { border-right: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; border-right: none; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2rem; }
+      .stat-item { flex: 1 1 100%; border-right: none; }
+      .stat-item:nth-child(odd) { border-right: none; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="site-wrapper">
+
+  <!-- ── NAVIGATION ────────────────────────────────────────── -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">USG</span>
+        <span class="logo-text">Umanah Systems Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="crucible.html">Crucible</a></li>
+        <li><a href="reydious.html">Reydious</a></li>
+        <li class="nav-dropdown">
+          <a href="programs.html">Programs</a>
+          <div class="dropdown-menu">
+            <a href="biogrid-networks.html">BioGrid Networks</a>
+            <a href="crucible.html">Crucible</a>
+            <a href="enferra.html">Enferra</a>
+            <a href="lucent-robotics.html">Lucent Robotics</a>
+            <a href="primescout.html">PrimeScout</a>
+            <a href="resonance-grid.html">Resonance Grid</a>
+            <a href="reydious.html">Reydious</a>
+            <a href="sapphyre.html">Sapphyre</a>
+            <a href="spattio.html">Spattio</a>
+            <a href="titanym.html">Titanym</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="crucible.html" class="mobile-link">Crucible</a>
+      <a href="reydious.html" class="mobile-link">Reydious</a>
+      <a href="programs.html" class="mobile-link">Programs</a>
+      <a href="biogrid-networks.html" class="mobile-sub-link">BioGrid Networks</a>
+      <a href="crucible.html" class="mobile-sub-link">Crucible</a>
+      <a href="enferra.html" class="mobile-sub-link">Enferra</a>
+      <a href="lucent-robotics.html" class="mobile-sub-link">Lucent Robotics</a>
+      <a href="primescout.html" class="mobile-sub-link">PrimeScout</a>
+      <a href="resonance-grid.html" class="mobile-sub-link">Resonance Grid</a>
+      <a href="reydious.html" class="mobile-sub-link">Reydious</a>
+      <a href="sapphyre.html" class="mobile-sub-link">Sapphyre</a>
+      <a href="spattio.html" class="mobile-sub-link">Spattio</a>
+      <a href="titanym.html" class="mobile-sub-link">Titanym</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Internal Reference</div>
+      <h1 class="hero-title">USG <span>Programs</span></h1>
+      <p class="hero-sub">A reference overview of all active Umanah Systems Group programs.</p>
+    </div>
+  </section>
+
+  <!-- ── STATS STRIP ───────────────────────────────────────── -->
+  <div class="stats-strip">
+    <div class="stats-inner stagger">
+      <div class="stat-item">
+        <span class="stat-num" data-target="10">0</span>
+        <span class="stat-label">Active Programs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="4">0</span>
+        <span class="stat-label">Hardware Tracks</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Software Platforms</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Semiconductor Programs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FEATURED: REYDIOUS + CRUCIBLE ─────────────────────── -->
+  <section class="section" id="foundation">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Foundation Programs</div>
+        <h2 class="section-title">The Two Programs That Power Everything</h2>
+        <p class="section-intro">Reydious and Crucible are not standalone products. They are the infrastructure layer that every other USG program is built on. One handles the software and control side; the other handles the hardware and manufacturing side.</p>
+      </div>
+
+      <div class="featured-grid stagger">
+
+        <!-- REYDIOUS -->
+        <a href="reydious.html" class="featured-card">
+          <div class="featured-tag"><span class="dot"></span> Software Platform</div>
+          <div class="featured-name">Reydious</div>
+          <div class="featured-role">Governing Software Layer</div>
+          <p class="featured-desc">Think of Reydious as the brain that keeps all USG systems in line. It is a software platform that connects and controls hardware, whether that hardware was made by USG, a government agency, or a third-party vendor. Before any system takes an action, Reydious checks whether it is allowed to do so. It enforces rules, tracks behavior, and keeps everything accountable. No system acts on its own. Reydious is always in the loop.</p>
+          <div class="featured-link">
+            View Reydious
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="featured-bg-num">R</div>
+        </a>
+
+        <!-- CRUCIBLE -->
+        <a href="crucible.html" class="featured-card">
+          <div class="featured-tag"><span class="dot"></span> Manufacturing Platform</div>
+          <div class="featured-name">Crucible</div>
+          <div class="featured-role">Hardware Manufacturing Layer</div>
+          <p class="featured-desc">Crucible is USG's manufacturing backbone, a network of production cells that build hardware tough enough to survive in the real world. Not a lab. Not a prototype bench. Actual deployable hardware, built to a documented standard, validated before it ships. Every other program that involves physical hardware, robots, sensors, and electronics, comes through Crucible. It ensures the hardware works, holds up, and can be audited.</p>
+          <div class="featured-link">
+            View Crucible
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="featured-bg-num">C</div>
+        </a>
+
+      </div>
+
+      <!-- ── ALL PROGRAMS ──────────────────────────────────── -->
+      <div class="reveal">
+        <div class="programs-header">
+          <div>
+            <div class="section-label">All Programs</div>
+            <h2 class="section-title">Complete Program Directory</h2>
+          </div>
+          <span class="programs-count">10 programs A–Z</span>
+        </div>
+      </div>
+
+      <!-- Hardware & Robotics -->
+      <div class="category-label reveal">Hardware &amp; Robotics</div>
+      <div class="programs-grid stagger">
+
+        <!-- BioGrid Networks -->
+        <a href="biogrid-networks.html" class="prog-card">
+          <div class="prog-card-num">01 / HARDWARE</div>
+          <div class="prog-card-name">BioGrid Networks</div>
+          <div class="prog-card-sub">Biological Detection Infrastructure</div>
+          <p class="prog-card-desc">In remote or industrial sites, think oil fields, military bases, or large facilities. Biological threats are usually only discovered after the fact, because samples have to be shipped to a lab. BioGrid puts portable microscopy equipment directly on-site, connected in a network, so you can detect biological issues in real time without waiting for lab results. Faster detection, fewer delays, fewer decisions made in the dark.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Crucible -->
+        <a href="crucible.html" class="prog-card">
+          <div class="prog-card-num">02 / MANUFACTURING</div>
+          <div class="prog-card-name">Crucible</div>
+          <div class="prog-card-sub">Hardware Manufacturing &amp; Validation</div>
+          <p class="prog-card-desc">Crucible is the manufacturing network that builds all USG hardware. It controls the entire process, from how parts are put together, to how they are tested, to how they are documented before deployment. If a piece of hardware comes from USG, it came through Crucible. The goal is simple: hardware that is tough, traceable, and trusted.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Lucent Robotics -->
+        <a href="lucent-robotics.html" class="prog-card">
+          <div class="prog-card-num">03 / ROBOTICS</div>
+          <div class="prog-card-name">Lucent Robotics</div>
+          <div class="prog-card-sub">Infrastructure Inspection Robots</div>
+          <p class="prog-card-desc">Most of the world's pipes, tunnels, and sealed machines cannot be inspected without shutting everything down or sending a person into a dangerous space. Lucent Robotics builds robots small enough and smart enough to go inside these spaces and collect data, cameras, sensors, and readings, while the infrastructure keeps running. No shutdowns. No confined-space hazards. Just information.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- PrimeScout -->
+        <a href="primescout.html" class="prog-card">
+          <div class="prog-card-num">04 / ROBOTICS</div>
+          <div class="prog-card-name">PrimeScout</div>
+          <div class="prog-card-sub">Autonomous Patrol &amp; Inspection</div>
+          <p class="prog-card-desc">PrimeScout is an autonomous patrol system, a robot that runs scheduled routes, checks on specific locations, and flags anything that looks wrong, without a person having to be there. It is designed for facilities that need consistent, around-the-clock coverage: warehouses, perimeters, industrial sites. It checks in, records what it sees, and reports, governed at every step by Reydious.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Semiconductors & Electronics -->
+      <div class="category-label reveal">Semiconductors &amp; Electronics</div>
+      <div class="programs-grid stagger">
+
+        <!-- Enferra -->
+        <a href="enferra.html" class="prog-card">
+          <div class="prog-card-num">05 / ELECTRONICS</div>
+          <div class="prog-card-name">Enferra</div>
+          <div class="prog-card-sub">Extreme-Environment Control Electronics</div>
+          <p class="prog-card-desc">Standard electronics stop working reliably above around 150°C. This is a real problem if your system needs to operate inside a jet engine, a deep geothermal well, or on Venus. Enferra develops control circuits built on silicon carbide that can survive these extreme temperatures without needing special cooling. The electronics sit right where the heat is and keep working.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Sapphyre -->
+        <a href="sapphyre.html" class="prog-card">
+          <div class="prog-card-num">06 / SEMICONDUCTORS</div>
+          <div class="prog-card-name">Sapphyre</div>
+          <div class="prog-card-sub">Advanced Semiconductor Materials</div>
+          <p class="prog-card-desc">Sapphyre works on the materials and structures that make semiconductor devices perform better in harsh conditions, including extreme heat, radiation, and tight power budgets. This is foundational work: figuring out which materials and device designs can outperform conventional silicon in aerospace, defense, and industrial environments. The findings feed directly into other USG semiconductor programs.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Titanym -->
+        <a href="titanym.html" class="prog-card">
+          <div class="prog-card-num">07 / SEMICONDUCTORS</div>
+          <div class="prog-card-name">Titanym</div>
+          <div class="prog-card-sub">SiGe-on-Sapphire Process Qualification</div>
+          <p class="prog-card-desc">Titanym is a focused research program trying to reproduce a specific semiconductor manufacturing process: growing silicon-germanium crystals on sapphire wafers. This combination could eventually enable high-performance electronics in extreme environments. Phase 1 is purely about proving the process works. Can the right crystal quality be achieved, consistently, under controlled conditions?</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Software & AI -->
+      <div class="category-label reveal">Software &amp; AI</div>
+      <div class="programs-grid stagger">
+
+        <!-- Reydious -->
+        <a href="reydious.html" class="prog-card">
+          <div class="prog-card-num">08 / SOFTWARE</div>
+          <div class="prog-card-name">Reydious</div>
+          <div class="prog-card-sub">Governing Software Platform</div>
+          <p class="prog-card-desc">Reydious is the software layer that sits on top of all USG hardware and systems. It connects things, robots, sensors, and third-party devices, into a single governed environment. It decides what each system is allowed to do, keeps logs of everything, and can push updated instructions to hardware in the field. It also integrates with government and commercial systems, acting as the authority layer across all of them.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Resonance Grid -->
+        <a href="resonance-grid.html" class="prog-card">
+          <div class="prog-card-num">09 / SENSING</div>
+          <div class="prog-card-name">Resonance Grid</div>
+          <div class="prog-card-sub">Battery-Free Cold Chain Verification</div>
+          <p class="prog-card-desc">When temperature-sensitive goods, vaccines, food, and chemicals, move through a supply chain, you need to know they stayed cold the whole time. Resonance Grid embeds battery-free sensing tags into packaging that can detect if the temperature went out of range or if the package was tampered withwithout needing a battery or wired connection. Check the package. Know the truth.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Spattio -->
+        <a href="spattio.html" class="prog-card">
+          <div class="prog-card-num">10 / AI INFRASTRUCTURE</div>
+          <div class="prog-card-name">Spattio</div>
+          <div class="prog-card-sub">Spatial &amp; Temporal AI Infrastructure</div>
+          <p class="prog-card-desc">AI tools like ChatGPT are smart with words, but they have no sense of where things are or what is happening right now. Spattio fixes that. It gives AI agents access to real-time location and environmental data, maps, sensor feeds, and live conditions, so they can answer questions that are grounded in the real world. What is happening at that location right now? Has anything changed in the last hour? Spattio makes that possible.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="usg-programs.html"><span class="logo-mark">USG</span></a>
+        <span class="footer-name">Umanah Systems Group</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="crucible.html">Crucible</a>
+        <a href="reydious.html">Reydious</a>
+        <a href="programs.html" class="active">Programs</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/umanah-systems" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Umanah Systems Group on LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; Umanah Systems Group. All rights reserved.</p>
+    </div>
+  </footer>
+</div><!-- /.site-wrapper -->
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Hamburger ─────────────────────────────────────────── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function () {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+  }
+  document.querySelectorAll('.mobile-link, .mobile-sub-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  /* ── Intersection Observer (reveal + stagger) ──────────── */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger');
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(function (el) { observer.observe(el); });
+
+  /* ── Animated counters ──────────────────────────────────── */
+  function animateCounter(el, target, duration) {
+    var start = 0;
+    var step = target / (duration / 16);
+    var current = start;
+    var timer = setInterval(function () {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.round(current);
+    }, 16);
+  }
+
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var nums = entry.target.querySelectorAll('.stat-num[data-target]');
+        nums.forEach(function (num) {
+          animateCounter(num, parseInt(num.getAttribute('data-target'), 10), 900);
+        });
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  var statsStrip = document.querySelector('.stats-strip');
+  if (statsStrip) counterObserver.observe(statsStrip);
+
+  /* ── Navbar scroll shrink ──────────────────────────────── */
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 40) {
+      navbar.style.background = 'rgba(10,12,16,0.97)';
+    } else {
+      navbar.style.background = 'rgba(10,12,16,0.88)';
+    }
+  }, { passive: true });
+
+})();
+</script>
+</body>
+</html>

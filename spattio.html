@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Spattio | AI Eyes, Memory, and a Map</title>
+  <meta name="description" content="Spattio gives AI eyes, memory, and a map so your copilots work with time, place, and truth. Real-time geospatial and environmental intelligence for AI agents." />
+  <meta name="keywords" content="Spattio, spatio-temporal AI, geospatial AI, context-aware AI, LangChain, real-time data, climate intelligence, AI copilots, Umanah Systems Group" />
+  <meta name="author" content="Umanah Systems Group" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08090c" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Spattio | AI Eyes, Memory, and a Map" />
+  <meta property="og:description" content="Spattio gives AI eyes, memory, and a map so your copilots work with time, place, and truth." />
+  <meta property="og:image" content="https://www.umanahsystems.com/images/og-social-share.jpg" />
+  <meta property="og:image:alt" content="Spattio: Context-Aware AI Infrastructure" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spattio | AI Eyes, Memory, and a Map" />
+  <meta name="twitter:description" content="Spattio gives AI eyes, memory, and a map so your copilots work with time, place, and truth." />
+  <meta name="twitter:image" content="https://www.umanahsystems.com/images/og-social-share.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-outer: #040508;
+  --bg-base: #08090c;
+  --bg-surface: #0d0f14;
+  --bg-card: #131620;
+  --bg-card-hover: #191d2b;
+  --border: rgba(255,255,255,0.07);
+  --border-bright: rgba(255,255,255,0.13);
+  --accent: #e8611a;
+  --accent-dim: rgba(232,97,26,0.15);
+  --accent-glow: rgba(232,97,26,0.35);
+  --accent-alt: #f08040;
+  --text-primary: #f0f2f5;
+  --text-secondary: #8b909e;
+  --text-muted: #484e60;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --r-sm: 6px; --r-md: 12px; --r-lg: 20px; --r-xl: 28px;
+  --ease: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg-outer);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg-base);
+  box-shadow: 0 0 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  font-weight: 700; line-height: 1.14; margin-bottom: 18px;
+}
+.section-body {
+  font-size: 1rem; color: var(--text-secondary);
+  line-height: 1.78; max-width: 540px;
+  margin-left: auto; margin-right: auto;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  padding: 13px 28px; border-radius: var(--r-md); border: none;
+  cursor: pointer; transition: var(--ease); letter-spacing: 0.02em; white-space: nowrap;
+}
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 20px var(--accent-glow); }
+.btn-primary:hover { background: var(--accent-alt); box-shadow: 0 6px 30px var(--accent-glow); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border-bright); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── NAV ─────────────────────────────────────────────────── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,9,12,0.92);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.logo-mark {
+  width: 38px; height: 38px; background: var(--accent); color: #fff;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.78rem;
+  letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r-sm);
+}
+.logo-text { font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  font-size: 0.865rem; font-weight: 500; color: var(--text-secondary);
+  padding: 8px 13px; border-radius: var(--r-sm); transition: var(--ease);
+}
+.nav-links a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta { background: var(--accent) !important; color: #fff !important; padding: 8px 16px !important; }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+.nav-dropdown > a::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.6; transition: transform var(--ease), opacity var(--ease); flex-shrink: 0; }
+.nav-dropdown:hover > a { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.nav-dropdown:hover > a::after { opacity: 1; transform: rotate(180deg); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); min-width: 192px; background: rgba(13,15,20,0.97); border: 1px solid var(--border-bright); border-radius: var(--r-md); padding: 12px 6px 6px; box-shadow: 0 12px 40px rgba(0,0,0,0.55); z-index: 200; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; font-size: 0.865rem; font-weight: 500; color: var(--text-secondary); padding: 9px 13px; border-radius: var(--r-sm); transition: var(--ease); white-space: nowrap; }
+.dropdown-menu a:hover { color: var(--text-primary); background: rgba(255,255,255,0.07); }
+.mobile-sub-link { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 10px 0 10px 18px; border-bottom: 1px solid var(--border); transition: color var(--ease); display: block; }
+.mobile-sub-link:last-child { border-bottom: none; }
+.mobile-sub-link:hover { color: var(--accent); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+.nav-mobile { display: none; flex-direction: column; padding: 12px 28px 20px; background: rgba(8,9,12,0.97); border-top: 1px solid var(--border); }
+.nav-mobile.open { display: flex; }
+.mobile-link { font-size: 1rem; font-weight: 500; color: var(--text-secondary); padding: 13px 0; border-bottom: 1px solid var(--border); }
+.mobile-link:last-child { border-bottom: none; }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero {
+  position: relative; min-height: min(100vh, 680px);
+  display: flex; align-items: center;
+  overflow: hidden; padding-top: 68px;
+}
+.hero-grid {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  opacity: 0.5;
+}
+.hero-glow-1, .hero-glow-2 {
+  position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none;
+}
+.hero-glow-1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(232,97,26,0.16) 0%, transparent 70%); top: -200px; right: -150px; }
+.hero-glow-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,97,26,0.1) 0%, transparent 70%); bottom: -100px; left: -80px; }
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 1100px; margin: 0 auto;
+  padding: 100px 28px 90px; text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-dim); border: 1px solid rgba(232,97,26,0.3);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 30px;
+}
+.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; margin-bottom: 36px; }
+.hero-subline { font-family: var(--font-display); font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.45; max-width: 760px; margin: 0 auto 28px; }
+.hero-text { max-width: 620px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── SECTIONS ─────────────────────────────────────────────── */
+.section { padding: 110px 0; border-top: 1px solid var(--border); }
+.surface { background: var(--bg-surface); }
+.content-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+.content-wrap .section-body { max-width: 720px; }
+.intro-line { margin-top: 22px; margin-bottom: 10px; color: var(--text-primary); font-weight: 600; }
+
+.bullet-list {
+  width: fit-content; max-width: 100%; margin: 20px auto 0; padding-left: 0;
+  display: grid; gap: 10px; text-align: left; list-style: none;
+}
+.bullet-list li {
+  position: relative; padding-left: 18px;
+  color: var(--text-secondary); line-height: 1.75;
+}
+.bullet-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); position: absolute; left: 0; top: 0.68em;
+}
+
+/* ── VIDEO EMBED ──────────────────────────────────────────── */
+.video-wrap {
+  max-width: 800px; margin: 48px auto 0;
+  border-radius: var(--r-xl); overflow: hidden;
+  border: 1px solid var(--border-bright);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  position: relative; aspect-ratio: 16/9;
+}
+.video-wrap iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; border: 0;
+}
+.yt-link-wrap {
+  text-align: center; margin-top: 20px;
+}
+.yt-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.88rem; font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-bright);
+  padding: 10px 20px; border-radius: 100px;
+  transition: var(--ease);
+}
+.yt-link:hover { color: #fff; border-color: #ff0000; background: rgba(255,0,0,0.1); }
+.yt-link i { color: #ff0000; font-size: 1.1rem; }
+
+/* ── QUESTION LIST ────────────────────────────────────────── */
+.question-grid {
+  max-width: 920px; margin: 42px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px;
+}
+.question-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 22px 24px;
+  display: flex; gap: 14px; align-items: flex-start;
+  transition: border-color var(--ease), background var(--ease);
+}
+.question-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
+.question-dot {
+  flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); margin-top: 8px;
+}
+.question-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; }
+
+/* ── FEATURE CARDS (3-col) ────────────────────────────────── */
+.feature-grid {
+  max-width: 920px; margin: 42px auto 0;
+  display: flex; flex-wrap: wrap; gap: 22px; justify-content: center;
+}
+.feature-card {
+  flex: 1 1 calc(33.333% - 15px); min-width: 250px; max-width: calc(33.333% - 15px);
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 30px 26px;
+}
+.feature-icon {
+  width: 46px; height: 46px; border-radius: var(--r-sm);
+  background: var(--accent-dim); display: flex; align-items: center; justify-content: center;
+  color: var(--accent); margin-bottom: 18px;
+}
+.feature-card h4 {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 10px;
+}
+.feature-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* ── COMPARE BLOCK ────────────────────────────────────────── */
+.compare-grid {
+  max-width: 920px; margin: 42px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
+}
+.compare-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 30px 28px;
+}
+.compare-card.accent-border { border-color: rgba(232,97,26,0.4); }
+.compare-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 12px;
+}
+.compare-card.accent-border .compare-label { color: var(--accent); }
+.compare-card h4 {
+  font-family: var(--font-display); font-size: 1.05rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 12px;
+}
+.compare-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.72; }
+
+/* ── INFRA SECTION ────────────────────────────────────────── */
+.infra-wrap {
+  max-width: 920px; margin: 42px auto 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+}
+.infra-text h4 {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 14px;
+}
+.infra-text p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.78; margin-bottom: 14px; }
+.infra-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; justify-content: center; }
+.infra-tag {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--accent); background: var(--accent-dim);
+  border: 1px solid rgba(232,97,26,0.25);
+  padding: 5px 12px; border-radius: 100px;
+}
+.infra-visual {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-xl); padding: 30px 28px;
+}
+.infra-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.infra-row:last-child { border-bottom: none; }
+.infra-row-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: var(--accent-dim); border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 0.85rem;
+}
+.infra-row-text { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; }
+.infra-row-text strong { color: var(--text-primary); font-weight: 600; display: block; }
+
+/* ── AUDIENCE PANELS ──────────────────────────────────────── */
+.panel-grid {
+  max-width: 920px; margin: 42px auto 0;
+  display: flex; flex-wrap: wrap; gap: 22px; justify-content: center;
+}
+.panel {
+  flex: 1 1 calc(33.333% - 15px); min-width: 230px; max-width: calc(33.333% - 15px);
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 24px; text-align: center;
+}
+.panel-icon {
+  width: 46px; height: 46px; margin: 0 auto 16px;
+  background: var(--accent-dim); border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 1.1rem;
+}
+.panel h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 10px;
+}
+.panel p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.68; }
+
+/* ── USE CASE CARDS ───────────────────────────────────────── */
+.usecase-grid {
+  max-width: 920px; margin: 42px auto 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px;
+}
+.usecase-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 26px 24px;
+}
+.usecase-card h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 10px;
+}
+.usecase-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.68; }
+.usecase-num {
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 800;
+  color: var(--accent); margin-bottom: 12px; opacity: 0.6;
+}
+
+/* ── STATUS / METRIC ──────────────────────────────────────── */
+.status-wrap { margin-top: 24px; display: flex; justify-content: center; }
+.status-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--accent); background: var(--accent-dim);
+  border: 1px solid rgba(232,97,26,0.28);
+  border-radius: 100px; padding: 9px 14px;
+}
+
+/* ── CONTACT / FORM ───────────────────────────────────────── */
+.contact-block { margin-top: 22px; }
+.contact-name { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; }
+.contact-email { color: var(--accent); font-weight: 600; border-bottom: 1px solid rgba(232,97,26,0.3); display: inline-block; }
+.form-wrap { max-width: 760px; margin: 34px auto 0; }
+.contact-form {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-xl); padding: 36px;
+}
+.form-group { margin-bottom: 18px; text-align: left; }
+.form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.form-group input, .form-group textarea {
+  width: 100%; background: var(--bg-base); border: 1px solid var(--border-bright);
+  border-radius: var(--r-md); padding: 12px 15px;
+  font-family: var(--font-body); font-size: 0.93rem; color: var(--text-primary);
+  outline: none; transition: border-color var(--ease), box-shadow var(--ease);
+}
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+.form-error { display: none; margin-top: 14px; text-align: left; font-size: 0.86rem; color: #fca5a5; }
+.form-success {
+  display: none; margin-top: 16px; padding: 14px 16px;
+  border-radius: var(--r-md); border: 1px solid rgba(34,197,94,0.3);
+  background: rgba(34,197,94,0.08); color: #86efac;
+  font-size: 0.9rem; text-align: left;
+}
+.form-success.show, .form-error.show { display: block; }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.footer { background: var(--bg-base); border-top: 1px solid var(--border); padding: 34px 0; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+.footer-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+.footer-name { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
+.footer-nav a { font-size: 0.85rem; color: var(--text-muted); transition: var(--ease); }
+.footer-nav a:hover, .footer-nav a.active { color: var(--accent); }
+.footer-social { display: flex; justify-content: center; gap: 12px; }
+.footer-social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-bright); color: var(--text-secondary); font-size: 0.95rem; transition: var(--ease); }
+.footer-social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
+.footer-copy { font-size: 0.78rem; color: var(--text-muted); width: 100%; text-align: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .container { padding: 0 20px; }
+  .hero-content { padding: 74px 20px 84px; }
+  .section { padding: 80px 0; }
+  .question-grid { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .infra-wrap { grid-template-columns: 1fr; }
+  .usecase-grid { grid-template-columns: 1fr; }
+  .feature-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
+  .panel { flex: 1 1 100%; max-width: 100%; min-width: 0; }
+  .contact-form { padding: 26px 22px; }
+}
+@media (max-width: 480px) {
+  .hero-content { padding: 62px 20px 72px; }
+  .hero-title { font-size: clamp(2rem, 10vw, 2.9rem); }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+}
+  </style>
+</head>
+<body>
+<div class="site-wrapper">
+
+  <!-- ── NAV ─────────────────────────────────────────────────── -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">USG</span>
+        <span class="logo-text">Umanah Systems Group</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="crucible.html">Crucible</a></li>
+        <li><a href="reydious.html">Reydious</a></li>
+        <li class="nav-dropdown">
+          <a href="programs.html" class="active">Programs</a>
+          <div class="dropdown-menu">
+            <a href="biogrid-networks.html">BioGrid Networks</a>
+            <a href="resonance-grid.html">Resonance Grid</a>
+          </div>
+        </li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="crucible.html" class="mobile-link">Crucible</a>
+      <a href="reydious.html" class="mobile-link">Reydious</a>
+      <a href="programs.html" class="mobile-link active">Programs</a>
+      <a href="biogrid-networks.html" class="mobile-sub-link">BioGrid Networks</a>
+      <a href="resonance-grid.html" class="mobile-sub-link">Resonance Grid</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">A Umanah Systems Group Program</div>
+      <h1 class="hero-title">Spattio</h1>
+      <p class="hero-subline">AI Eyes, Memory, and a Map</p>
+      <p class="hero-text">
+        Spattio gives AI eyes, memory, and a map so your copilots work with time, place, and truth.<br>
+        No GIS skills needed. LangChain helps agents think. Spattio helps them understand the real world.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="#why" class="btn btn-ghost">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIDEO ─────────────────────────────────────────────────── -->
+  <section class="section surface" id="video">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">See It in Action</div>
+        <h2 class="section-title">Spattio: Giving AI Eyes, Memory &amp; a Map</h2>
+        <p class="section-body">Watch how Spattio connects AI agents to real-world spatial and temporal data streams, turning smart language models into context-aware systems.</p>
+      </div>
+      <div class="video-wrap reveal">
+        <iframe
+          src="https://www.youtube.com/embed/M-oHYqkBaXY"
+          title="Spattio Giving AI Eyes, Memory &amp; a Map"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY SPATTIO ───────────────────────────────────────────── -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">The Problem</div>
+        <h2 class="section-title">Why Spattio?</h2>
+        <p class="section-body">LLMs are smart, but blind. They can write your email, but they can't answer questions grounded in real places and real times.</p>
+        <p class="section-body" style="margin-top:14px;">Questions like these remain out of reach for standard AI systems today:</p>
+      </div>
+      <div class="question-grid">
+        <div class="question-card reveal">
+          <div class="question-dot"></div>
+          <p>When did shipping delays spike in Amazon's SoCal network between May 6–9, 2025?</p>
+        </div>
+        <div class="question-card reveal">
+          <div class="question-dot"></div>
+          <p>When did air quality drop below safe levels in Denver during the third week of January 2024?</p>
+        </div>
+        <div class="question-card reveal">
+          <div class="question-dot"></div>
+          <p>Where were EV chargers offline in Texas on Tuesday, March 12th, 2024?</p>
+        </div>
+        <div class="question-card reveal">
+          <div class="question-dot"></div>
+          <p>Which neighborhoods in Santa Rosa were evacuated first during the wildfire on August 17th, 2023?</p>
+        </div>
+        <div class="question-card reveal">
+          <div class="question-dot"></div>
+          <p>Where did rainfall exceed 200mm in Lagos between April 1st and June 30th, 2024?</p>
+        </div>
+        <div class="question-card reveal">
+          <div class="question-dot"></div>
+          <p>When did port congestion in Singapore trigger rerouting from June 10–15, 2025?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LLM LIMITATION + SOLUTION ────────────────────────────── -->
+  <section class="section surface" id="solution">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">The Gap</div>
+        <h2 class="section-title">LLMs Are Powerful, But Blind to Time, Location, and Context</h2>
+        <p class="section-body">As OpenAI themselves acknowledge: AI can make mistakes. Check important info. That's fine for fiction, but not for climate, logistics, infrastructure, or business ops.</p>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-card reveal">
+          <div class="compare-label">Without Spattio</div>
+          <h4>Smart words, blind world</h4>
+          <p>Standard LLMs and AI copilots lack real-time awareness of where and when events occur. They reason from training data, not from live, located, timestamped facts. The result: confident-sounding answers that miss what actually happened.</p>
+        </div>
+        <div class="compare-card accent-border reveal">
+          <div class="compare-label">With Spattio</div>
+          <h4>Real-time awareness of where and when</h4>
+          <p>Spattio gives AI real-time awareness of where and when things happen. Your copilots make decisions based on facts, not guesses, grounded in live environmental and geospatial data at the moment it matters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT WE'RE BUILDING ───────────────────────────────────── -->
+  <section class="section" id="building">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">What We're Building</h2>
+        <p class="section-body">Three core capabilities that transform how AI agents interact with the real world.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h4>Get real answers to real events</h4>
+          <p>Spattio helps teams make smarter decisions by answering complex questions with live environmental and geospatial data, not stale training snapshots.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <h4>Monitor climate risks in real time</h4>
+          <p>From flash floods to heatwaves, Spattio alerts you when and where conditions shift so you can act fast before impact reaches your operations.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <h4>Plug into your existing tools</h4>
+          <p>Use Spattio with your current dashboards, agents, or automations. No rip-and-replace, just smarter results layered onto what you already have.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INFRASTRUCTURE ────────────────────────────────────────── -->
+  <section class="section surface" id="infrastructure">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Architecture</div>
+        <h2 class="section-title">The New Infrastructure for Context-Aware AI</h2>
+        <p class="section-body">We're rethinking how AI interacts with the real world by adding a spatio-temporal query layer and a plugin-ready core.</p>
+      </div>
+      <div class="infra-wrap">
+        <div class="infra-text reveal">
+          <h4>Agents that see, sync, and respond with context</h4>
+          <p>Spattio adds a spatio-temporal query layer and a plugin-ready core, so your AI can connect to sensors, APIs, and live data streams in real time.</p>
+          <p>The result? Agents that don't just talk. They see, sync, and respond with context.</p>
+          <div class="infra-tags">
+            <span class="infra-tag">Spatio-Temporal Queries</span>
+            <span class="infra-tag">Plugin-Ready Core</span>
+            <span class="infra-tag">Live Data Streams</span>
+            <span class="infra-tag">Sensor APIs</span>
+            <span class="infra-tag">LangChain Compatible</span>
+          </div>
+        </div>
+        <div class="infra-visual reveal">
+          <div class="infra-row">
+            <div class="infra-row-icon"><i class="fas fa-satellite-dish"></i></div>
+            <div class="infra-row-text">
+              <strong>Live Data Ingestion</strong>
+              Sensors, APIs, and environmental streams
+            </div>
+          </div>
+          <div class="infra-row">
+            <div class="infra-row-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <div class="infra-row-text">
+              <strong>Spatio-Temporal Query Layer</strong>
+              Where + when + what happened
+            </div>
+          </div>
+          <div class="infra-row">
+            <div class="infra-row-icon"><i class="fas fa-plug"></i></div>
+            <div class="infra-row-text">
+              <strong>Plugin-Ready Core</strong>
+              Drop into your existing agent stack
+            </div>
+          </div>
+          <div class="infra-row">
+            <div class="infra-row-icon"><i class="fas fa-robot"></i></div>
+            <div class="infra-row-text">
+              <strong>Context-Aware AI Output</strong>
+              Decisions grounded in facts, not guesses
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO IT'S FOR ───────────────────────────────────────────── -->
+  <section class="section" id="audience">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Audience</div>
+        <h2 class="section-title">Empowering Developers, AI Teams, Enterprises, and Researchers</h2>
+        <p class="section-body">Real-world insights for the teams building the next generation of intelligent systems.</p>
+      </div>
+      <div class="panel-grid">
+        <div class="panel reveal">
+          <div class="panel-icon"><i class="fas fa-users"></i></div>
+          <h4>Teams</h4>
+          <p>Transform how your team uses time and location data. Surface the insights buried in complex, real-world signals.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-icon"><i class="fas fa-tools"></i></div>
+          <h4>Developers</h4>
+          <p>Build agents and apps that reason with space and time, not just tokens. Custom tools for real-world development.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-icon"><i class="fas fa-brain"></i></div>
+          <h4>AI Teams</h4>
+          <p>Give your copilots spatial awareness and real-time memory for better decisions at the moment they matter most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── USE CASES ─────────────────────────────────────────────── -->
+  <section class="section surface" id="usecases">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Applications</div>
+        <h2 class="section-title">AI That Knows What's Happening and Where</h2>
+        <p class="section-body">From custom copilots to automated pipelines, Spattio powers a new class of operations that are location-aware and time-grounded.</p>
+      </div>
+      <div class="usecase-grid">
+        <div class="usecase-card reveal">
+          <div class="usecase-num">01</div>
+          <h4>Custom Copilots &amp; Dashboards</h4>
+          <p>Create tailored copilots and dashboards that deliver actionable insights based on what's happening right now, in specific places.</p>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-num">02</div>
+          <h4>Advanced Agent Toolchains</h4>
+          <p>Integrate seamlessly with existing tools to automate processes and enhance efficiency with spatial and temporal reasoning baked in.</p>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-num">03</div>
+          <h4>Real-Time Alerting</h4>
+          <p>Receive timely alerts and insights from spatial data pipelines so you make informed decisions before conditions escalate.</p>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-num">04</div>
+          <h4>Climate &amp; Infrastructure Monitoring</h4>
+          <p>Track environmental conditions, utility states, and infrastructure health across geographies, updated as events unfold.</p>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-num">05</div>
+          <h4>Logistics &amp; Supply Chain Intelligence</h4>
+          <p>Answer where-and-when questions across shipping networks, ports, and distribution hubs with precision and speed.</p>
+        </div>
+        <div class="usecase-card reveal">
+          <div class="usecase-num">06</div>
+          <h4>Context Persistence</h4>
+          <p>A memory layer that preserves spatial context across sessions.</p>
+          <ul class="bullet-list" style="margin-top:12px;">
+            <li>Retains location history and interaction patterns</li>
+            <li>Enables continuity between queries without re-explaining context</li>
+            <li>Supports long-running situational awareness workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATUS ────────────────────────────────────────────────── -->
+  <section class="section" id="status">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Stage</div>
+        <h2 class="section-title">Program Status</h2>
+        <p class="section-body">Spattio is in active development. We are building the spatio-temporal query layer, API integrations, and the plugin framework for agent toolchains. Seeking early partners and pilot collaborators.</p>
+        <div class="status-wrap"><span class="status-badge">Active Development · Seeking Early Partners</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ───────────────────────────────────────────────── -->
+  <section class="section surface" id="contact">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Get Involved</div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-body">Interested in partnering, integrating, or learning more about Spattio? We'd love to hear from you.</p>
+        <div class="contact-block">
+          <div class="contact-name">Amaete Umanah</div>
+          <a class="contact-email" href="mailto:contact@umanahsystems.com">contact@umanahsystems.com</a>
+        </div>
+      </div>
+      <div class="form-wrap reveal">
+        <form class="contact-form" id="spattioContactForm" novalidate>
+          <input type="hidden" name="subject" value="Spattio Program Inquiry" />
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" placeholder="Your company or organization" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your use case and interest in Spattio." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          <p id="formError" class="form-error" role="alert"></p>
+          <p id="formSuccess" class="form-success" role="status">Thank you. Your message has been received. We will be in touch shortly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="usg-programs.html"><span class="logo-mark">USG</span></a>
+        <span class="footer-name">Umanah Systems Group</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="crucible.html">Crucible</a>
+        <a href="reydious.html">Reydious</a>
+        <a href="programs.html" class="active">Programs</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/umanah-systems" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Umanah Systems Group on LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; Umanah Systems Group. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  }
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach((el) => obs.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+})();
+</script>
+<script src="js/spattio.js"></script>
+</body>
+</html>

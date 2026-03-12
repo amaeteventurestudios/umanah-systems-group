@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Titanym | SiGe-on-Sapphire Process Qualification</title>
-  <meta name="description" content="Titanym is a Umanah Systems Group program focused on reproducing and qualifying a SiGe-on-sapphire semiconductor process for future extreme-environment electronics." />
-  <meta name="keywords" content="Titanym, SiGe on sapphire, silicon germanium epitaxy, semiconductor materials qualification, extreme environment electronics, semiconductor process development, Umanah Systems Group" />
+  <title>Enferra | Extreme-Environment Control Electronics</title>
+  <meta name="description" content="Enferra is a Umanah Systems Group program developing integrated control electronics capable of operating in extreme high-temperature environments where conventional silicon electronics cannot survive." />
+  <meta name="keywords" content="Enferra, extreme environment electronics, high temperature electronics, silicon carbide, SiC, JFET, deterministic control circuits, ceramic packaging, Umanah Systems Group" />
   <meta name="author" content="Umanah Systems Group" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#08090c" />
@@ -17,16 +17,16 @@
   <link rel="shortcut icon" href="images/favicon.png" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Titanym | SiGe-on-Sapphire Process Qualification" />
-  <meta property="og:description" content="Titanym is a technical program focused on reproducing and qualifying a SiGe-on-sapphire semiconductor growth process." />
-  <meta property="og:image" content="https://www.umanahsystems.com/images/titanym-preview.jpg" />
-  <meta property="og:image:alt" content="Titanym — SiGe-on-Sapphire Process Qualification" />
+  <meta property="og:title" content="Enferra | Extreme-Environment Control Electronics" />
+  <meta property="og:description" content="Enferra develops integrated circuits for sensing, signal processing, and deterministic control in extreme high-temperature environments." />
+  <meta property="og:image" content="https://www.umanahsystems.com/images/enferra1.jpg" />
+  <meta property="og:image:alt" content="Enferra: High-Temperature Semiconductor Platform" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Titanym | SiGe-on-Sapphire Process Qualification" />
-  <meta name="twitter:description" content="A Umanah Systems Group program evaluating SiGe-on-sapphire semiconductor growth for future extreme-environment electronics." />
-  <meta name="twitter:image" content="https://www.umanahsystems.com/images/titanym-preview.jpg" />
-  <meta name="twitter:image:alt" content="Titanym — SiGe-on-Sapphire Process Qualification" />
+  <meta name="twitter:title" content="Enferra | Extreme-Environment Control Electronics" />
+  <meta name="twitter:description" content="Integrated control electronics for extreme environments. Silicon carbide, JFET-based logic, deterministic control. A Umanah Systems Group program." />
+  <meta name="twitter:image" content="https://www.umanahsystems.com/images/enferra1.jpg" />
+  <meta name="twitter:image:alt" content="Enferra: High-Temperature Semiconductor Platform" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -121,6 +121,7 @@ img { max-width: 100%; display: block; }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ── NAV ──────────────────────────────────────────────── */
 .nav {
   position: sticky; top: 0; z-index: 100;
   background: rgba(8,9,12,0.92);
@@ -161,12 +162,11 @@ img { max-width: 100%; display: block; }
 .dropdown-menu a:hover { color: var(--text-primary); background: rgba(255,255,255,0.07); }
 .dropdown-menu a.active { color: var(--accent); }
 
-/* ── MOBILE SUB-LINKS ─────────────────────────────────── */
+/* ── MOBILE NAV ───────────────────────────────────────── */
 .mobile-sub-link { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 10px 0 10px 18px; border-bottom: 1px solid var(--border); transition: color var(--ease); display: block; }
 .mobile-sub-link:last-child { border-bottom: none; }
 .mobile-sub-link:hover { color: var(--accent); }
 .mobile-sub-link.active { color: var(--accent); }
-
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
 .nav-hamburger span { width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
 .nav-mobile { display: none; flex-direction: column; padding: 12px 28px 20px; background: rgba(8,9,12,0.97); border-top: 1px solid var(--border); }
@@ -174,6 +174,7 @@ img { max-width: 100%; display: block; }
 .mobile-link { font-size: 1rem; font-weight: 500; color: var(--text-secondary); padding: 13px 0; border-bottom: 1px solid var(--border); }
 .mobile-link:last-child { border-bottom: none; }
 
+/* ── HERO ─────────────────────────────────────────────── */
 .hero {
   position: relative;
   min-height: min(100vh, 680px);
@@ -205,16 +206,18 @@ img { max-width: 100%; display: block; }
   color: var(--accent); background: var(--accent-dim); border: 1px solid rgba(232,97,26,0.3);
   padding: 6px 14px; border-radius: 100px; margin-bottom: 30px;
 }
-.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; margin-bottom: 22px; }
-.hero-subline { font-family: var(--font-display); font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.45; max-width: 760px; margin: 0 auto 18px; }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; margin-bottom: 36px; }
+.hero-subline { font-family: var(--font-display); font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.45; max-width: 760px; margin: 0 auto 28px; }
 .hero-text { max-width: 620px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
 .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
+/* ── SECTIONS ─────────────────────────────────────────── */
 .section { padding: 110px 0; border-top: 1px solid var(--border); }
 .surface { background: var(--bg-surface); }
 .content-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
 .content-wrap .section-body { max-width: 720px; }
 .intro-line { margin-top: 22px; margin-bottom: 10px; color: var(--text-primary); font-weight: 600; }
+
 .bullet-list {
   width: fit-content; max-width: 100%; margin: 20px auto 0; padding-left: 0;
   display: grid; gap: 10px; text-align: left; list-style: none;
@@ -227,49 +230,6 @@ img { max-width: 100%; display: block; }
   content: ''; width: 6px; height: 6px; border-radius: 50%;
   background: var(--accent); position: absolute; left: 0; top: 0.68em;
 }
-
-/* ── SCOPE CARDS ──────────────────────────────────────── */
-.scope-grid {
-  max-width: 920px; margin: 36px auto 0;
-  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
-}
-.scope-card { flex: 1 1 calc(50% - 10px); min-width: 280px; max-width: calc(50% - 10px); }
-.scope-card {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 28px 26px;
-  display: flex; gap: 18px; align-items: flex-start;
-  transition: border-color var(--ease), background var(--ease);
-}
-.scope-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
-.scope-icon {
-  flex-shrink: 0; width: 42px; height: 42px;
-  background: var(--accent-dim); border-radius: var(--r-sm);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--accent);
-}
-.scope-card h4 {
-  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
-  color: var(--text-primary); margin-bottom: 6px;
-}
-.scope-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
-
-/* ── STEP / QUAL PATH ─────────────────────────────────── */
-.qual-path { max-width: 700px; margin: 36px auto 0; }
-.qual-step {
-  display: flex; gap: 22px; align-items: flex-start;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border);
-}
-.qual-step:last-child { border-bottom: none; }
-.qual-step-num {
-  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
-  color: var(--accent); min-width: 36px; flex-shrink: 0;
-}
-.qual-step-content h4 {
-  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
-  color: var(--text-primary); margin-bottom: 6px;
-}
-.qual-step-content p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
 
 /* ── INFO CARDS ───────────────────────────────────────── */
 .info-grid {
@@ -286,61 +246,85 @@ img { max-width: 100%; display: block; }
 }
 .info-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65; }
 
-/* ── QUAL CARDS (measurement framework) ──────────────── */
-.qual-cards {
+/* ── TECHNOLOGY CARDS (qual-cards style) ──────────────── */
+.tech-cards {
   max-width: 920px; margin: 36px auto 0;
   display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
 }
-.qual-card { flex: 1 1 calc(33.333% - 14px); min-width: 240px; max-width: calc(33.333% - 14px); }
-.qual-card {
+.tech-card { flex: 1 1 calc(33.333% - 14px); min-width: 240px; max-width: calc(33.333% - 14px); }
+.tech-card {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--r-lg); padding: 26px 22px;
+  transition: border-color var(--ease), background var(--ease);
 }
-.qual-card-icon { color: var(--accent); margin-bottom: 14px; }
-.qual-card h4 {
-  font-family: var(--font-display); font-size: 0.9rem; font-weight: 600;
+.tech-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
+.tech-card-icon { color: var(--accent); margin-bottom: 14px; }
+.tech-card h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
   color: var(--text-primary); margin-bottom: 10px;
 }
-.qual-card ul { display: grid; gap: 6px; }
-.qual-card li { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55; }
+.tech-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.68; }
 
-/* ── GAUGE ───────────────────────────────────────────── */
-@keyframes needleSweep {
-  from { transform: rotate(50deg);  transform-origin: 100px 100px; }
-  to   { transform: rotate(-5deg);  transform-origin: 100px 100px; }
+/* ── APPLICATION CARDS (scope-card style) ────────────── */
+.app-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
 }
-#gauge-needle {
-  transform-origin: 100px 100px;
-  animation: needleSweep 1.8s cubic-bezier(0.34,1.56,0.64,1) forwards;
-  animation-play-state: paused;
+.app-card { flex: 1 1 calc(50% - 10px); min-width: 280px; max-width: calc(50% - 10px); }
+.app-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 30px 26px;
+  display: flex; gap: 18px; align-items: flex-start;
+  transition: border-color var(--ease), background var(--ease);
 }
-#gauge-needle.animated { animation-play-state: running; }
+.app-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
+.app-icon {
+  flex-shrink: 0; width: 44px; height: 44px;
+  background: var(--accent-dim); border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+.app-card h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 8px;
+}
+.app-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.68; }
 
-.gauge-wrap {
-  text-align: center;
-  padding: 36px 32px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-bright);
-  border-radius: var(--r-xl);
-  max-width: 420px;
-  margin: 36px auto 0;
+/* ── DEV STEP LIST ────────────────────────────────────── */
+.dev-path { max-width: 700px; margin: 36px auto 0; }
+.dev-step {
+  display: flex; gap: 22px; align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
 }
-.gauge-label {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 24px;
+.dev-step:last-child { border-bottom: none; }
+.dev-step-num {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+  color: var(--accent); min-width: 36px; flex-shrink: 0;
 }
-.gauge { max-width: 220px; width: 100%; margin: 0 auto 16px; }
-.gauge-arc svg { width: 100%; height: auto; display: block; }
-.gauge-wrap { max-width: 420px; width: 100%; }
-.gauge-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  letter-spacing: 0.02em;
-  line-height: 1.6;
+.dev-step-content h4 {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 6px;
 }
+.dev-step-content p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* ── COLLAB CARDS ─────────────────────────────────────── */
+.collab-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px;
+}
+.collab-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 26px 24px;
+  display: flex; gap: 14px; align-items: flex-start;
+  transition: border-color var(--ease), background var(--ease);
+}
+.collab-card:hover { border-color: var(--border-bright); background: var(--bg-card-hover); }
+.collab-card-dot {
+  flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent); margin-top: 7px;
+}
+.collab-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; }
 
 /* ── EXEC CARDS ───────────────────────────────────────── */
 .exec-grid {
@@ -390,21 +374,7 @@ img { max-width: 100%; display: block; }
   object-position: center;
 }
 
-/* ── PANEL GRID ───────────────────────────────────────── */
-.panel-grid {
-  max-width: 920px; margin: 36px auto 0;
-  display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px;
-}
-.panel {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-lg);
-  padding: 30px 26px; text-align: center;
-}
-.panel h4 { font-family: var(--font-display); font-size: 1rem; margin-bottom: 14px; }
-.panel ul { display: grid; gap: 8px; }
-.panel li { color: var(--text-secondary); }
-
-/* ── METRIC / STATUS ──────────────────────────────────── */
-.metric-list { margin-top: 0; }
+/* ── STATUS / BADGE ───────────────────────────────────── */
 .status-wrap { margin-top: 24px; display: flex; justify-content: center; }
 .status-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -467,6 +437,7 @@ img { max-width: 100%; display: block; }
 .footer-social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
 .footer-copy { font-size: 0.78rem; color: var(--text-muted); width: 100%; text-align: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
 
+/* ── RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-inner { padding: 0 20px; }
   .nav-links { display: none; }
@@ -474,11 +445,10 @@ img { max-width: 100%; display: block; }
   .container { padding: 0 20px; }
   .hero-content { padding: 74px 20px 84px; }
   .section { padding: 80px 0; }
-  .panel-grid { grid-template-columns: 1fr; }
-  .scope-grid { flex-direction: column; }
-  .scope-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
   .info-grid { grid-template-columns: 1fr; }
-  .qual-card { flex: 1 1 calc(50% - 10px); max-width: calc(50% - 10px); min-width: 200px; }
+  .tech-card { flex: 1 1 calc(50% - 10px); max-width: calc(50% - 10px); min-width: 200px; }
+  .app-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
+  .collab-grid { grid-template-columns: 1fr; }
   .exec-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 26px 22px; }
 }
@@ -487,12 +457,14 @@ img { max-width: 100%; display: block; }
   .hero-title { font-size: clamp(2rem, 10vw, 2.9rem); }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
-  .qual-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
+  .tech-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
 }
   </style>
 </head>
 <body>
 <div class="site-wrapper">
+
+  <!-- ── NAV ───────────────────────────────────────────────── -->
   <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -532,260 +504,231 @@ img { max-width: 100%; display: block; }
     <div class="hero-glow-2"></div>
     <div class="hero-content">
       <div class="hero-badge">A Umanah Systems Group Program</div>
-      <h1 class="hero-title">Titanym</h1>
-      <p class="hero-subline">SiGe-on-Sapphire Process Qualification</p>
+      <h1 class="hero-title">Enferra</h1>
+      <p class="hero-subline">Extreme-Environment Control Electronics</p>
       <p class="hero-text">
-        A technical program focused on reproducing and evaluating a low-temperature silicon-germanium growth process on sapphire substrates.<br>
-        Phase 1 is designed to determine whether the process can be reliably reproduced and whether the resulting material meets the quality requirements for future device work.
+        Electronics are often the limiting factor in systems operating under extreme heat.<br>
+        Enferra focuses on integrated circuits designed to perform sensing, signal processing, and deterministic control where conventional electronics cannot survive.
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Request Program Discussion</a>
-        <a href="#program" class="btn btn-ghost">Learn More</a>
+        <a href="#contact" class="btn btn-primary">Explore Collaboration</a>
+        <a href="#overview" class="btn btn-ghost">Learn More</a>
       </div>
     </div>
   </section>
 
   <!-- ── PROGRAM OVERVIEW ───────────────────────────────────── -->
-  <section class="section surface" id="program">
+  <section class="section surface" id="overview">
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Program Overview</div>
-        <h2 class="section-title">Titanym begins with materials qualification.</h2>
-        <p class="section-body">The program attempts to reproduce reported SiGe-on-sapphire growth conditions in a controlled nanofabrication environment and measure the resulting crystal material.</p>
-        <p class="section-body" style="margin-top:16px;">This phase is not focused on device deployment. The objective is to determine whether the process can produce repeatable, high-quality semiconductor material suitable for further development.</p>
+        <h2 class="section-title">The problem is at the point of operation.</h2>
+        <p class="section-body">Conventional silicon electronics typically require junction temperatures below approximately 150 °C for reliable operation. When systems operate beyond this threshold, engineers must redesign architectures to protect electronics from the environment.</p>
+        <p class="section-body" style="margin-top:16px;">Common mitigation approaches increase system complexity and introduce additional failure modes. Enferra focuses on electronics that remain embedded directly inside high-temperature environments.</p>
       </div>
       <div class="info-grid">
         <div class="info-card reveal">
-          <h4>Qualification before deployment</h4>
-          <p>Phase 1 focuses on process reproduction and material measurement — not device integration or field deployment. The work ends with a qualification report and a Go / No-Go decision.</p>
+          <h4>Eliminate relocation trade-offs</h4>
+          <p>Moving electronics away from heat sources requires long wiring harnesses and increases latency between sensing and control. Embedded electronics close that gap.</p>
         </div>
         <div class="info-card reveal">
-          <h4>Defined technical scope</h4>
-          <p>Each Phase 1 objective is bounded. Growth conditions, crystal quality, defect mapping, wafer stress, surface morphology, and repeatability — nothing beyond the defined scope.</p>
+          <h4>Reduce cooling overhead</h4>
+          <p>Introducing cooling systems adds weight, complexity, and potential failure modes. High-temperature electronics operate without the need for active thermal management.</p>
         </div>
         <div class="info-card reveal">
-          <h4>Risk reduction</h4>
-          <p>A structured qualification sequence identifies failure modes before downstream investment. Each measurement gates the next step, reducing technical and program risk.</p>
+          <h4>Control at the point of operation</h4>
+          <p>The objective is to maintain control logic at the point of operation rather than relocating it away from the system, enabling more direct and responsive control.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── PHASE 1 SCOPE ──────────────────────────────────────── -->
-  <section class="section" id="phase1">
+  <!-- ── IMAGE: enferra1 ────────────────────────────────────── -->
+  <div class="image-break">
+    <img src="images/enferra1.jpg" alt="Enferra: High-Temperature Semiconductor Platform" />
+  </div>
+
+  <!-- ── TECHNOLOGY ─────────────────────────────────────────── -->
+  <section class="section" id="technology">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Scope</div>
-        <h2 class="section-title">Phase 1 Scope</h2>
-        <p class="section-body">Phase 1 focuses on a tightly scoped set of process and measurement objectives.</p>
+        <div class="section-label">Technology</div>
+        <h2 class="section-title">High-Temperature Semiconductor Platform</h2>
+        <p class="section-body">Enferra electronics are based on semiconductor architectures designed for operation in extreme thermal environments. The platform integrates sensing interfaces, mixed-signal processing, and deterministic control circuits on a single high-temperature device.</p>
       </div>
-      <div class="scope-grid">
-        <div class="scope-card reveal">
-          <div class="scope-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <div class="tech-cards">
+        <div class="tech-card reveal">
+          <div class="tech-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/><circle cx="17" cy="17" r="3"/></svg>
           </div>
-          <div>
-            <h4>Process Reproduction</h4>
-            <p>Reproduce low-temperature SiGe growth conditions from reported literature parameters in a controlled nanofabrication environment.</p>
-          </div>
+          <h4>Silicon Carbide Devices</h4>
+          <p>Circuits are implemented on 4H silicon carbide, a semiconductor material capable of maintaining electrical stability at temperatures far above those tolerated by conventional silicon.</p>
         </div>
-        <div class="scope-card reveal">
-          <div class="scope-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <div class="tech-card reveal">
+          <div class="tech-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
           </div>
-          <div>
-            <h4>Crystal Structure &amp; Lattice Alignment</h4>
-            <p>Measure crystal quality, orientation, and structural integrity of deposited SiGe layers including single-crystal confirmation and SiGe orientation alignment.</p>
-          </div>
+          <h4>JFET-Based Logic</h4>
+          <p>The architecture uses junction field-effect transistors rather than oxide-gated MOS devices. This approach reduces gate oxide failure mechanisms that occur under sustained high temperatures.</p>
         </div>
-        <div class="scope-card reveal">
-          <div class="scope-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M6 20V10M12 20V4M18 20v-8"/></svg>
+        <div class="tech-card reveal">
+          <div class="tech-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
           </div>
-          <div>
-            <h4>Defect Density &amp; Twin Formation</h4>
-            <p>Evaluate defect density and twin formation using X-ray diffraction — dislocations, twin defects, and contamination mapping across the deposited layer.</p>
-          </div>
+          <h4>Deterministic Control Circuits</h4>
+          <p>The electronics perform fixed sensing and control functions rather than general-purpose computing. Circuits execute threshold monitoring, signal conditioning, and control logic directly within the device.</p>
         </div>
-        <div class="scope-card reveal">
-          <div class="scope-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <div class="tech-card reveal">
+          <div class="tech-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
-          <div>
-            <h4>Wafer Stress &amp; Surface Morphology</h4>
-            <p>Analyze wafer stress through curvature analysis and thermal load performance testing, combined with AFM and microscopy for surface roughness and defect counts.</p>
-          </div>
+          <h4>High-Temperature Metallization</h4>
+          <p>Specialized metallization layers maintain stable electrical connections during prolonged exposure to elevated temperatures, preventing interconnect degradation over extended operation.</p>
         </div>
-        <div class="scope-card reveal">
-          <div class="scope-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+        <div class="tech-card reveal">
+          <div class="tech-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
           </div>
-          <div>
-            <h4>Repeatability Across Runs</h4>
-            <p>Test reproducibility across multiple growth runs with statistical analysis and clear Go/No-Go criteria applied to the full dataset.</p>
-          </div>
+          <h4>Ceramic Packaging</h4>
+          <p>Devices are integrated into ceramic packages engineered for sustained operation in harsh environments, enabling the full assembly to remain embedded within extreme thermal conditions.</p>
         </div>
       </div>
       <div class="output-box reveal">
-        <span class="output-label">Program Output</span>
-        <p>Qualification report and <strong>Go / No-Go</strong> decision for subsequent device work.</p>
+        <span class="output-label">Platform Capability</span>
+        <p>These elements together allow sensing and control electronics to remain embedded inside systems operating at temperatures <strong>far beyond conventional electronic limits.</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- ── QUALIFICATION PATH ─────────────────────────────────── -->
-  <section class="section surface" id="qualification">
+  <!-- ── APPLICATIONS ───────────────────────────────────────── -->
+  <section class="section surface" id="applications">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Evaluation Sequence</div>
-        <h2 class="section-title">The Qualification Path</h2>
-        <p class="section-body">The program follows a defined evaluation sequence — each step gates the next.</p>
+        <div class="section-label">Applications</div>
+        <h2 class="section-title">Built for Environments That Break Conventional Electronics</h2>
+        <p class="section-body">Extreme-environment systems across multiple sectors face the same underlying challenge: electronics cannot survive where the system must operate.</p>
       </div>
-      <div class="qual-path">
-        <div class="qual-step reveal">
-          <div class="qual-step-num">01</div>
-          <div class="qual-step-content">
-            <h4>Reproduce Growth Conditions</h4>
-            <p>Reproduce reported low-temperature SiGe growth conditions in a controlled nanofabrication environment.</p>
+      <div class="app-grid">
+        <div class="app-card reveal">
+          <div class="app-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L8 8H2l4 4-1.5 6L12 15l7.5 3L18 12l4-4h-6L12 2z"/></svg>
+          </div>
+          <div>
+            <h4>Aerospace Propulsion</h4>
+            <p>Modern turbine engines rely on distributed sensing to monitor temperature, pressure, and structural behavior. High-temperature electronics allow sensing and control circuits to operate closer to hot-section components, enabling more direct monitoring and faster response.</p>
           </div>
         </div>
-        <div class="qual-step reveal">
-          <div class="qual-step-num">02</div>
-          <div class="qual-step-content">
-            <h4>Characterize Crystal Quality</h4>
-            <p>Single crystal confirmation, SiGe orientation alignment, and X-ray diffraction defect density mapping.</p>
+        <div class="app-card reveal">
+          <div class="app-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12m0-8v4M8 6l4-4 4 4M4 10h16M6 14v6M18 14v6"/></svg>
+          </div>
+          <div>
+            <h4>Geothermal and Downhole Systems</h4>
+            <p>Deep geothermal wells and high-temperature oil and gas operations often exceed the operating limits of conventional electronics. Electronics capable of surviving these conditions enable sensing and control systems to operate continuously within the well environment.</p>
           </div>
         </div>
-        <div class="qual-step reveal">
-          <div class="qual-step-num">03</div>
-          <div class="qual-step-content">
-            <h4>Evaluate Repeatability</h4>
-            <p>Statistical analysis across multiple growth runs. Surface condition, wafer stress, and defect uniformity.</p>
+        <div class="app-card reveal">
+          <div class="app-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+          </div>
+          <div>
+            <h4>Hypersonic Systems</h4>
+            <p>Hypersonic vehicles experience extreme thermal loads on structural surfaces. Embedded electronics capable of surviving these environments can support distributed sensing and control functions within the vehicle structure.</p>
           </div>
         </div>
-        <div class="qual-step reveal">
-          <div class="qual-step-num">04</div>
-          <div class="qual-step-content">
-            <h4>Produce Qualification Report</h4>
-            <p>Document all measurement data, process parameters, and material characterization findings.</p>
+        <div class="app-card reveal">
+          <div class="app-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/></svg>
           </div>
-        </div>
-        <div class="qual-step reveal">
-          <div class="qual-step-num">05</div>
-          <div class="qual-step-content">
-            <h4>Issue Go / No-Go Decision</h4>
-            <p>A formal determination on whether the material system is ready for subsequent device development work.</p>
+          <div>
+            <h4>Extreme Planetary Environments</h4>
+            <p>Planetary exploration missions to environments such as Venus require electronics capable of operating under sustained temperatures approaching 460 °C. High-temperature electronics allow sensing and control systems to remain operational without heavy cooling infrastructure.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── IMAGE: titanym3 ────────────────────────────────────── -->
-  <div class="image-break">
-    <img src="images/titanym3.jpg" alt="SiGe-on-Sapphire process qualification — laboratory environment" />
-  </div>
-
-  <!-- ── MEASUREMENT FRAMEWORK ─────────────────────────────── -->
-  <section class="section" id="measurement">
+  <!-- ── DEVELOPMENT PROGRAM ────────────────────────────────── -->
+  <section class="section" id="development">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Measurement Framework</div>
-        <h2 class="section-title">SiGe-on-Sapphire Wafer Qualification</h2>
-        <p class="section-body">Six measurement categories define the qualification standard for Phase 1.</p>
+        <div class="section-label">Development Program</div>
+        <h2 class="section-title">Demonstrating a Deployable High-Temperature Control Module</h2>
+        <p class="section-body">The Enferra program focuses on demonstrating integrated high-temperature electronics capable of operating continuously in extreme environments. The objective is a deployable electronic control module capable of performing sensing and control functions where conventional electronics fail.</p>
       </div>
-      <div class="qual-cards">
-        <div class="qual-card reveal">
-          <div class="qual-card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <div class="dev-path">
+        <div class="dev-step reveal">
+          <div class="dev-step-num">01</div>
+          <div class="dev-step-content">
+            <h4>Design Deterministic High-Temperature Control Circuits</h4>
+            <p>Development of circuit architectures optimized for fixed sensing and control functions in sustained extreme thermal environments.</p>
           </div>
-          <h4>Crystal Quality</h4>
-          <ul class="bullet-list metric-list">
-            <li>Single crystal confirmation</li>
-            <li>SiGe orientation alignment</li>
-          </ul>
         </div>
-        <div class="qual-card reveal">
-          <div class="qual-card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M8 11h6M11 8v6"/></svg>
+        <div class="dev-step reveal">
+          <div class="dev-step-num">02</div>
+          <div class="dev-step-content">
+            <h4>Fabricate Silicon Carbide Integrated Circuits</h4>
+            <p>Implementation of circuit designs on 4H-SiC substrate through controlled fabrication processes suited to high-temperature device requirements.</p>
           </div>
-          <h4>Defect Structure</h4>
-          <ul class="bullet-list metric-list">
-            <li>X-ray diffraction for dislocations</li>
-            <li>Twin defects and contamination</li>
-          </ul>
         </div>
-        <div class="qual-card reveal">
-          <div class="qual-card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <div class="dev-step reveal">
+          <div class="dev-step-num">03</div>
+          <div class="dev-step-content">
+            <h4>Integrate High-Temperature Interconnects and Packaging</h4>
+            <p>Assembly of fabricated circuits with specialized metallization and ceramic packaging engineered for sustained operation in harsh environments.</p>
           </div>
-          <h4>Wafer Stress</h4>
-          <ul class="bullet-list metric-list">
-            <li>Curvature analysis for internal stress</li>
-            <li>Thermal load performance</li>
-          </ul>
         </div>
-        <div class="qual-card reveal">
-          <div class="qual-card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <div class="dev-step reveal">
+          <div class="dev-step-num">04</div>
+          <div class="dev-step-content">
+            <h4>Environmental Testing Under Sustained High-Temperature Conditions</h4>
+            <p>Validation of fully assembled modules under representative extreme-temperature conditions to confirm operational performance and durability.</p>
           </div>
-          <h4>Surface Condition</h4>
-          <ul class="bullet-list metric-list">
-            <li>AFM and microscopy analysis</li>
-            <li>Defect counts and surface roughness</li>
-          </ul>
-        </div>
-        <div class="qual-card reveal">
-          <div class="qual-card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-          </div>
-          <h4>Repeatability</h4>
-          <ul class="bullet-list metric-list">
-            <li>Statistical analysis of multiple wafer runs</li>
-            <li>Clear Go / No-Go criteria</li>
-          </ul>
-        </div>
-        <div class="qual-card reveal">
-          <div class="qual-card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <h4>Mission Evidence</h4>
-          <ul class="bullet-list metric-list">
-            <li>Captures checkpoint proof and route completion records</li>
-            <li>Organizes logs for review, exception handling, and audit</li>
-            <li>Shows what was completed, missed, or escalated</li>
-          </ul>
         </div>
       </div>
+      <div class="status-wrap reveal">
+        <span class="status-badge">Active Development</span>
+      </div>
+    </div>
+  </section>
 
-      <!-- Go / No-Go gauge -->
-      <div class="gauge-wrap reveal">
-        <div class="gauge-label">Go / No-Go</div>
-        <div class="gauge">
-          <div class="gauge-arc">
-            <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10,100 A90,90 0 0,1 100,10"  fill="none" stroke="#3A8C5C" stroke-width="22" stroke-linecap="butt"/>
-              <path d="M100,10 A90,90 0 0,1 155,32"  fill="none" stroke="#C8A227" stroke-width="22" stroke-linecap="butt"/>
-              <path d="M155,32 A90,90 0 0,1 190,100" fill="none" stroke="#C05430" stroke-width="22" stroke-linecap="butt"/>
-              <line id="gauge-needle" x1="100" y1="100" x2="30" y2="18" stroke="#f0f2f5" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="100" cy="100" r="6" fill="#f0f2f5"/>
-              <text x="4"   y="126" font-size="13" fill="#3A8C5C" font-family="Inter,sans-serif" font-weight="600">Go</text>
-              <text x="148" y="126" font-size="13" fill="#C05430" font-family="Inter,sans-serif" font-weight="600">No-Go</text>
-            </svg>
-          </div>
+  <!-- ── COLLABORATION ──────────────────────────────────────── -->
+  <section class="section surface" id="collaboration">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Collaboration</div>
+        <h2 class="section-title">Working with Organizations in Extreme Environments</h2>
+        <p class="section-body">Organizations developing systems for extreme environments may explore technical collaboration with the Enferra program. Enferra operates as a program within Umanah Systems Group, focused on advancing electronics for environments where conventional technologies cannot operate.</p>
+      </div>
+      <div class="collab-grid">
+        <div class="collab-card reveal">
+          <div class="collab-card-dot"></div>
+          <p><strong style="color:var(--text-primary);font-weight:600;">High-temperature electronics evaluation</strong> — assessment of existing or candidate devices for extreme-environment performance.</p>
         </div>
-        <p class="gauge-desc">Each qualification metric must pass before a Go decision is issued.</p>
+        <div class="collab-card reveal">
+          <div class="collab-card-dot"></div>
+          <p><strong style="color:var(--text-primary);font-weight:600;">Integration of sensing and control modules</strong> — embedding Enferra electronics into host system architectures.</p>
+        </div>
+        <div class="collab-card reveal">
+          <div class="collab-card-dot"></div>
+          <p><strong style="color:var(--text-primary);font-weight:600;">Environmental testing and validation</strong> — coordinated testing under representative high-temperature operating conditions.</p>
+        </div>
+        <div class="collab-card reveal">
+          <div class="collab-card-dot"></div>
+          <p><strong style="color:var(--text-primary);font-weight:600;">Application-specific system development</strong> — tailored electronics development for defined extreme-environment use cases.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── EXECUTION ──────────────────────────────────────────── -->
-  <section class="section surface" id="execution">
+  <section class="section" id="execution">
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Operations</div>
-        <h2 class="section-title">Execution Environment</h2>
-        <p class="section-body">Titanym Phase 1 is carried out within a university nanofabrication environment where controlled deposition and materials characterization equipment are available. The program is structured to operate within existing lab capacity rather than building a new facility.</p>
+        <h2 class="section-title">Program Structure</h2>
+        <p class="section-body">Enferra operates as a focused research and development program within Umanah Systems Group, advancing electronics for environments where conventional technologies cannot operate.</p>
       </div>
       <div class="exec-grid">
         <div class="exec-card reveal">
@@ -793,34 +736,22 @@ img { max-width: 100%; display: block; }
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h4>Program Structure</h4>
-          <p>Titanym operates as a program under Umanah Systems Group — a structured technical program with defined scope and deliverables.</p>
+          <p>Enferra operates as a program under Umanah Systems Group with defined technical objectives, development milestones, and a focus on demonstrable outcomes.</p>
         </div>
         <div class="exec-card reveal">
           <div class="exec-card-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9V7H8V3L2 8l6 5V9h14z"/><rect x="2" y="13" width="14" height="2" rx="1"/><rect x="2" y="18" width="10" height="2" rx="1"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 00-3 3v12a3 3 0 003 3 3 3 0 003-3 3 3 0 00-3-3H6a3 3 0 00-3 3 3 3 0 003 3 3 3 0 003-3V6a3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3h12a3 3 0 003-3 3 3 0 00-3-3z"/></svg>
           </div>
-          <h4>Nanofabrication Environment</h4>
-          <p>Phase 1 is intended to run within a university nanofabrication environment where controlled deposition and materials characterization can be performed.</p>
+          <h4>Extreme-Environment Electronics R&amp;D</h4>
+          <p>Development activities span circuit design, silicon carbide fabrication, high-temperature packaging integration, and sustained environmental testing.</p>
         </div>
         <div class="exec-card reveal">
           <div class="exec-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
           <h4>Current Focus</h4>
-          <p>The current phase focuses strictly on process reproduction and materials evaluation. Device development is not in scope for Phase 1.</p>
+          <p>The program is currently focused on demonstrating a deployable control module capable of operating in environments exceeding conventional electronic temperature limits.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── STAGE ───────────────────────────────────────────────── -->
-  <section class="section" id="stage">
-    <div class="container">
-      <div class="content-wrap reveal">
-        <div class="section-label">Stage</div>
-        <h2 class="section-title">Program Status</h2>
-        <p class="section-body">Phase 1 qualification program. Seeking technical collaborators and institutional partners for controlled process work.</p>
-        <div class="status-wrap"><span class="status-badge">Phase 1 · Process Qualification</span></div>
       </div>
     </div>
   </section>
@@ -830,23 +761,24 @@ img { max-width: 100%; display: block; }
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Get Involved</div>
-        <h2 class="section-title">Program Contact</h2>
-        <p class="section-body">For technical collaboration, institutional partnership, or program discussion inquiries.</p>
+        <h2 class="section-title">Collaboration Inquiries</h2>
+        <p class="section-body">For collaboration inquiries, technical discussion, or information about the Enferra program.</p>
         <div class="contact-block">
-          <div class="contact-name">Amaete Umanah</div>
+          <div class="contact-name">Umanah Systems Group</div>
           <a class="contact-email" href="mailto:contact@umanahsystems.com">contact@umanahsystems.com</a>
         </div>
+        <p class="section-body" style="margin-top:16px; font-size:0.88rem;">Program: Enferra &nbsp;&middot;&nbsp; Extreme-Environment Electronics Research and Development</p>
       </div>
 
       <div class="form-wrap reveal">
-        <form class="contact-form" id="titanymContactForm" novalidate>
-          <input type="hidden" name="subject" value="Titanym Program Discussion" />
+        <form class="contact-form" id="enforraContactForm" novalidate>
+          <input type="hidden" name="subject" value="Enferra Program Inquiry" />
           <div class="form-group">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Your full name" required />
           </div>
           <div class="form-group">
-            <label for="company">Company</label>
+            <label for="company">Organization</label>
             <input id="company" name="company" type="text" placeholder="Your company or institution" required />
           </div>
           <div class="form-group">
@@ -855,9 +787,9 @@ img { max-width: 100%; display: block; }
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your background and interest in the Titanym program." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Describe your system environment, application area, or collaboration interest." required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">Request Program Discussion</button>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Inquiry</button>
           <p id="formError" class="form-error" role="alert"></p>
           <p id="formSuccess" class="form-success" role="status">Thank you. Your message has been received. We will be in touch shortly.</p>
         </form>
@@ -865,6 +797,7 @@ img { max-width: 100%; display: block; }
     </div>
   </section>
 
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -892,28 +825,48 @@ img { max-width: 100%; display: block; }
 <script>
 (function () {
   'use strict';
+  /* ── Hamburger menu ─────────────────────────────────────── */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    hamburger.addEventListener('click', function () {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.mobile-link, .mobile-sub-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 
+  /* ── Reveal on scroll ───────────────────────────────────── */
   const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-    reveals.forEach((el) => obs.observe(el));
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { obs.observe(el); });
   } else {
-    reveals.forEach((el) => el.classList.add('visible'));
+    reveals.forEach(function (el) { el.classList.add('visible'); });
   }
+
+  /* ── Stagger child reveals ──────────────────────────────── */
+  ['.tech-cards', '.app-grid', '.collab-grid', '.exec-grid', '.info-grid', '.dev-path'].forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (grid) {
+      grid.querySelectorAll('.reveal').forEach(function (child, i) {
+        child.style.transitionDelay = (i * 80) + 'ms';
+      });
+    });
+  });
 })();
 </script>
-<script src="js/titanym.js"></script>
+<script src="js/enferra.js"></script>
 </body>
 </html>
