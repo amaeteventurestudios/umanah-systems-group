@@ -297,6 +297,26 @@
       user-select: none;
     }
 
+    /* ── STATUS BADGES ──────────────────────────────────────── */
+    .prog-status {
+      display: inline-block;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.11em;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .prog-status.active {
+      color: #3ecf8e; background: rgba(62,207,142,0.10);
+      border: 1px solid rgba(62,207,142,0.22);
+    }
+    .prog-status.staged {
+      color: var(--text-muted); background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+    .prog-status.foundation {
+      color: var(--accent); background: var(--accent-soft);
+      border: 1px solid rgba(232,98,10,0.22);
+    }
+
     /* ── ALL PROGRAMS GRID ───────────────────────────────────── */
     .programs-header {
       display: flex; align-items: baseline; gap: 14px; margin-bottom: 36px;
@@ -520,6 +540,7 @@
             <a href="enferra.html">Enferra</a>
             <a href="lucent-robotics.html">Lucent Robotics</a>
             <a href="primescout.html">PrimeScout</a>
+            <a href="loqsat.html">LoqSat</a>
             <a href="resonance-grid.html">Resonance Grid</a>
             <a href="reydious.html">Reydious</a>
             <a href="sapphyre.html">Sapphyre</a>
@@ -543,6 +564,7 @@
       <a href="enferra.html" class="mobile-sub-link">Enferra</a>
       <a href="lucent-robotics.html" class="mobile-sub-link">Lucent Robotics</a>
       <a href="primescout.html" class="mobile-sub-link">PrimeScout</a>
+      <a href="loqsat.html" class="mobile-sub-link">LoqSat</a>
       <a href="resonance-grid.html" class="mobile-sub-link">Resonance Grid</a>
       <a href="reydious.html" class="mobile-sub-link">Reydious</a>
       <a href="sapphyre.html" class="mobile-sub-link">Sapphyre</a>
@@ -560,7 +582,7 @@
     <div class="hero-content">
       <div class="hero-badge">Internal Reference</div>
       <h1 class="hero-title">USG <span>Programs</span></h1>
-      <p class="hero-sub">A reference overview of all active Umanah Systems Group programs.</p>
+      <p class="hero-sub">A reference overview of Umanah Systems Group programs, including active programs and staged program IP.</p>
     </div>
   </section>
 
@@ -568,15 +590,15 @@
   <div class="stats-strip">
     <div class="stats-inner stagger">
       <div class="stat-item">
-        <span class="stat-num" data-target="10">0</span>
-        <span class="stat-label">Active Programs</span>
+        <span class="stat-num" data-target="11">0</span>
+        <span class="stat-label">Total Programs</span>
       </div>
       <div class="stat-item">
         <span class="stat-num" data-target="4">0</span>
         <span class="stat-label">Hardware Tracks</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-num" data-target="4">0</span>
         <span class="stat-label">Software Platforms</span>
       </div>
       <div class="stat-item">
@@ -592,14 +614,14 @@
       <div class="reveal">
         <div class="section-label">Foundation Programs</div>
         <h2 class="section-title">The Two Programs That Power Everything</h2>
-        <p class="section-intro">Reydious and Crucible are not standalone products. They are the infrastructure layer that every other USG program is built on. One handles the software and control side; the other handles the hardware and manufacturing side.</p>
+        <p class="section-intro">Reydious and Crucible are the two foundation programs inside Umanah Systems Group. They are not standalone products. They provide the software, control, manufacturing, and validation backbone that supports every other USG program. Reydious governs execution and system behavior. Crucible handles hardware integration, production, and survivability validation.</p>
       </div>
 
       <div class="featured-grid stagger">
 
         <!-- REYDIOUS -->
         <a href="reydious.html" class="featured-card">
-          <div class="featured-tag"><span class="dot"></span> Software Platform</div>
+          <div class="featured-tag"><span class="dot"></span> Foundation Program</div>
           <div class="featured-name">Reydious</div>
           <div class="featured-role">Governing Software Layer</div>
           <p class="featured-desc">Think of Reydious as the brain that keeps all USG systems in line. It is a software platform that connects and controls hardware, whether that hardware was made by USG, a government agency, or a third-party vendor. Before any system takes an action, Reydious checks whether it is allowed to do so. It enforces rules, tracks behavior, and keeps everything accountable. No system acts on its own. Reydious is always in the loop.</p>
@@ -612,7 +634,7 @@
 
         <!-- CRUCIBLE -->
         <a href="crucible.html" class="featured-card">
-          <div class="featured-tag"><span class="dot"></span> Manufacturing Platform</div>
+          <div class="featured-tag"><span class="dot"></span> Foundation Program</div>
           <div class="featured-name">Crucible</div>
           <div class="featured-role">Hardware Manufacturing Layer</div>
           <p class="featured-desc">Crucible is USG's manufacturing backbone, a network of production cells that build hardware tough enough to survive in the real world. Not a lab. Not a prototype bench. Actual deployable hardware, built to a documented standard, validated before it ships. Every other program that involves physical hardware, robots, sensors, and electronics, comes through Crucible. It ensures the hardware works, holds up, and can be audited.</p>
@@ -625,15 +647,16 @@
 
       </div>
 
-      <!-- ── ALL PROGRAMS ──────────────────────────────────── -->
+      <!-- ── PROGRAM PIPELINE ─────────────────────────────── -->
       <div class="reveal">
         <div class="programs-header">
           <div>
-            <div class="section-label">All Programs</div>
-            <h2 class="section-title">Complete Program Directory</h2>
+            <div class="section-label">Program Pipeline</div>
+            <h2 class="section-title">Active and Staged Programs</h2>
           </div>
-          <span class="programs-count">10 programs A–Z</span>
+          <span class="programs-count">Active programs and staged IP</span>
         </div>
+        <p class="section-intro" style="margin-bottom: 0;">Umanah Systems Group maintains a structured program pipeline. Some programs are active today. Others represent strategic system architectures and intellectual property that are being staged for future activation as capital, partnerships, and deployment pathways mature.</p>
       </div>
 
       <!-- Hardware & Robotics -->
@@ -643,6 +666,7 @@
         <!-- BioGrid Networks -->
         <a href="biogrid-networks.html" class="prog-card">
           <div class="prog-card-num">01 / HARDWARE</div>
+          <span class="prog-status active">Active Program</span>
           <div class="prog-card-name">BioGrid Networks</div>
           <div class="prog-card-sub">Biological Detection Infrastructure</div>
           <p class="prog-card-desc">In remote or industrial sites, think oil fields, military bases, or large facilities. Biological threats are usually only discovered after the fact, because samples have to be shipped to a lab. BioGrid puts portable microscopy equipment directly on-site, connected in a network, so you can detect biological issues in real time without waiting for lab results. Faster detection, fewer delays, fewer decisions made in the dark.</p>
@@ -655,6 +679,7 @@
         <!-- Crucible -->
         <a href="crucible.html" class="prog-card">
           <div class="prog-card-num">02 / MANUFACTURING</div>
+          <span class="prog-status foundation">Foundation Program</span>
           <div class="prog-card-name">Crucible</div>
           <div class="prog-card-sub">Hardware Manufacturing &amp; Validation</div>
           <p class="prog-card-desc">Crucible is the manufacturing network that builds all USG hardware. It controls the entire process, from how parts are put together, to how they are tested, to how they are documented before deployment. If a piece of hardware comes from USG, it came through Crucible. The goal is simple: hardware that is tough, traceable, and trusted.</p>
@@ -667,9 +692,10 @@
         <!-- Lucent Robotics -->
         <a href="lucent-robotics.html" class="prog-card">
           <div class="prog-card-num">03 / ROBOTICS</div>
+          <span class="prog-status staged">Staged Program</span>
           <div class="prog-card-name">Lucent Robotics</div>
           <div class="prog-card-sub">Infrastructure Inspection Robots</div>
-          <p class="prog-card-desc">Most of the world's pipes, tunnels, and sealed machines cannot be inspected without shutting everything down or sending a person into a dangerous space. Lucent Robotics builds robots small enough and smart enough to go inside these spaces and collect data, cameras, sensors, and readings, while the infrastructure keeps running. No shutdowns. No confined-space hazards. Just information.</p>
+          <p class="prog-card-desc">Most of the world's pipes, tunnels, and sealed machines cannot be easily inspected. Lucent Robotics is a staged robotics architecture designed to deploy inspection robots into confined infrastructure environments. The system design covers mobility, sensor integration, and data collection for environments where physical access is constrained or hazardous. Staged for activation pending hardware development partnerships.</p>
           <div class="prog-card-link">
             View Program
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -679,9 +705,10 @@
         <!-- PrimeScout -->
         <a href="primescout.html" class="prog-card">
           <div class="prog-card-num">04 / ROBOTICS</div>
+          <span class="prog-status staged">Staged Program</span>
           <div class="prog-card-name">PrimeScout</div>
           <div class="prog-card-sub">Autonomous Patrol &amp; Inspection</div>
-          <p class="prog-card-desc">PrimeScout is an autonomous patrol system, a robot that runs scheduled routes, checks on specific locations, and flags anything that looks wrong, without a person having to be there. It is designed for facilities that need consistent, around-the-clock coverage: warehouses, perimeters, industrial sites. It checks in, records what it sees, and reports, governed at every step by Reydious.</p>
+          <p class="prog-card-desc">PrimeScout is a staged autonomous patrol architecture for facilities that need consistent coverage: warehouses, perimeters, industrial sites. The system design covers scheduled route execution, anomaly detection, and Reydious-governed reporting. Staged for activation pending deployment partnerships.</p>
           <div class="prog-card-link">
             View Program
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -697,9 +724,10 @@
         <!-- Enferra -->
         <a href="enferra.html" class="prog-card">
           <div class="prog-card-num">05 / ELECTRONICS</div>
+          <span class="prog-status staged">Staged Program</span>
           <div class="prog-card-name">Enferra</div>
           <div class="prog-card-sub">Extreme-Environment Control Electronics</div>
-          <p class="prog-card-desc">Standard electronics stop working reliably above around 150°C. This is a real problem if your system needs to operate inside a jet engine, a deep geothermal well, or on Venus. Enferra develops control circuits built on silicon carbide that can survive these extreme temperatures without needing special cooling. The electronics sit right where the heat is and keep working.</p>
+          <p class="prog-card-desc">Standard electronics stop working reliably above around 150°C. Enferra is a staged electronics program developing the architecture for silicon carbide control circuits designed to operate in extreme-temperature environments. The program covers sensing, signal processing, and deterministic control logic for conditions where conventional silicon cannot survive. Staged for activation as fabrication partnerships mature.</p>
           <div class="prog-card-link">
             View Program
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -709,9 +737,10 @@
         <!-- Sapphyre -->
         <a href="sapphyre.html" class="prog-card">
           <div class="prog-card-num">06 / SEMICONDUCTORS</div>
+          <span class="prog-status staged">Staged Program</span>
           <div class="prog-card-name">Sapphyre</div>
           <div class="prog-card-sub">Advanced Semiconductor Materials</div>
-          <p class="prog-card-desc">Sapphyre works on the materials and structures that make semiconductor devices perform better in harsh conditions, including extreme heat, radiation, and tight power budgets. This is foundational work: figuring out which materials and device designs can outperform conventional silicon in aerospace, defense, and industrial environments. The findings feed directly into other USG semiconductor programs.</p>
+          <p class="prog-card-desc">Sapphyre is a staged semiconductor materials program focused on device architectures for harsh conditions, including extreme heat, radiation, and tight power budgets. The architecture covers material selection, device design, and performance benchmarking for aerospace, defense, and industrial environments. Staged to activate alongside Enferra and Titanym program progression.</p>
           <div class="prog-card-link">
             View Program
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -721,9 +750,10 @@
         <!-- Titanym -->
         <a href="titanym.html" class="prog-card">
           <div class="prog-card-num">07 / SEMICONDUCTORS</div>
+          <span class="prog-status staged">Staged Program</span>
           <div class="prog-card-name">Titanym</div>
           <div class="prog-card-sub">SiGe-on-Sapphire Process Qualification</div>
-          <p class="prog-card-desc">Titanym is a focused research program trying to reproduce a specific semiconductor manufacturing process: growing silicon-germanium crystals on sapphire wafers. This combination could eventually enable high-performance electronics in extreme environments. Phase 1 is purely about proving the process works. Can the right crystal quality be achieved, consistently, under controlled conditions?</p>
+          <p class="prog-card-desc">Titanym is a staged semiconductor process qualification program focused on reproducing silicon-germanium growth on sapphire substrates. The architecture defines the process parameters, characterization methodology, and qualification criteria needed before the process can be applied to extreme-environment device development. Staged pending lab access and material sourcing.</p>
           <div class="prog-card-link">
             View Program
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -739,6 +769,7 @@
         <!-- Reydious -->
         <a href="reydious.html" class="prog-card">
           <div class="prog-card-num">08 / SOFTWARE</div>
+          <span class="prog-status foundation">Foundation Program</span>
           <div class="prog-card-name">Reydious</div>
           <div class="prog-card-sub">Governing Software Platform</div>
           <p class="prog-card-desc">Reydious is the software layer that sits on top of all USG hardware and systems. It connects things, robots, sensors, and third-party devices, into a single governed environment. It decides what each system is allowed to do, keeps logs of everything, and can push updated instructions to hardware in the field. It also integrates with government and commercial systems, acting as the authority layer across all of them.</p>
@@ -751,9 +782,23 @@
         <!-- Resonance Grid -->
         <a href="resonance-grid.html" class="prog-card">
           <div class="prog-card-num">09 / SENSING</div>
+          <span class="prog-status active">Active Program</span>
           <div class="prog-card-name">Resonance Grid</div>
           <div class="prog-card-sub">Battery-Free Cold Chain Verification</div>
-          <p class="prog-card-desc">When temperature-sensitive goods, vaccines, food, and chemicals, move through a supply chain, you need to know they stayed cold the whole time. Resonance Grid embeds battery-free sensing tags into packaging that can detect if the temperature went out of range or if the package was tampered withwithout needing a battery or wired connection. Check the package. Know the truth.</p>
+          <p class="prog-card-desc">When temperature-sensitive goods, vaccines, food, and chemicals move through a supply chain, you need to know they stayed within range the whole time. Resonance Grid embeds battery-free sensing tags into packaging that detect temperature excursions and tampering without wired connections or batteries. Check the package. Know the truth.</p>
+          <div class="prog-card-link">
+            View Program
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- LoqSat -->
+        <a href="loqsat.html" class="prog-card">
+          <div class="prog-card-num">11 / SOFTWARE</div>
+          <span class="prog-status staged">Staged Program</span>
+          <div class="prog-card-name">LoqSat</div>
+          <div class="prog-card-sub">Orbital Coordination Infrastructure</div>
+          <p class="prog-card-desc">LoqSat is a staged orbital coordination architecture for spacecraft operators working in shared orbital environments. The system design covers operator coordination networks, modular spacecraft integration, and distributed satellite operations governed by Reydious. Staged for activation as pilot partnerships and deployment pathways mature.</p>
           <div class="prog-card-link">
             View Program
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -763,9 +808,10 @@
         <!-- Spattio -->
         <a href="spattio.html" class="prog-card">
           <div class="prog-card-num">10 / AI INFRASTRUCTURE</div>
+          <span class="prog-status staged">Staged Program</span>
           <div class="prog-card-name">Spattio</div>
           <div class="prog-card-sub">Spatial &amp; Temporal AI Infrastructure</div>
-          <p class="prog-card-desc">AI tools like ChatGPT are smart with words, but they have no sense of where things are or what is happening right now. Spattio fixes that. It gives AI agents access to real-time location and environmental data, maps, sensor feeds, and live conditions, so they can answer questions that are grounded in the real world. What is happening at that location right now? Has anything changed in the last hour? Spattio makes that possible.</p>
+          <p class="prog-card-desc">AI tools are good with language but have no built-in sense of location, time, or environmental state. Spattio is a staged AI infrastructure program that defines the architecture for connecting AI agents to real-time geospatial and environmental data. The system design covers spatial indexing, sensor feed integration, and agent-accessible context layers. Staged for activation as AI deployment use cases mature.</p>
           <div class="prog-card-link">
             View Program
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
