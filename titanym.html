@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Titanym | SiGe-on-Sapphire Process Qualification</title>
-  <meta name="description" content="Titanym is a Umanah Systems Group program focused on reproducing and qualifying a SiGe-on-sapphire semiconductor process for future extreme-environment electronics." />
-  <meta name="keywords" content="Titanym, SiGe on sapphire, silicon germanium epitaxy, semiconductor materials qualification, extreme environment electronics, semiconductor process development, Umanah Systems Group" />
+  <title>Titanym | Single-Crystal SiGe-on-Sapphire Semiconductor Manufacturing</title>
+  <meta name="description" content="Titanym is a Umanah Systems Group program developing a specialized semiconductor manufacturing process platform built on single-crystal silicon-germanium on sapphire for space, defense, RF, and advanced device markets." />
+  <meta name="keywords" content="Titanym, SiGe on sapphire, silicon germanium epitaxy, semiconductor process platform, space electronics, defense semiconductors, RF devices, extreme environment electronics, Umanah Systems Group" />
   <meta name="author" content="Umanah Systems Group" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#08090c" />
@@ -17,16 +17,16 @@
   <link rel="shortcut icon" href="images/favicon.png" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Titanym | SiGe-on-Sapphire Process Qualification" />
-  <meta property="og:description" content="Titanym is a technical program focused on reproducing and qualifying a SiGe-on-sapphire semiconductor growth process." />
+  <meta property="og:title" content="Titanym | Single-Crystal SiGe-on-Sapphire Semiconductor Manufacturing" />
+  <meta property="og:description" content="Titanym is developing a specialized semiconductor process platform for space, defense, RF, and advanced device markets where standard process flows fall short." />
   <meta property="og:image" content="https://www.umanahsystems.com/images/titanym-preview.jpg" />
-  <meta property="og:image:alt" content="Titanym — SiGe-on-Sapphire Process Qualification" />
+  <meta property="og:image:alt" content="Titanym — SiGe-on-Sapphire Semiconductor Manufacturing" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Titanym | SiGe-on-Sapphire Process Qualification" />
-  <meta name="twitter:description" content="A Umanah Systems Group program evaluating SiGe-on-sapphire semiconductor growth for future extreme-environment electronics." />
+  <meta name="twitter:title" content="Titanym | Single-Crystal SiGe-on-Sapphire Semiconductor Manufacturing" />
+  <meta name="twitter:description" content="A Umanah Systems Group program building the semiconductor stack silicon cannot reach." />
   <meta name="twitter:image" content="https://www.umanahsystems.com/images/titanym-preview.jpg" />
-  <meta name="twitter:image:alt" content="Titanym — SiGe-on-Sapphire Process Qualification" />
+  <meta name="twitter:image:alt" content="Titanym — SiGe-on-Sapphire Semiconductor Manufacturing" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -210,6 +210,29 @@ img { max-width: 100%; display: block; }
 .hero-text { max-width: 620px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
 .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
+/* ── HERO STATS ───────────────────────────────────────── */
+.hero-stats {
+  display: flex; gap: 0; justify-content: center; flex-wrap: wrap;
+  max-width: 640px; margin: 0 auto 34px;
+  border: 1px solid var(--border-bright);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.hero-stat {
+  flex: 1 1 0; min-width: 130px;
+  padding: 18px 16px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-value {
+  font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
+  color: var(--accent); line-height: 1.1; margin-bottom: 4px;
+}
+.hero-stat-label {
+  font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;
+}
+
 .section { padding: 110px 0; border-top: 1px solid var(--border); }
 .surface { background: var(--bg-surface); }
 .content-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
@@ -286,7 +309,7 @@ img { max-width: 100%; display: block; }
 }
 .info-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.65; }
 
-/* ── QUAL CARDS (measurement framework) ──────────────── */
+/* ── QUAL CARDS (measurement framework) ───────────────── */
 .qual-cards {
   max-width: 920px; margin: 36px auto 0;
   display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
@@ -303,75 +326,6 @@ img { max-width: 100%; display: block; }
 }
 .qual-card ul { display: grid; gap: 6px; }
 .qual-card li { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.55; }
-
-/* ── GAUGE ───────────────────────────────────────────── */
-@keyframes needleSweep {
-  from { transform: rotate(50deg);  transform-origin: 100px 100px; }
-  to   { transform: rotate(-5deg);  transform-origin: 100px 100px; }
-}
-#gauge-needle {
-  transform-origin: 100px 100px;
-  animation: needleSweep 1.8s cubic-bezier(0.34,1.56,0.64,1) forwards;
-  animation-play-state: paused;
-}
-#gauge-needle.animated { animation-play-state: running; }
-
-.gauge-wrap {
-  text-align: center;
-  padding: 36px 32px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-bright);
-  border-radius: var(--r-xl);
-  max-width: 420px;
-  margin: 36px auto 0;
-}
-.gauge-label {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 24px;
-}
-.gauge { max-width: 220px; width: 100%; margin: 0 auto 16px; }
-.gauge-arc svg { width: 100%; height: auto; display: block; }
-.gauge-wrap { max-width: 420px; width: 100%; }
-.gauge-desc {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  letter-spacing: 0.02em;
-  line-height: 1.6;
-}
-
-/* ── EXEC CARDS ───────────────────────────────────────── */
-.exec-grid {
-  max-width: 920px; margin: 36px auto 0;
-  display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;
-}
-.exec-card {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--r-lg); padding: 28px 24px;
-}
-.exec-card-icon { color: var(--accent); margin-bottom: 14px; }
-.exec-card h4 {
-  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
-  color: var(--text-primary); margin-bottom: 8px;
-}
-.exec-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
-
-/* ── OUTPUT BOX ───────────────────────────────────────── */
-.output-box {
-  max-width: 920px; margin: 32px auto 0;
-  background: var(--bg-surface); border: 1px solid var(--border-bright);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--r-md); padding: 20px 24px;
-  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
-}
-.output-label {
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); white-space: nowrap;
-}
-.output-box p { font-size: 0.95rem; color: var(--text-secondary); margin: 0; }
-.output-box strong { color: var(--text-primary); font-weight: 600; }
 
 /* ── IMAGE BREAK ──────────────────────────────────────── */
 .image-break {
@@ -415,6 +369,37 @@ img { max-width: 100%; display: block; }
   border-radius: 100px;
   padding: 9px 14px;
 }
+
+/* ── EXEC CARDS ───────────────────────────────────────── */
+.exec-grid {
+  max-width: 920px; margin: 36px auto 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;
+}
+.exec-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 28px 24px;
+}
+.exec-card-icon { color: var(--accent); margin-bottom: 14px; }
+.exec-card h4 {
+  font-family: var(--font-display); font-size: 0.95rem; font-weight: 600;
+  color: var(--text-primary); margin-bottom: 8px;
+}
+.exec-card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+
+/* ── OUTPUT BOX ───────────────────────────────────────── */
+.output-box {
+  max-width: 920px; margin: 32px auto 0;
+  background: var(--bg-surface); border: 1px solid var(--border-bright);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-md); padding: 20px 24px;
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.output-label {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); white-space: nowrap;
+}
+.output-box p { font-size: 0.95rem; color: var(--text-secondary); margin: 0; }
+.output-box strong { color: var(--text-primary); font-weight: 600; }
 
 /* ── CONTACT / FORM ───────────────────────────────────── */
 .contact-block { margin-top: 22px; }
@@ -481,6 +466,8 @@ img { max-width: 100%; display: block; }
   .qual-card { flex: 1 1 calc(50% - 10px); max-width: calc(50% - 10px); min-width: 200px; }
   .exec-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 26px 22px; }
+  .hero-stats { border-radius: var(--r-md); }
+  .hero-stat { min-width: 100px; }
 }
 @media (max-width: 480px) {
   .hero-content { padding: 62px 20px 72px; }
@@ -488,6 +475,9 @@ img { max-width: 100%; display: block; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
   .qual-card { flex: 1 1 100%; max-width: 100%; min-width: 0; }
+  .hero-stats { flex-direction: column; }
+  .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+  .hero-stat:last-child { border-bottom: none; }
 }
   </style>
 </head>
@@ -533,39 +523,118 @@ img { max-width: 100%; display: block; }
     <div class="hero-content">
       <div class="hero-badge">A Umanah Systems Group Program</div>
       <h1 class="hero-title">Titanym</h1>
-      <p class="hero-subline">SiGe-on-Sapphire Process Qualification</p>
+      <p class="hero-subline">Building the semiconductor stack silicon cannot reach.</p>
       <p class="hero-text">
-        A technical program focused on reproducing and evaluating a low-temperature silicon-germanium growth process on sapphire substrates.<br>
-        Phase 1 is designed to determine whether the process can be reliably reproduced and whether the resulting material meets the quality requirements for future device work.
+        Titanym is a specialized semiconductor manufacturing program developing a process platform around single-crystal silicon-germanium on sapphire. Built for space, defense, RF, and advanced device markets where standard process flows fall short.<br><br>
+        Phase 1 is underway: process reproduction and materials qualification, before device development begins.
       </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value">4x</div>
+          <div class="hero-stat-label">Carrier mobility vs. silicon</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">8</div>
+          <div class="hero-stat-label">Steps vs. 19-step CMOS</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">450&ndash;500C</div>
+          <div class="hero-stat-label">Low-temp growth process</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">Phase 1</div>
+          <div class="hero-stat-label">Current program stage</div>
+        </div>
+      </div>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Request Program Discussion</a>
-        <a href="#program" class="btn btn-ghost">Learn More</a>
+        <a href="#thesis" class="btn btn-ghost">View Program</a>
       </div>
     </div>
   </section>
 
-  <!-- ── PROGRAM OVERVIEW ───────────────────────────────────── -->
-  <section class="section surface" id="program">
+  <!-- ── THE THESIS ─────────────────────────────────────────── -->
+  <section class="section surface" id="thesis">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Program Overview</div>
-        <h2 class="section-title">Titanym begins with materials qualification.</h2>
-        <p class="section-body">The program attempts to reproduce reported SiGe-on-sapphire growth conditions in a controlled nanofabrication environment and measure the resulting crystal material.</p>
-        <p class="section-body" style="margin-top:16px;">This phase is not focused on device deployment. The objective is to determine whether the process can produce repeatable, high-quality semiconductor material suitable for further development.</p>
+        <div class="section-label">The Thesis</div>
+        <h2 class="section-title">Silicon is not the ceiling. It is the starting point.</h2>
+        <p class="section-body">Single-crystal silicon-germanium grown on sapphire substrates offers a combination of material performance, process economics, and integration potential that silicon alone cannot match. Particularly for device categories where substrate behavior, thermal management, defect control, and heterogeneous integration drive value.</p>
+        <p class="section-body" style="margin-top:16px;">Titanym is not competing with TSMC or Intel on leading-edge logic. The goal is different: own a narrow, high-consequence manufacturing stack that enables device classes standard foundries are not designed to serve.</p>
       </div>
       <div class="info-grid">
         <div class="info-card reveal">
-          <h4>Qualification before deployment</h4>
-          <p>Phase 1 focuses on process reproduction and material measurement — not device integration or field deployment. The work ends with a qualification report and a Go / No-Go decision.</p>
+          <h4>Four times the carrier mobility</h4>
+          <p>Single-crystal SiGe delivers substantially higher electron and hole mobility compared to standard silicon, enabling faster, lower-power device performance.</p>
         </div>
         <div class="info-card reveal">
-          <h4>Defined technical scope</h4>
-          <p>Each Phase 1 objective is bounded. Growth conditions, crystal quality, defect mapping, wafer stress, surface morphology, and repeatability — nothing beyond the defined scope.</p>
+          <h4>Radically simplified manufacturing</h4>
+          <p>A mask-based deposition process reduces CMOS fabrication from 19 conventional steps to 8, eliminating photoresist, UV exposure, and most selective etching steps.</p>
         </div>
         <div class="info-card reveal">
-          <h4>Risk reduction</h4>
-          <p>A structured qualification sequence identifies failure modes before downstream investment. Each measurement gates the next step, reducing technical and program risk.</p>
+          <h4>Low-temperature growth</h4>
+          <p>SiGe-on-sapphire growth at 450 to 500C versus the conventional 850 to 900C range. Less thermal load, faster cycle times, higher throughput potential.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY THIS MATTERS ───────────────────────────────────── -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Why This Matters</div>
+        <h2 class="section-title">A narrow process advantage in a high-consequence market.</h2>
+        <p class="section-body">Standard silicon process flows are optimized for volume and cost at scale. They are not designed for the material requirements of extreme-environment electronics, specialized RF devices, or heterogeneous integration across substrates.</p>
+        <p class="section-body" style="margin-top:16px;">Titanym's foundation is a set of interlocking manufacturing capabilities, each addressing a specific technical bottleneck in specialty semiconductor production. The sapphire substrate enables SiGe electronics on one side and III-nitride device structures on the other, opening paths toward integrated compute and photonics on a single wafer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TECHNOLOGY FOUNDATION ──────────────────────────────── -->
+  <section class="section surface" id="technology">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Technology Foundation</div>
+        <h2 class="section-title">The manufacturing stack.</h2>
+        <p class="section-body">Titanym's foundation is a set of interlocking manufacturing capabilities, each addressing a specific commercial and technical bottleneck in specialty semiconductor production.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h4>Low-Temperature SiGe Epitaxy</h4>
+            <p>A fabrication method that reduces SiGe-on-sapphire growth temperature from the conventional range down to 450 to 500C, eliminating thermal soak requirements and reducing production time from over four hours to under one hour without sacrificing crystal quality.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <div>
+            <h4>Single-Crystal Manufacturing Suite</h4>
+            <p>A broader suite of process methods including Molten Target Sputtering, Thermally Absorptive Coating for faster heating, graded-index layer growth, and methods for thicker, denser, more crack-resistant crystal films.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M6 20V10M12 20V4M18 20v-8"/></svg>
+          </div>
+          <div>
+            <h4>Defect Control and Heteroepitaxy</h4>
+            <p>Crystal orientation alignment with the sapphire substrate lattice minimizes misfit dislocation defects. Twin defect volume reduced to well under one percent. X-ray diffraction methods map defect structure across the full wafer.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <h4>Simplified CMOS Manufacturing</h4>
+            <p>A mask-based deposition process that eliminates photoresist, UV exposure, and selective etching steps. Achieves the same result in 8 steps versus the conventional 19-step process, reducing cost, cycle time, and chemical waste.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -575,9 +644,9 @@ img { max-width: 100%; display: block; }
   <section class="section" id="phase1">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Scope</div>
-        <h2 class="section-title">Phase 1 Scope</h2>
-        <p class="section-body">Phase 1 focuses on a tightly scoped set of process and measurement objectives.</p>
+        <div class="section-label">Phase 1 Current Stage</div>
+        <h2 class="section-title">Qualification first. Device development later.</h2>
+        <p class="section-body">Phase 1 is strictly scoped. The objective is to determine whether the SiGe-on-sapphire process can produce repeatable, high-quality semiconductor material. No device claims are made until this materials determination is complete.</p>
       </div>
       <div class="scope-grid">
         <div class="scope-card reveal">
@@ -586,7 +655,7 @@ img { max-width: 100%; display: block; }
           </div>
           <div>
             <h4>Process Reproduction</h4>
-            <p>Reproduce low-temperature SiGe growth conditions from reported literature parameters in a controlled nanofabrication environment.</p>
+            <p>Reproducing low-temperature SiGe growth at 450 to 500C from reported process parameters in a controlled nanofabrication environment.</p>
           </div>
         </div>
         <div class="scope-card reveal">
@@ -594,7 +663,7 @@ img { max-width: 100%; display: block; }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
           </div>
           <div>
-            <h4>Crystal Structure &amp; Lattice Alignment</h4>
+            <h4>Crystal Structure and Lattice Alignment</h4>
             <p>Measure crystal quality, orientation, and structural integrity of deposited SiGe layers including single-crystal confirmation and SiGe orientation alignment.</p>
           </div>
         </div>
@@ -603,8 +672,8 @@ img { max-width: 100%; display: block; }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M6 20V10M12 20V4M18 20v-8"/></svg>
           </div>
           <div>
-            <h4>Defect Density &amp; Twin Formation</h4>
-            <p>Evaluate defect density and twin formation using X-ray diffraction — dislocations, twin defects, and contamination mapping across the deposited layer.</p>
+            <h4>Defect Density and Twin Formation</h4>
+            <p>Evaluate defect density and twin formation using X-ray diffraction: dislocations, twin defects, and contamination mapping across the deposited layer.</p>
           </div>
         </div>
         <div class="scope-card reveal">
@@ -612,7 +681,7 @@ img { max-width: 100%; display: block; }
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <div>
-            <h4>Wafer Stress &amp; Surface Morphology</h4>
+            <h4>Wafer Stress and Surface Morphology</h4>
             <p>Analyze wafer stress through curvature analysis and thermal load performance testing, combined with AFM and microscopy for surface roughness and defect counts.</p>
           </div>
         </div>
@@ -622,13 +691,13 @@ img { max-width: 100%; display: block; }
           </div>
           <div>
             <h4>Repeatability Across Runs</h4>
-            <p>Test reproducibility across multiple growth runs with statistical analysis and clear Go/No-Go criteria applied to the full dataset.</p>
+            <p>Test reproducibility across multiple growth runs with statistical analysis and clear pass criteria applied to the full dataset.</p>
           </div>
         </div>
       </div>
       <div class="output-box reveal">
-        <span class="output-label">Program Output</span>
-        <p>Qualification report and <strong>Go / No-Go</strong> decision for subsequent device work.</p>
+        <span class="output-label">Phase 1 Output</span>
+        <p><strong>Materials Qualification Report.</strong> A formal qualification report documenting all measurement data, process parameters, and material characterization findings, with a binary determination on readiness for Phase 2 device development.</p>
       </div>
     </div>
   </section>
@@ -639,42 +708,42 @@ img { max-width: 100%; display: block; }
       <div class="content-wrap reveal">
         <div class="section-label">Evaluation Sequence</div>
         <h2 class="section-title">The Qualification Path</h2>
-        <p class="section-body">The program follows a defined evaluation sequence — each step gates the next.</p>
+        <p class="section-body">Phase 1 follows a defined evaluation sequence. Each step informs the next.</p>
       </div>
       <div class="qual-path">
         <div class="qual-step reveal">
           <div class="qual-step-num">01</div>
           <div class="qual-step-content">
             <h4>Reproduce Growth Conditions</h4>
-            <p>Reproduce reported low-temperature SiGe growth conditions in a controlled nanofabrication environment.</p>
+            <p>Controlled deposition at target low-temperature parameters in a university nanofabrication environment.</p>
           </div>
         </div>
         <div class="qual-step reveal">
           <div class="qual-step-num">02</div>
           <div class="qual-step-content">
             <h4>Characterize Crystal Quality</h4>
-            <p>Single crystal confirmation, SiGe orientation alignment, and X-ray diffraction defect density mapping.</p>
+            <p>XRD analysis, single crystal confirmation, SiGe orientation alignment, and defect density mapping.</p>
           </div>
         </div>
         <div class="qual-step reveal">
           <div class="qual-step-num">03</div>
           <div class="qual-step-content">
             <h4>Evaluate Repeatability</h4>
-            <p>Statistical analysis across multiple growth runs. Surface condition, wafer stress, and defect uniformity.</p>
+            <p>Multi-run statistical analysis with documented variance across surface condition, wafer stress, and defect uniformity.</p>
           </div>
         </div>
         <div class="qual-step reveal">
           <div class="qual-step-num">04</div>
           <div class="qual-step-content">
             <h4>Produce Qualification Report</h4>
-            <p>Document all measurement data, process parameters, and material characterization findings.</p>
+            <p>Full measurement record documenting all process parameters, material characterization findings, and readiness determination.</p>
           </div>
         </div>
         <div class="qual-step reveal">
           <div class="qual-step-num">05</div>
           <div class="qual-step-content">
-            <h4>Issue Go / No-Go Decision</h4>
-            <p>A formal determination on whether the material system is ready for subsequent device development work.</p>
+            <h4>Issue Materials Determination</h4>
+            <p>A formal readiness evaluation on whether the material system is prepared for subsequent device development work.</p>
           </div>
         </div>
       </div>
@@ -692,7 +761,7 @@ img { max-width: 100%; display: block; }
       <div class="content-wrap reveal">
         <div class="section-label">Measurement Framework</div>
         <h2 class="section-title">SiGe-on-Sapphire Wafer Qualification</h2>
-        <p class="section-body">Six measurement categories define the qualification standard for Phase 1.</p>
+        <p class="section-body">Five measurement categories define the materials qualification standard for Phase 1.</p>
       </div>
       <div class="qual-cards">
         <div class="qual-card reveal">
@@ -712,7 +781,7 @@ img { max-width: 100%; display: block; }
           <h4>Defect Structure</h4>
           <ul class="bullet-list metric-list">
             <li>X-ray diffraction for dislocations</li>
-            <li>Twin defects and contamination</li>
+            <li>Twin defects and contamination mapping</li>
           </ul>
         </div>
         <div class="qual-card reveal">
@@ -741,51 +810,179 @@ img { max-width: 100%; display: block; }
           </div>
           <h4>Repeatability</h4>
           <ul class="bullet-list metric-list">
-            <li>Statistical analysis of multiple wafer runs</li>
-            <li>Clear Go / No-Go criteria</li>
-          </ul>
-        </div>
-        <div class="qual-card reveal">
-          <div class="qual-card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <h4>Mission Evidence</h4>
-          <ul class="bullet-list metric-list">
-            <li>Captures checkpoint proof and route completion records</li>
-            <li>Organizes logs for review, exception handling, and audit</li>
-            <li>Shows what was completed, missed, or escalated</li>
+            <li>Statistical analysis across multiple wafer runs</li>
+            <li>Documented variance and pass criteria per category</li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Go / No-Go gauge -->
-      <div class="gauge-wrap reveal">
-        <div class="gauge-label">Go / No-Go</div>
-        <div class="gauge">
-          <div class="gauge-arc">
-            <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10,100 A90,90 0 0,1 100,10"  fill="none" stroke="#3A8C5C" stroke-width="22" stroke-linecap="butt"/>
-              <path d="M100,10 A90,90 0 0,1 155,32"  fill="none" stroke="#C8A227" stroke-width="22" stroke-linecap="butt"/>
-              <path d="M155,32 A90,90 0 0,1 190,100" fill="none" stroke="#C05430" stroke-width="22" stroke-linecap="butt"/>
-              <line id="gauge-needle" x1="100" y1="100" x2="30" y2="18" stroke="#f0f2f5" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="100" cy="100" r="6" fill="#f0f2f5"/>
-              <text x="4"   y="126" font-size="13" fill="#3A8C5C" font-family="Inter,sans-serif" font-weight="600">Go</text>
-              <text x="148" y="126" font-size="13" fill="#C05430" font-family="Inter,sans-serif" font-weight="600">No-Go</text>
-            </svg>
+  <!-- ── PROGRAM ROADMAP ────────────────────────────────────── -->
+  <section class="section surface" id="roadmap">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Program Roadmap</div>
+        <h2 class="section-title">Four phases. One platform.</h2>
+        <p class="section-body">Titanym builds toward a specialized semiconductor manufacturing platform through a disciplined, phase-controlled progression from process validation through proprietary product development.</p>
+      </div>
+      <div class="qual-path">
+        <div class="qual-step reveal">
+          <div class="qual-step-num">01</div>
+          <div class="qual-step-content">
+            <h4>Process Qualification &mdash; Active</h4>
+            <p>Reproduce the low-temperature SiGe-on-sapphire growth process in a controlled nanofabrication environment. Characterize crystal quality, defect structure, surface morphology, and repeatability. Output is a materials qualification report.</p>
           </div>
         </div>
-        <p class="gauge-desc">Each qualification metric must pass before a Go decision is issued.</p>
+        <div class="qual-step reveal">
+          <div class="qual-step-num">02</div>
+          <div class="qual-step-content">
+            <h4>Engineering Services</h4>
+            <p>Paid feasibility projects, wafer development engagements, custom device prototyping, and process transfer work with government and commercial customers. This phase converts process knowledge into contracted revenue.</p>
+          </div>
+        </div>
+        <div class="qual-step reveal">
+          <div class="qual-step-num">03</div>
+          <div class="qual-step-content">
+            <h4>Device Manufacturing</h4>
+            <p>Low-volume specialty manufacturing, custom runs for high-value customers, and recurring process-service contracts in space, defense, and RF verticals.</p>
+          </div>
+        </div>
+        <div class="qual-step reveal">
+          <div class="qual-step-num">04</div>
+          <div class="qual-step-content">
+            <h4>Proprietary Products</h4>
+            <p>Selective launch of proprietary device lines in target verticals where Titanym's process advantage and customer knowledge create defensible product positions with recurring margin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SAPPHIRE AND SINGLE-CRYSTAL SIGE ───────────────────── -->
+  <section class="section" id="sapphire">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Sapphire and Single-Crystal SiGe</div>
+        <h2 class="section-title">A substrate that does more than anchor the device.</h2>
+        <p class="section-body">Sapphire is electrically insulating, thermally stable, and optically transparent. It enables SiGe electronics on one face and III-nitride device structures on the other, a combination no standard substrate can match.</p>
+        <p class="section-body" style="margin-top:16px;">Single-crystal SiGe grown on sapphire maintains structural coherence with the substrate lattice, minimizing misfit dislocations and producing a semiconductor layer with well-controlled electronic properties. This combination is what Titanym is built to manufacture at process scale.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <div>
+            <h4>Electrical Isolation</h4>
+            <p>Sapphire's insulating properties eliminate substrate leakage paths, reducing parasitic coupling and enabling cleaner RF device behavior compared to bulk silicon substrates.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Radiation Hardness</h4>
+            <p>SiGe-on-sapphire demonstrates strong resistance to radiation-induced charge buildup, making it well-suited for satellite systems, deep-space instruments, and mission-critical payloads.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <div>
+            <h4>Optical Transparency</h4>
+            <p>Sapphire transmits across visible and near-infrared wavelengths, enabling double-sided architectures that combine electronic and photonic device structures on a single substrate.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <h4>Monolithic Integration Potential</h4>
+            <p>The sapphire substrate enables SiGe electronics on one side and III-nitride device structures on the other, opening paths toward integrated compute and photonics on a single wafer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TARGET MARKETS ─────────────────────────────────────── -->
+  <section class="section surface" id="markets">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Target Markets</div>
+        <h2 class="section-title">Where the process advantage matters most.</h2>
+        <p class="section-body">Titanym's commercial focus is on markets where reliability, differentiated process performance, and specialized integration matter more than commodity volume.</p>
+      </div>
+      <div class="scope-grid">
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <div>
+            <h4>Space and Radiation-Hardened Electronics</h4>
+            <p>SiGe on sapphire demonstrates strong radiation hardness, making it well-suited for satellite systems, deep-space instruments, and mission-critical payloads that cannot tolerate single-event upsets.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <h4>RF and High-Frequency Communications</h4>
+            <p>SiGe heterojunction bipolar transistors already power RF front-ends in 5G base stations, satellite communications, and radar. The Titanym process opens a pathway to specialized RF device manufacturing.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Aerospace and Defense Sensing</h4>
+            <p>Harsh-environment sensing applications benefit directly from rugged substrate performance, extended operational temperature range, and process-controlled reliability.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <div>
+            <h4>Optoelectronics and Display</h4>
+            <p>Double-sided sapphire structures enable LED devices on one face and solar or electronic structures on the other, creating a platform for integrated, self-powered display architectures.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div>
+            <h4>Energy Conversion Devices</h4>
+            <p>SiGe's Type II band-gap alignment enables solar cell architectures with projected efficiencies of 30 to 40 percent, along with thermoelectric generator applications for waste heat recovery.</p>
+          </div>
+        </div>
+        <div class="scope-card reveal">
+          <div class="scope-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <h4>Co-Development Manufacturing</h4>
+            <p>Government agencies, aerospace primes, and specialty hardware companies seeking non-standard semiconductor process support represent a direct co-development and process services opportunity.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── EXECUTION ──────────────────────────────────────────── -->
-  <section class="section surface" id="execution">
+  <section class="section" id="execution">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Operations</div>
+        <div class="section-label">Program Structure</div>
         <h2 class="section-title">Execution Environment</h2>
-        <p class="section-body">Titanym Phase 1 is carried out within a university nanofabrication environment where controlled deposition and materials characterization equipment are available. The program is structured to operate within existing lab capacity rather than building a new facility.</p>
+        <p class="section-body">Titanym operates as a structured program under Umanah Systems Group with defined scope, phase-controlled progression, and institutional manufacturing access. Phase 1 runs within a university nanofabrication facility capable of controlled deposition, materials characterization, and full metrology.</p>
       </div>
       <div class="exec-grid">
         <div class="exec-card reveal">
@@ -793,40 +990,40 @@ img { max-width: 100%; display: block; }
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h4>Program Structure</h4>
-          <p>Titanym operates as a program under Umanah Systems Group — a structured technical program with defined scope and deliverables.</p>
+          <p>Titanym operates as a program under Umanah Systems Group with defined scope, deliverables, and phase gates. A structured technical program with a disciplined commercialization pathway.</p>
         </div>
         <div class="exec-card reveal">
           <div class="exec-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9V7H8V3L2 8l6 5V9h14z"/><rect x="2" y="13" width="14" height="2" rx="1"/><rect x="2" y="18" width="10" height="2" rx="1"/></svg>
           </div>
           <h4>Nanofabrication Environment</h4>
-          <p>Phase 1 is intended to run within a university nanofabrication environment where controlled deposition and materials characterization can be performed.</p>
+          <p>Phase 1 runs within a university nanofabrication facility with access to controlled deposition, materials characterization equipment, and process expertise. Institutional access rather than new facility construction.</p>
         </div>
         <div class="exec-card reveal">
           <div class="exec-card-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           </div>
           <h4>Current Focus</h4>
-          <p>The current phase focuses strictly on process reproduction and materials evaluation. Device development is not in scope for Phase 1.</p>
+          <p>Phase 1 is strictly process reproduction and materials evaluation. Device development is not in scope until the materials determination is issued. This discipline is intentional.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── STAGE ───────────────────────────────────────────────── -->
-  <section class="section" id="stage">
+  <!-- ── PROGRAM STATUS ─────────────────────────────────────── -->
+  <section class="section surface" id="stage">
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Stage</div>
         <h2 class="section-title">Program Status</h2>
-        <p class="section-body">Phase 1 qualification program. Seeking technical collaborators and institutional partners for controlled process work.</p>
-        <div class="status-wrap"><span class="status-badge">Phase 1 · Process Qualification</span></div>
+        <p class="section-body">Phase 1 is active. The program is carrying out process reproduction, materials qualification, and readiness evaluation. Seeking technical collaborators and institutional partners for controlled process work.</p>
+        <div class="status-wrap"><span class="status-badge">Phase 1 &middot; Materials Qualification</span></div>
       </div>
     </div>
   </section>
 
   <!-- ── CONTACT ─────────────────────────────────────────────── -->
-  <section class="section surface" id="contact">
+  <section class="section" id="contact">
     <div class="container">
       <div class="content-wrap reveal">
         <div class="section-label">Get Involved</div>
