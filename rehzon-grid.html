@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Rehzon Grid | Battery-Free Cold-Chain Verification</title>
-  <meta name="description" content="Rehzon Grid is building battery-free verification infrastructure for regulated cold-chain logistics to detect temperature excursions and tampering before custody transfer." />
+  <title>Rehzon Grid Systems | Verify Before Transfer</title>
+  <meta name="description" content="Rehzon Grid Systems builds battery-free verification infrastructure for defense and regulated logistics. Detect temperature excursions, tampering, and seal breach at every custody transfer point." />
   <meta name="author" content="Umanah Systems Group" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://umanahsystems.com/rehzon-grid" />
@@ -17,16 +17,16 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://umanahsystems.com/rehzon-grid" />
-  <meta property="og:title" content="Rehzon Grid | Battery-Free Cold-Chain Verification" />
-  <meta property="og:description" content="Rehzon Grid is building battery-free verification infrastructure for regulated cold-chain logistics to detect temperature excursions and tampering before custody transfer." />
+  <meta property="og:title" content="Rehzon Grid Systems | Verify Before Transfer" />
+  <meta property="og:description" content="Battery-free verification infrastructure for defense and regulated logistics. Verify materiel integrity, exposure, tampering, and custody at every transfer point." />
   <meta property="og:image" content="https://umanahsystems.com/images/og-preview.jpg" />
-  <meta property="og:image:alt" content="Rehzon Grid — Battery-Free Cold-Chain Verification" />
+  <meta property="og:image:alt" content="Rehzon Grid — Battery-Free Verification Infrastructure" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rehzon Grid | Battery-Free Cold-Chain Verification" />
-  <meta name="twitter:description" content="Rehzon Grid is building battery-free verification infrastructure for regulated cold-chain logistics to detect temperature excursions and tampering before custody transfer." />
+  <meta name="twitter:title" content="Rehzon Grid Systems | Verify Before Transfer" />
+  <meta name="twitter:description" content="Battery-free verification infrastructure for defense and regulated logistics. No batteries. No retrieval. Pass/fail at every custody transfer point." />
   <meta name="twitter:image" content="https://umanahsystems.com/images/og-preview.jpg" />
-  <meta name="twitter:image:alt" content="Rehzon Grid — Battery-Free Cold-Chain Verification" />
+  <meta name="twitter:image:alt" content="Rehzon Grid — Battery-Free Verification Infrastructure" />
 
   <meta name="theme-color" content="#08090c" />
 
@@ -151,7 +151,6 @@ img { max-width: 100%; display: block; }
 .nav-links a.active { color: var(--accent); }
 .nav-cta { background: var(--accent) !important; color: #fff !important; padding: 8px 16px !important; }
 
-/* ── NAV DROPDOWN ─────────────────────────────────────── */
 .nav-dropdown { position: relative; }
 .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
 .nav-dropdown > a::after { content: ''; display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; opacity: 0.6; transition: transform var(--ease), opacity var(--ease); flex-shrink: 0; }
@@ -163,7 +162,6 @@ img { max-width: 100%; display: block; }
 .dropdown-menu a:hover { color: var(--text-primary); background: rgba(255,255,255,0.07); }
 .dropdown-menu a.active { color: var(--accent); }
 
-/* ── MOBILE SUB-LINKS ─────────────────────────────────── */
 .mobile-sub-link { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 10px 0 10px 18px; border-bottom: 1px solid var(--border); transition: color var(--ease); display: block; }
 .mobile-sub-link:last-child { border-bottom: none; }
 .mobile-sub-link:hover { color: var(--accent); }
@@ -178,7 +176,7 @@ img { max-width: 100%; display: block; }
 
 .hero {
   position: relative;
-  min-height: min(100vh, 680px);
+  min-height: min(100vh, 760px);
   display: flex; align-items: center;
   overflow: hidden;
   padding-top: 68px;
@@ -211,6 +209,30 @@ img { max-width: 100%; display: block; }
 .hero-subline { font-family: var(--font-display); font-size: clamp(1.1rem, 2.1vw, 1.45rem); line-height: 1.45; max-width: 760px; margin: 0 auto 18px; }
 .hero-text { max-width: 620px; margin: 0 auto 34px; color: var(--text-secondary); line-height: 1.78; }
 .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero-stats {
+  max-width: 920px; margin: 42px auto 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px;
+  background: var(--border); border: 1px solid var(--border);
+  border-radius: var(--r-lg); overflow: hidden;
+}
+.hero-stat {
+  background: var(--bg-card);
+  padding: 22px 16px;
+  text-align: center;
+}
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.hero-stat-label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
 
 .section { padding: 110px 0; border-top: 1px solid var(--border); }
 .surface { background: var(--bg-surface); }
@@ -221,7 +243,6 @@ img { max-width: 100%; display: block; }
   width: fit-content; max-width: 100%; margin: 20px auto 0; padding-left: 0;
   display: grid; gap: 10px; text-align: left; list-style: none;
 }
-
 .bullet-list li {
   position: relative; padding-left: 18px;
   color: var(--text-secondary); line-height: 1.75;
@@ -267,6 +288,118 @@ img { max-width: 100%; display: block; }
 .panel ul { display: grid; gap: 8px; }
 .panel li { color: var(--text-secondary); }
 
+.stat-grid, .model-grid, .flow-track, .metrics-table, .contact-items {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stat-grid {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.stat-card {
+  background: var(--bg-card);
+  padding: 28px 20px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.stat-desc {
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+.stat-source {
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.model-grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.model-col {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 30px 26px;
+}
+.model-heading {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: var(--text-primary);
+}
+.model-item {
+  position: relative;
+  padding-left: 26px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  text-align: left;
+}
+.model-item + .model-item { margin-top: 12px; }
+.model-item::before {
+  position: absolute;
+  left: 0;
+  top: 0.08em;
+  font-weight: 700;
+}
+.model-col.fail .model-item::before { content: '×'; color: #fca5a5; }
+.model-col.win .model-item::before { content: '✓'; color: var(--accent); }
+
+.flow-wrap {
+  max-width: 920px;
+  margin: 40px auto 0;
+  overflow-x: auto;
+}
+.flow-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.flow-node {
+  background: var(--bg-card);
+  padding: 24px 16px;
+  text-align: center;
+}
+.flow-node.active { background: linear-gradient(180deg, rgba(232,97,26,0.12), rgba(19,22,32,1)); }
+.flow-step {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.flow-label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+.flow-node.active .flow-step,
+.flow-node.active .flow-label { color: var(--accent); }
+
 .metric-list { margin-top: 0; }
 .status-wrap { margin-top: 24px; display: flex; justify-content: center; }
 .status-badge {
@@ -284,6 +417,36 @@ img { max-width: 100%; display: block; }
 .contact-name { font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px; }
 .contact-email { color: var(--accent); font-weight: 600; border-bottom: 1px solid rgba(232,97,26,0.3); display: inline-block; }
 
+.contact-items {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.contact-item {
+  background: var(--bg-card);
+  padding: 20px 16px;
+  text-align: center;
+}
+.contact-item-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.contact-item-val {
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .form-wrap { max-width: 760px; margin: 34px auto 0; }
 .contact-form {
   background: var(--bg-card); border: 1px solid var(--border);
@@ -291,14 +454,15 @@ img { max-width: 100%; display: block; }
 }
 .form-group { margin-bottom: 18px; text-align: left; }
 .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
-.form-group input, .form-group textarea {
+.form-group input, .form-group select, .form-group textarea {
   width: 100%; background: var(--bg-base); border: 1px solid var(--border-bright);
   border-radius: var(--r-md); padding: 12px 15px;
   font-family: var(--font-body); font-size: 0.93rem; color: var(--text-primary);
   outline: none; transition: border-color var(--ease), box-shadow var(--ease);
 }
-.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+.form-group select option { background: var(--bg-base); color: var(--text-primary); }
 .form-error {
   display: none; margin-top: 14px; text-align: left;
   font-size: 0.86rem; color: #fca5a5;
@@ -328,6 +492,46 @@ img { max-width: 100%; display: block; }
 .footer-social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-2px); }
 .footer-copy { font-size: 0.78rem; color: var(--text-muted); width: 100%; text-align: center; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
 
+.panel-number {
+  font-size: 2rem;
+  color: var(--accent);
+  opacity: 0.35;
+  font-family: var(--font-display);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.panel-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.panel-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.badge-accent {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(232,97,26,0.3);
+}
+.badge-muted {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-bright);
+}
+
+@media (max-width: 900px) {
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-items { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 768px) {
   .nav-inner { padding: 0 20px; }
   .nav-links { display: none; }
@@ -335,8 +539,10 @@ img { max-width: 100%; display: block; }
   .container { padding: 0 20px; }
   .hero-content { padding: 74px 20px 84px; }
   .section { padding: 80px 0; }
-  .panel-grid { grid-template-columns: 1fr; }
+  .panel-grid,
+  .model-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 26px 22px; }
+  .flow-track { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .hero-content { padding: 62px 20px 72px; }
@@ -344,6 +550,8 @@ img { max-width: 100%; display: block; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
   .image-overlay-inner { padding: 22px 18px; }
+  .stat-grid,
+  .hero-stats { grid-template-columns: 1fr; }
 }
   </style>
 </head>
@@ -375,24 +583,42 @@ img { max-width: 100%; display: block; }
       <a href="crucible.html" class="mobile-link">Crucible</a>
       <a href="reydious.html" class="mobile-link">Reydious</a>
       <a href="programs.html" class="mobile-link active">Programs</a>
-      <a href="biogrid-networks.html"   class="mobile-sub-link">BioGrid Networks</a>
-      <a href="rehzon-grid.html"     class="mobile-sub-link active">Rehzon Grid</a>
+      <a href="biogrid-networks.html" class="mobile-sub-link">BioGrid Networks</a>
+      <a href="rehzon-grid.html" class="mobile-sub-link active">Rehzon Grid</a>
       <a href="index.html#contact" class="mobile-link">Contact</a>
     </div>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-grid"></div>
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
     <div class="hero-content">
-      <div class="hero-badge">Infrastructure in Development</div>
-      <h1 class="hero-title">Rehzon Grid</h1>
-      <p class="hero-subline">Building battery-free verification infrastructure for regulated cold-chain logistics.</p>
-      <p class="hero-text">Designed to detect temperature excursions and tampering before custody transfer.<br>No batteries. No charging. No device recovery.</p>
+      <div class="hero-badge">A Umanah Systems Group Program</div>
+      <h1 class="hero-title">Verify<br>Before<br>Transfer</h1>
+      <p class="hero-subline">Battery-free verification infrastructure for <strong>defense and regulated logistics.</strong></p>
+      <p class="hero-text">Detect temperature excursions, tampering, and seal breach at every custody transfer point. No batteries. No retrieval. No failure.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Request Pilot Discussion</a>
-        <a href="#pilot" class="btn btn-ghost">Discuss Pilot Participation</a>
+        <a href="#problem" class="btn btn-ghost">See the Problem &rarr;</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="hero-stat">
+          <div class="hero-stat-value">0</div>
+          <div class="hero-stat-label">Batteries Required</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">0</div>
+          <div class="hero-stat-label">Devices to Retrieve</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">Pass/Fail</div>
+          <div class="hero-stat-label">At Every Transfer Point</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">2</div>
+          <div class="hero-stat-label">Markets Served: Defense and Commercial</div>
+        </div>
       </div>
     </div>
   </section>
@@ -400,161 +626,269 @@ img { max-width: 100%; display: block; }
   <section class="section" id="problem">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Challenge</div>
-        <h2 class="section-title">The Problem</h2>
-        <p class="section-body">Cold-chain goods move through multiple facilities before reaching end users.</p>
-        <p class="section-body">Exposure events and tampering may not be detected until after arrival.</p>
-        <p class="section-body">Battery-based data loggers introduce retrieval, maintenance, and cost constraints that limit large-scale deployment.</p>
+        <div class="section-label">The Problem</div>
+        <h2 class="section-title">The Model Problem.</h2>
+        <p class="section-body">Whether you are moving food through a distribution network, regulated goods across a supply chain, or medical materiel through a defense logistics node, every verification solution in use today requires the same thing: a battery, a retrieval, or a person. None produce a governed pass/fail at the moment custody changes hands.</p>
+
+        <p class="intro-line">Different industries. Different buyers.</p>
+        <h3 class="section-title" style="font-size: clamp(1.4rem, 2.5vw, 2rem); margin-top: 10px;">The Same Broken Model.</h3>
+      </div>
+
+      <div class="panel-grid">
+        <div class="panel reveal">
+          <h4>Commercial &amp; Regulated Logistics</h4>
+          <ul class="bullet-list" style="margin: 14px auto 0; max-width: 100%; width: 100%;">
+            <li>The US cold chain moves <strong>$94 billion</strong> in temperature-sensitive goods every year.</li>
+            <li>Seven to nine percent of those shipments experience a temperature excursion.</li>
+            <li>Problems are discovered at receiving, after the load is already a loss or a dispute.</li>
+          </ul>
+        </div>
+        <div class="panel reveal">
+          <h4>Defense &amp; Government</h4>
+          <ul class="bullet-list" style="margin: 14px auto 0; max-width: 100%; width: 100%;">
+            <li>DoD OIG found <strong>28,594 items omitted from accountability records</strong> at a single forward logistics element.</li>
+            <li>Different industry. Different buyer.</li>
+            <li>The same monitor-retrieve-process model. The same failure mode.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stat-grid reveal">
+        <div class="stat-card">
+          <div class="stat-num">$94B</div>
+          <div class="stat-desc">US cold chain logistics market served by the problem Rehzon Grid is built to solve.</div>
+          <div class="stat-source">GMI Insights / Mordor Intelligence</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">7-9%</div>
+          <div class="stat-desc">of US cold shipments experience temperature excursions, usually discovered after transfer.</div>
+          <div class="stat-source">Cold Chain Analysis</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">28,594</div>
+          <div class="stat-desc">items omitted from accountability records at a single DoD logistics node.</div>
+          <div class="stat-source">DoD OIG Audit</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">$161B</div>
+          <div class="stat-desc">annual US food loss value tied to a system that discovers issues too late.</div>
+          <div class="stat-source">USDA ERS</div>
+        </div>
+      </div>
+
+      <div class="model-grid reveal">
+        <div class="model-col fail">
+          <h4 class="model-heading">Battery-Based Logging (Current Standard)</h4>
+          <div class="model-item">Requires physical retrieval at every custody point.</div>
+          <div class="model-item">Return packaging and manual processing before data is available.</div>
+          <div class="model-item">Logs data post-event, so discovery happens after custody transfer.</div>
+          <div class="model-item">Cannot scale to full pallet density.</div>
+          <div class="model-item">Issues no pass/fail verdict at the transfer point.</div>
+          <div class="model-item">Fails in austere and contested environments.</div>
+        </div>
+        <div class="model-col win">
+          <h4 class="model-heading">Rehzon Grid</h4>
+          <div class="model-item">No retrieval. No return package. No processing lag.</div>
+          <div class="model-item">Pass/fail at the transfer point, before custody changes hands.</div>
+          <div class="model-item">Scales to full pallet density with no per-shipment hardware burden.</div>
+          <div class="model-item">Simultaneous temperature, tamper, spoilage, and fill-state verification.</div>
+          <div class="model-item">Full governed provenance record at every node.</div>
+          <div class="model-item">Battery-free operation across any environment.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section surface" id="approach">
+  <section class="section surface" id="capabilities">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Solution</div>
-        <h2 class="section-title">The Approach</h2>
-        <p class="section-body">Rehzon Grid is developing battery-free sensing elements embedded into pallet wrap and packaging layers.</p>
-        <p class="section-body">At facility transfer points, a wireless scan would interrogate the shipment to determine exposure state.</p>
-        <p class="intro-line">The objective:</p>
-        <ul class="bullet-list">
-          <li>Provide checkpoint-based verification</li>
-          <li>Reduce reliance on battery loggers</li>
-          <li>Enable scalable facility coverage</li>
-        </ul>
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Six Layers.<br>One Platform.</h2>
+        <p class="section-body">Rehzon Grid stacks six capabilities that today exist only in isolation into one unified verification architecture. No current solution delivers all six together.</p>
+      </div>
+
+      <div class="flow-wrap reveal">
+        <div class="flow-track">
+          <div class="flow-node">
+            <div class="flow-step">01 · Packaging</div>
+            <div class="flow-label">Sensor<br>Embedded</div>
+          </div>
+          <div class="flow-node">
+            <div class="flow-step">02 · Transit</div>
+            <div class="flow-label">Shipment<br>Moves</div>
+          </div>
+          <div class="flow-node active">
+            <div class="flow-step">03 · Checkpoint</div>
+            <div class="flow-label">Passive<br>Interrogation</div>
+          </div>
+          <div class="flow-node active">
+            <div class="flow-step">04 · Verification</div>
+            <div class="flow-label">Pass / Fail<br>Issued</div>
+          </div>
+          <div class="flow-node active">
+            <div class="flow-step">05 · Record</div>
+            <div class="flow-label">Governed<br>Provenance</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <div class="panel reveal">
+          <div class="panel-number">01</div>
+          <h4>Package-Integrated Sensing</h4>
+          <p class="panel-text">Simultaneously detects temperature excursion, tamper, spoilage, and fill-state from a single sensor element embedded in packaging. No batteries. No wires. External to container. Mass-producible.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-number">02</div>
+          <h4>Battery-Free Thermal Verification</h4>
+          <p class="panel-text">Verifies thermal exposure wirelessly via dielectric change measurement. Damage tolerant. Flexible form factor. Tunable temperature range. No electrical connections required.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-number">03</div>
+          <h4>Material Anomaly Detection</h4>
+          <p class="panel-text">Detects surface and subsurface anomalies, including hidden damage, moisture intrusion, and material-state changes invisible to surface inspection or standard logging.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-number">04</div>
+          <h4>Passive Checkpoint Identity</h4>
+          <p class="panel-text">Long-range and wide-coverage passive identity at custody transfer points without GPS and without tag power. Both range and coverage simultaneously, which conventional RFID cannot deliver.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-number">05</div>
+          <h4>Anomaly-Aware AI</h4>
+          <p class="panel-text">Learns nominal behavior from archived sensor data and flags real-time deviation without requiring examples of failure. Active alerting before compromised materiel reaches the next checkpoint.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-number">06</div>
+          <h4>Governed Provenance</h4>
+          <p class="panel-text">Every scan, every pass/fail, and every anomaly flag flows into a governed record with full lineage and cross-domain relationships for decision-grade planning.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="image-break reveal" aria-label="Rehzon Grid image section">
-    <img src="images/resonance-grid-source.jpg" alt="Rehzon Grid cold-chain verification infrastructure" />
+    <img src="images/resonance-grid-source.jpg" alt="Rehzon Grid battery-free verification infrastructure" />
     <div class="image-overlay">
       <div class="image-overlay-inner">
-        <h3>Rehzon Grid</h3>
-        <p>Verifies shipments stayed cold and sealed. No batteries. No charging. No device recovery.</p>
+        <h3>Rehzon Grid Systems</h3>
+        <p>Battery-free verification at the custody transfer point.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="audience">
+  <section class="section" id="dual-use">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Audience</div>
-        <h2 class="section-title">Who This Is For</h2>
-        <p class="section-body">Rehzon Grid is designed for regulated logistics environments where shipment integrity, environmental exposure, and custody verification must be validated across complex supply chains.</p>
+        <div class="section-label">Defense &amp; Commercial</div>
+        <h2 class="section-title">One Platform.<br>Two Markets.</h2>
+        <p class="section-body">The same verification architecture that addresses DoD's physical-state accountability gap serves every regulated logistics environment where high-value, temperature-sensitive goods change hands.</p>
       </div>
+
       <div class="panel-grid">
         <div class="panel reveal">
-          <h4>Industries</h4>
-          <ul>
-            <li>Pharmaceutical manufacturers</li>
-            <li>3PL logistics operators</li>
-            <li>Cold storage facilities</li>
-            <li>Large distributors</li>
-            <li>Defense logistics commands</li>
-            <li>Military medical supply chains</li>
-            <li>Ammunition and weapons depots</li>
-            <li>Secure electronics and satellite component logistics</li>
+          <div class="panel-badge badge-accent">Defense</div>
+          <h4>Strategic Logistics Assurance</h4>
+          <p class="panel-text" style="margin-bottom: 14px;">DLA and DoD logistics systems move $50B+ in materiel annually through a network with no battery-free, infrastructure-level physical verification layer at custody transfer points. Rehzon Grid closes that gap.</p>
+          <ul class="bullet-list" style="margin: 0 auto; max-width: 100%; width: 100%;">
+            <li>DLA pharmaceutical and medical cold-chain</li>
+            <li>Forward deployed logistics nodes</li>
+            <li>Strategic inventory assurance</li>
+            <li>Theater supply accountability</li>
+            <li>DHA medical materiel verification</li>
           </ul>
         </div>
         <div class="panel reveal">
-          <h4>Decision Makers</h4>
-          <ul>
-            <li>Quality assurance</li>
-            <li>Regulatory compliance</li>
-            <li>Supply chain operations</li>
-            <li>Defense logistics officers</li>
-            <li>Program managers for mission-critical systems</li>
-            <li>Procurement and sustainment teams</li>
+          <div class="panel-badge badge-muted">Commercial</div>
+          <h4>Regulated Logistics Verification</h4>
+          <p class="panel-text" style="margin-bottom: 14px;">Battery-based loggers add cost, retrieval burden, and post-event discovery to every regulated shipment across food, biotech, chemical, and industrial sectors. Rehzon Grid scales to full pallet density with no per-shipment hardware cost.</p>
+          <ul class="bullet-list" style="margin: 0 auto; max-width: 100%; width: 100%;">
+            <li>Food and grocery distribution</li>
+            <li>3PL logistics providers</li>
+            <li>Cold storage operators</li>
+            <li>Biotech and clinical trial logistics</li>
+            <li>Chemical and industrial regulated goods</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section surface" id="rationale">
+  <section class="section surface" id="pilot">
     <div class="container">
       <div class="content-wrap reveal">
-        <div class="section-label">Rationale</div>
-        <h2 class="section-title">Why Battery-Free</h2>
-        <p class="section-body">Battery-based systems create ongoing operational overhead that limits broad deployment in high-throughput logistics environments.</p>
+        <div class="section-label">Pilot Program</div>
+        <h2 class="section-title">Controlled Validation.</h2>
+        <p class="section-body">Rehzon Grid is preparing controlled validation pilots with regulated logistics and defense partners. The objective is to validate sensing accuracy, checkpoint reliability, and custody workflow integration under real operating conditions.</p>
+        <div class="status-wrap"><span class="status-badge">Active &middot; Seeking Pilot Partners</span></div>
       </div>
-      <div class="panel-grid">
+
+      <div class="panel-grid" style="margin-top: 48px;">
         <div class="panel reveal">
-          <h4>Battery-Based Limitations</h4>
-          <ul>
-            <li>Require retrieval</li>
-            <li>Fail over time</li>
-            <li>Add maintenance overhead</li>
-          </ul>
+          <div class="panel-number">01</div>
+          <h4>Detection Sensitivity</h4>
+          <p class="panel-text">Validate temperature excursion detection, tamper indication, and moisture detection against defined thresholds under controlled exposure conditions.</p>
         </div>
         <div class="panel reveal">
-          <h4>Battery-Free Advantages</h4>
-          <ul>
-            <li>Reduce hardware servicing</li>
-            <li>Lower lifecycle cost</li>
-            <li>Enable broader facility coverage</li>
-          </ul>
+          <div class="panel-number">02</div>
+          <h4>Scan Reliability</h4>
+          <p class="panel-text">Measure interrogation success rates at custody transfer points across realistic dock and warehouse environments.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-number">03</div>
+          <h4>Operational Friction</h4>
+          <p class="panel-text">Quantify time required for checkpoint verification and measure integration ease into existing compliance workflows.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="panel-number">04</div>
+          <h4>Provenance Record Quality</h4>
+          <p class="panel-text">Validate that custody events produce complete, governed, audit-ready data records with full lineage traceable across each node.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="pilot">
-    <div class="container">
-      <div class="content-wrap reveal">
-        <div class="section-label">Validation</div>
-        <h2 class="section-title">Pilot Invitation</h2>
-        <p class="section-body">Rehzon Grid is preparing controlled validation pilots with regulated logistics partners.</p>
-        <p class="intro-line">Pilot objectives include:</p>
-        <ul class="bullet-list">
-          <li>Detection sensitivity</li>
-          <li>Scan reliability</li>
-          <li>Operational friction</li>
-          <li>Compliance workflow integration</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section surface" id="measurement">
-    <div class="container">
-      <div class="content-wrap reveal">
-        <div class="section-label">Measurement</div>
-        <h2 class="section-title">Pilot Evaluation Metrics</h2>
-        <p class="section-body">The pilot is intended to measure:</p>
+      <div class="content-wrap reveal" style="margin-top: 48px;">
+        <p class="intro-line">Pilot Evaluation Metrics:</p>
         <ul class="bullet-list metric-list">
           <li>Detection accuracy under defined exposure conditions</li>
           <li>Scan reliability at custody transfer points</li>
           <li>False positive and false negative rates</li>
           <li>Time required for checkpoint verification</li>
-          <li>Integration into existing compliance workflows</li>
+          <li>Compliance and custody workflow integration</li>
+          <li>Governed provenance record completeness</li>
         </ul>
-        <div style="margin-top:30px;">
-          <a href="#contact" class="btn btn-primary">Discuss Pilot Participation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="content-wrap reveal">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Get Involved.</h2>
+        <p class="section-body">Whether you are a logistics operator, a defense partner, an implementation partner, or an investor, we want to hear from you.</p>
+
+        <div style="margin: 32px 0; font-family: var(--font-display); font-size: clamp(1.2rem, 3vw, 1.8rem); line-height: 1.25; font-weight: 700; color: var(--text-primary); text-transform: uppercase;">
+          Pilot Partners.<br>
+          Implementation Partners.<br>
+          <span style="color: var(--accent);">Both Welcome.</span>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="stage">
-    <div class="container">
-      <div class="content-wrap reveal">
-        <div class="section-label">Stage</div>
-        <h2 class="section-title">Current Status</h2>
-        <p class="section-body">Early-stage infrastructure development. Seeking pilot partners for controlled validation.</p>
-        <div class="status-wrap"><span class="status-badge">Active · Seeking Pilot Partners</span></div>
-      </div>
-    </div>
-  </section>
+        <div class="contact-items reveal">
+          <div class="contact-item">
+            <span class="contact-item-label">Program</span>
+            <div class="contact-item-val">Rehzon Grid Systems</div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Parent Organization</span>
+            <div class="contact-item-val">Umanah Systems Group</div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Status</span>
+            <div class="contact-item-val">Infrastructure in Development</div>
+          </div>
+        </div>
 
-  <section class="section surface" id="contact">
-    <div class="container">
-      <div class="content-wrap reveal">
-        <div class="section-label">Get Involved</div>
-        <h2 class="section-title">Contact</h2>
-        <p class="section-body">For pilot discussions, contact:</p>
-        <div class="contact-block">
+        <div class="contact-block" style="margin-top: 28px;">
           <div class="contact-name">Amaete Umanah</div>
           <a class="contact-email" href="mailto:contact@umanahsystems.com">contact@umanahsystems.com</a>
         </div>
@@ -564,20 +898,32 @@ img { max-width: 100%; display: block; }
         <form class="contact-form" id="resonanceContactForm" novalidate>
           <input type="hidden" name="subject" value="Rehzon Grid Pilot Discussion" />
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Full Name</label>
             <input id="name" name="name" type="text" placeholder="Your full name" required />
           </div>
           <div class="form-group">
-            <label for="company">Company</label>
-            <input id="company" name="company" type="text" placeholder="Your company" required />
+            <label for="company">Organization</label>
+            <input id="company" name="company" type="text" placeholder="Company or institution" required />
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email Address</label>
             <input id="email" name="email" type="email" placeholder="you@company.com" required />
           </div>
           <div class="form-group">
+            <label for="inquiryType">Inquiry Type</label>
+            <select id="inquiryType" name="inquiry_type" required>
+              <option value="" selected disabled>Select one</option>
+              <option>Pilot Participation - Defense / Government</option>
+              <option>Pilot Participation - Commercial Logistics</option>
+              <option>Implementation Partnership</option>
+              <option>Investment Inquiry</option>
+              <option>Federal / Government Procurement</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your logistics environment and interest in the pilot." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your operation and what you need." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;">Request Pilot Discussion</button>
           <p id="formError" class="form-error" role="alert"></p>
